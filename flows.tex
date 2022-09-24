@@ -1,63 +1,13 @@
 \documentclass{amsart}
-\usepackage[utf8]{inputenc}
 
 \input{other/style}
-%\input{other/usualcmds}
-\addbibresource{other/usualpapers.bib}
+\input{other/usualcmds}
+%\addbibresource{other/usualpapers.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%
-%\input{other/commands} % add commands here
+\input{other/commands} % add commands here
 \addbibresource{other/bibliography.bib} % add references here
-%\usepackage{package} % add packages here
-\usepackage{subcaption}
-
-% environments
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{theorem*}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-
-% math commands
-\newcommand{\R}{\mathbb{R}}              % reals
-\newcommand{\Z}{\mathbb{Z}}              % integers
-\newcommand{\N}{\mathbb{N}}              % natural
-\newcommand{\norm}[1]{\Vert{#1}\Vert}    % norm
-\newcommand{\id}{\mathrm{id}}            % identity
-\newcommand{\e}{\mathbf{e}}              % canonical v-field
-\newcommand{\f}{\mathbf{f}}              % logistic v-field
-\newcommand{\interval}{\mathbb{I}}       % geometric interval
-\newcommand{\chains}{C_{\ast}}           % chains
-\newcommand{\cochains}{C^{\ast}}         % cochains
-\newcommand{\chain}[1]{C_{#1}}           % chains one degree
-\newcommand{\cochain}[1]{C^{#1}}         % cochains one degree
-\newcommand{\sh}{\mathfrak{sh}}          % shuffle sign
-\newcommand{\Or}{{\rm Det}}              % orientation bundle
-\newcommand{\cman}{\mathrm{cMan}}        % c-manifolds
-\newcommand{\cI}{\mathcal{I}}            % comparison map
-\newcommand{\Hom}{\textup{Hom}}          % Hom complex
-\newcommand{\init}{{\rm Init}}           % initial faces
-\newcommand{\term}{{\rm Term}}           % terminal faces
-\newcommand{\vertices}{{\rm Vert}}       % vertices
-\newcommand{\uW}{\underline{W}}          % geometric cochain W
-\newcommand{\uV}{\underline{V}}          % geometric cochain V
-\newcommand{\Ginit}{G^{\mathrm{init}}}   % initial graph-like nbhd
-\newcommand{\Gterm}{G^{\mathrm{term}}}   % initial graph-like nbhd
-
-% typing shortcuts
-\newcommand{\into}{\hookrightarrow}
-\newcommand{\xr}{\xrightarrow}
-\newcommand{\sms}{\smallsmile}
-\newcommand{\pf}{\pitchfork}
-\renewcommand{\th}{^{\mathrm{th}}}
-
-\hyphenation{to-pol-o-gy}
-
-\newcommand{\anibal}[1]{\textcolor{brown}{*Anibal: #1}}
-\newcommand{\dev}[1]{\textcolor{blue}{*Dev: #1}}
-\newcommand{\red}[1]{\textcolor{red}{#1}}
+\usepackage{subcaption}  % add packages here
 
 \begin{document}
 
