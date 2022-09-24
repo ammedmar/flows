@@ -1,26 +1,15 @@
 \documentclass{amsart}
-\usepackage{amssymb, amsmath, amsfonts}
-\usepackage{tikz-cd}
-\usepackage{subcaption}
-\usepackage[bookmarks=true, linktocpage=true,
-bookmarksnumbered=true, breaklinks=true,
-pdfstartview=FitH, hyperfigures=false,
-plainpages=false, naturalnames=true,
-colorlinks=true, pagebackref=true,
-pdfpagelabels]{hyperref}
-\hypersetup{
-	linkcolor = blue,
-	citecolor = blue,
-	urlcolor = blue,
-	colorlinks = true,
-}
+\usepackage[utf8]{inputenc}
 
-% layout
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2in}
-\setlength{\textheight}{\paperheight}
-\addtolength{\textheight}{-2in}
-\calclayout
+\input{other/style}
+%\input{other/usualcmds}
+\addbibresource{other/usualpapers.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%\input{other/commands} % add commands here
+\addbibresource{other/bibliography.bib} % add references here
+%\usepackage{package} % add packages here
+\usepackage{subcaption}
 
 % environments
 \newtheorem{theorem}{Theorem}[section]
@@ -64,12 +53,6 @@ pdfpagelabels]{hyperref}
 \newcommand{\pf}{\pitchfork}
 \renewcommand{\th}{^{\mathrm{th}}}
 
-% update to MSC2020
-\makeatletter
-\@namedef{subjclassname@2020}{%
-	\textup{2020} Mathematics Subject Classification}
-\makeatother
-
 \hyphenation{to-pol-o-gy}
 
 \newcommand{\anibal}[1]{\textcolor{brown}{*Anibal: #1}}
@@ -89,7 +72,7 @@ pdfpagelabels]{hyperref}
 \email{ammedmar@mpim-bonn.mpg.de}
 \address{Department of Mathematics, University of Notre, Notre Dame, IN, USA}
 \email{amedinam@nd.edu}
-\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1} and the hospitality of the Laboratory for Topology and Neuroscience at EPFL where part of this work developed.}
+\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1IP-ICT-1} and the hospitality of the Laboratory for Topology and Neuroscience at EPFL where part of this work developed.}
 
 \author[D. Sinha]{Dev Sinha}
 \address{Mathematics Department, University of Oregon}
@@ -110,8 +93,7 @@ pdfpagelabels]{hyperref}
 \input{s3} % Geometric cochains
 \input{s4} % Logistic vector field
 \input{s5} % Flow comparison theorem
-
-\bibliographystyle{alpha}
-\bibliography{flows}
+\sloppy
+\printbibliography
 
 \end{document}
