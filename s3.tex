@@ -3,12 +3,12 @@
 
 \section{Geometric cochains} \label{S: geometric cochains}
 
-To specify a cubical cochain in a fixed degree is to give an integer for each and every cube in that dimension, which in practice can be an unwieldy amount of data. 
+To specify a cubical cochain in a fixed degree is to give an integer for each and every cube in that dimension, which in practice can be an unwieldy amount of data.
 Submanifolds, which can be simple to describe in cases of interest, can encode such data through intersection.
 
 The basic idea is classical, essentially an implementation of Poincar\'e duality at the chain and cochain level by using intersection with a submanifold in order to define a function on chains.
 We implement this idea in Definition~\ref{D: intersection homomorphism}.
-But there are technical obstacles to overcome in order to obtain cochain models. 
+But there are technical obstacles to overcome in order to obtain cochain models.
 First, submanifolds alone do not capture homology and cohomology, as Thom famously realized and as can be seen in applications such as using Schubert varieties to represent cohomology of Grassmannians.
 So we generalize from submanifolds to any manifold equipped with a map to our manifold in question.
 These evaluate on chains through pull-back, generalizing intersection.
@@ -19,22 +19,22 @@ In \cite{FMS-foundations}, we have filled in details of this theory as well as e
 We now give an overview of geometric cohomology referring to \cite{FMS-foundations} for a more complete exposition.
 
 \subsection{Manifolds with corners}
- 
+
 We follow a careful development by Joyce \cite{Joy12}.
 Let $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$, and let $x_i \colon \R^n_k \to \R$ denote projection onto the $i$th coordinate.
-If $A\subset \R^n$ and $B\subset \R^m$ are any subsets we say that $f:A\to B$ is smooth if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$. 
+If $A\subset \R^n$ and $B\subset \R^m$ are any subsets we say that $f:A\to B$ is smooth if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
 We carry over the definitions of smooth charts and atlases as in the standard setting, and we choose to work with subspaces of $\R^\infty$ in order to have a set of such objects.
 The following definitions are from \cite[Section 2]{Joy12}.
 
 \begin{definition}
 	A {\bf manifold with corners}, or simply a \textbf{c-manifold}, is a subspace of some $\R^N \subset \R^\infty$ that is a topological manifold with boundary together with an atlas of smooth local charts modeled on $\R^n_k$.
-	
-	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi \colon U \subset \R^n_k \to W$ the composition $f \circ \phi \colon U \to \R$ is smooth.	
-	
-	A map $f \colon W \to V$ from a manifold with corners to a manifold without boundary 
-	is {\bf smooth} if the composition of $f$ with any smooth real-valued function on $V$ is 
+
+	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi \colon U \subset \R^n_k \to W$ the composition $f \circ \phi \colon U \to \R$ is smooth.
+
+	A map $f \colon W \to V$ from a manifold with corners to a manifold without boundary
+	is {\bf smooth} if the composition of $f$ with any smooth real-valued function on $V$ is
 	a smooth real-valued function on $W$.
-	
+
 	The {\bf tangent bundle} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions.
 \end{definition}
 
@@ -51,7 +51,7 @@ We will use boundaries of manifolds with corners, which are defined through thei
 	Define the {\bf corner-strata} $S^k(W) \subseteq W$ to be the set of elements having depth~$k$.
 \end{definition}
 
-If $W$ is a manifold with boundary, then $S^0(W)$ is its interior and $S^1(W)$ is its boundary. 
+If $W$ is a manifold with boundary, then $S^0(W)$ is its interior and $S^1(W)$ is its boundary.
 But, if $W$ is a general manifold with corners, deeper corner strata need to be incorporated in the boundary.
 Because of this, the boundary is naturally a c-manifold over $W$ (that is, a map from a c-manifold to $W$), rather than a subspace of $W$.
 Again see \cite[Section 2]{Joy12} for further details.
@@ -61,12 +61,12 @@ Again see \cite[Section 2]{Joy12} for further details.
 \end{definition}
 
 Since this notion is local, the number of such components is determined by depth.
-Considering the origin in $\R^n_k$, for any $k \geq 0$, points having depth $k$ have exactly $k$ local components. 
+Considering the origin in $\R^n_k$, for any $k \geq 0$, points having depth $k$ have exactly $k$ local components.
 For example, $S^1(\interval^3)$ consists of the interiors of two-dimensional faces, and any sufficiently small neighborhood of a corner intersects exactly three of these.
 
 \begin{definition}
 	Let $W$ be a manifold with corners. Define its {\bf boundary} $\partial W$ to be the space of pairs $(x, \beta)$ with $x \in W$ and $\beta$ a local boundary component of $W$ at $x$.
-	Define $i_{\partial W} \colon \partial W \to W$ by sending $(x,\beta)$ to $x$. 
+	Define $i_{\partial W} \colon \partial W \to W$ by sending $(x,\beta)$ to $x$.
 \end{definition}
 
 The boundary $\partial W$ is itself a manifold with corners, and the boundary map $i_{\partial W}$ is an immersion.
@@ -78,22 +78,22 @@ These are treated below and are more involved, requiring care to develop in \cit
 
 We let $\partial^k W$ denote $\partial (\partial^{k-1} W)$ with $\partial^0 W = W$, and we let $i_{\partial^k W}$, or simply $i_{\partial^k}$, denote the composite of the $i_{\partial^i W}$ maps sending $\partial^k W$ to $W$.
 
-Recall the standard notion of transversality of two maps, defined locally by having the tangent space at an image point spanned by the images 
+Recall the standard notion of transversality of two maps, defined locally by having the tangent space at an image point spanned by the images
 of tangent spaces of preimages.
 
 \begin{definition}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
 	We say $f$ and $g$ are \textbf{transverse}, denoted $f \pf g$, if $f|_{S^k(V)}$ and $g|_{S^\ell(W)}$ are transverse for all $k, \ell$. This is equivalent to requiring all pairs $fi_{\partial^kV}$ and $gi_{\partial^\ell W}$ be transverse in the standard sense.
-	
+
 	Suppressing maps from the notation, define the \textbf{pull-back} or \textbf{fiber product} $V \times_M W$ as the subspace of $(x, y) \in V \times W$ with $f(x) = g(y)$.
 \end{definition}
 
 We will use the term pull-back when we want to emphasize its map to $V$ or $W$, while the fiber product is to be considered over $M$.
-The following analysis of fiber products is standard -- see for example Proposition~7.2.7 of \cite{MaDo92}. 
+The following analysis of fiber products is standard -- see for example Proposition~7.2.7 of \cite{MaDo92}.
 
 \begin{theorem} \label{pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
-	If $f \pf g$ then the fiber product $V \times_M W$ is a manifold with corners with 
+	If $f \pf g$ then the fiber product $V \times_M W$ is a manifold with corners with
 	\begin{equation*}
 	S^i(V \times_M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
@@ -113,7 +113,7 @@ But, unlike de Rham theory, it is defined over the integers.
 Geometric homology and cohomology were defined and developed in a preprint of Lipyanskiy \cite{Lipy14}.
 But this preprint does not develop a multiplicative structure at the cochain level.
 Moreover, while Lipyanskiy shows geometric homology groups are isomorphic to singular homology, he does not state or prove the corresponding fact for cohomology.
-We give a full treatment addressing these points and others in \cite{FMS-foundations}, reviewing here only what we need to compare geometric and cubical cohomology. 
+We give a full treatment addressing these points and others in \cite{FMS-foundations}, reviewing here only what we need to compare geometric and cubical cohomology.
 
 We first define co-orientations.
 Recall that one definition of an orientation of a bundle is an equivalence class, up to positive scalar multiplication, of an everywhere non-zero section of the top exterior power of the bundle.
@@ -121,20 +121,20 @@ Recall that one definition of an orientation of a bundle is an equivalence class
 \begin{definition} \label{D: co-orientations}
 	Let $E \to M$ be a rank $d$ vector bundle.
 	If $d > 0$, define $\Or(E)$ to be $\bigwedge^d E$, and if $d = 0$, define $\Or(E)$ to be the trivial rank one bundle.
-	
+
 	A \textbf{co-orientation} of $g \colon W \to M$ is an equivalence class, up to positive scalar multiplication, of an everywhere non-zero section of $\Hom \big( \Or(TW),\, \Or(g^*TM) \big)$.
 	We say that $g$ is \textbf{co-orientable} if a co-orientation exists.
 \end{definition}
 
-The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods. 
+The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods.
 We call such a choice of basis vectors around a point, which we typically do not specify, a \textbf{local orientation}, and often denote the local orientation for $W$ by $\beta_W$.
-We use ordered-pair notation for co-orientation homomorphisms, with $\omega = (\beta_W, \beta_M)$ being the co-orientation that sends the local orientation $\beta_W$ at $x\in W$ to a local orientation $\beta_M$ for $g^*(TM)_x\cong T_{g(x)}M$. 	
+We use ordered-pair notation for co-orientation homomorphisms, with $\omega = (\beta_W, \beta_M)$ being the co-orientation that sends the local orientation $\beta_W$ at $x\in W$ to a local orientation $\beta_M$ for $g^*(TM)_x\cong T_{g(x)}M$.
 
 We can equivalently define a co-orientation as a choice of isomorphism $\Or(TW)\cong \Or(g^*TM)$, again up to positive scalar multiplication.
 Thus, if $f$ is co-orientable and $W$ is connected, any local co-orientation uniquely extends to a global co-orientation.
-If a map is co-orientable, it has exactly two co-orientations, which we say are \textbf{opposite}, with, for example, the opposite of $\omega$ above being $(\beta_W, -\beta_M)$, which we also write as $-(\beta_W, \beta_M)$. 
+If a map is co-orientable, it has exactly two co-orientations, which we say are \textbf{opposite}, with, for example, the opposite of $\omega$ above being $(\beta_W, -\beta_M)$, which we also write as $-(\beta_W, \beta_M)$.
 
-Co-oriented maps compose in an immediate way, forming a category. 
+Co-oriented maps compose in an immediate way, forming a category.
 Namely, given $V \xr{f} W \xr{g} M$ and co-orientations $\Or(TV) \to \Or(f^*TW)$ and $\Or(TW)\to \Or(g^*TM)$, we simply compose the latter with the pullback of the former via $g^*$.
 
 Like orientations, co-orientations are ``additional data.''
@@ -145,17 +145,17 @@ A key case of co-orientation is the following.
 \begin{definition} \label{D: normal co-or}
 	Let $g \colon W \to M$ be an immersion with an oriented normal bundle $\nu$, with local orientation denoted by $\beta_\nu$.
 	Define the \textbf{normal co-orientation} associated to $\beta_\nu$ locally as $\omega_{\nu} = (\beta_W, \beta_W \wedge \beta_\nu)$, where	$\beta_W$ is any choice of a local orientation of $W$.
-	
+
 	Conversely, if $g \colon W \to M$ is a co-oriented immersion, define the induced orientation of the normal bundle as the one whose normal co-orientation	agrees with the given one.
 \end{definition}
 
 \begin{definition} \label{V: maps are co-oriented}
-	A \textbf{c-manifold over a manifold with corners} $N$ is a 
+	A \textbf{c-manifold over a manifold with corners} $N$ is a
 	manifold with corners $W$ with a weakly smooth, proper, co-oriented map $r_W \colon W \to N$, called the \textbf{reference map}.
 	Two such are equivalent if there is a diffeomorphism $f \colon W \to W$ so that $r_W \circ f = r'_W$ and the composite of the co-orientation of $r_W$ with the intrinsic co-orientation of $f$ yields the co-orientation of $r'_W$.
 	Let $\cman(N)$ denote the set of proper co-oriented c-manifolds over $N$.
 
-	For an element of $\cman(N)$, we write $|W|$ for the \textbf{codimension} $|W|=\dim(N)-\dim(W)$. 
+	For an element of $\cman(N)$, we write $|W|$ for the \textbf{codimension} $|W|=\dim(N)-\dim(W)$.
 	Let $\cman^*(N)$ be the free abelian group generated by $\cman(N)$, graded by the \textbf{codimension} $|W|$, modulo the following relations:
 	\begin{enumerate}
 	\item ${V \sqcup W} = V + W$,
@@ -164,7 +164,7 @@ A key case of co-orientation is the following.
 \end{definition}
 
 We take a free abelian group and then quotient by the first relation instead of defining sum as disjoint union as in \cite{Lipy14} since we define our manifolds with corners as subspaces of a fixed universe, which complicates self addition through union.
-By these relations any element of $\cman^*(N)$ is represented by a single map from a likely disconnected manifold with corners, as in particular one can find as many ``copies'' as one needs of any manifold with corners embedded in $\R^\infty$. 
+By these relations any element of $\cman^*(N)$ is represented by a single map from a likely disconnected manifold with corners, as in particular one can find as many ``copies'' as one needs of any manifold with corners embedded in $\R^\infty$.
 
 We freely and almost always abuse notation by using the domain $W$ to refer to the manifold over $N$, not $r_W$ or some other symbol, letting context determine whether we are referring to the entire data or the domain.
 Our favorite class of c-manifolds over $N$ are submanifolds, for which this abuse is minor.
@@ -174,8 +174,8 @@ To do so, we consistently co-orient boundaries, using composition of co-orientat
 
 \begin{definition} \label{D: boundary co-orientation}
 	The {\bf standard co-orientation of a boundary inclusion} $\partial W \hookrightarrow W$ is the normal co-orientation associated to the outward-pointing orientation of $\nu_{\partial W \subset W}$.
-	
-	If $g \colon W \to M$ is co-oriented, the {\bf induced co-orientation} of $g|_{\partial W}$ is the composition of the standard co-orientation of $\partial W$ into $W$ with the pullback of the co-orientation of $g \colon W \to M$. 
+
+	If $g \colon W \to M$ is co-oriented, the {\bf induced co-orientation} of $g|_{\partial W}$ is the composition of the standard co-orientation of $\partial W$ into $W$ with the pullback of the co-orientation of $g \colon W \to M$.
 \end{definition}
 
 Our cochains will be equivalence classes of co-oriented c-manifolds over $M$, under an equivalence relation we define using the following concepts, which are taken from or inspired by the definitions of \cite{Lipy14}.
@@ -188,23 +188,23 @@ Our cochains will be equivalence classes of co-oriented c-manifolds over $M$, un
 		\item $W$ is \textbf{trivial} if there is a diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$
 		and the composite of the co-orientation of $r_W$ with the co-orientation given by $D\rho$ is the opposite of the co-orientation of $r_W$.
 		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank at all points of $W$.
-		\item $W$ is \textbf{degenerate} if it has small rank and ${\partial W}$ is the union of a trivial co-oriented 
+		\item $W$ is \textbf{degenerate} if it has small rank and ${\partial W}$ is the union of a trivial co-oriented
 		c-manifold over $M$ and one with small rank.
 	\end{itemize}
 \end{definition}
 
 Rather than small rank, Lipyanskiy uses a condition called small image.
 In our notation, $r_W$ has small image if there is an $r_T \colon T \to M$ with $T$ of smaller dimension than $W$ such that $r_W(W) \subseteq r_T(T)$.
-The small rank condition is thus weaker, and we find it more manageable for purposes of defining a product while still providing a theory that is isomorphic to singular cohomology \cite{FMS-foundations}. 
- 
-A key example is the interval mapping to a point, which has small rank, but its boundary does not have small rank. 
+The small rank condition is thus weaker, and we find it more manageable for purposes of defining a product while still providing a theory that is isomorphic to singular cohomology \cite{FMS-foundations}.
+
+A key example is the interval mapping to a point, which has small rank, but its boundary does not have small rank.
 It is nonetheless degenerate because its boundary is trivial.
 
 \begin{definition} \label{D: geometric cohomology}
-	Let $M$ be a manifold without boundary. Let $Q^*(M)$ denote the subgroup 
+	Let $M$ be a manifold without boundary. Let $Q^*(M)$ denote the subgroup
 	of $\cman^*(M)$ generated by those equivalence classes that are either trivial or degenerate.
 	We define the \textbf{geometric cochains} of $M$, denoted $C_\Gamma^*(M)$, as the quotient $\cman^*(M)/ Q^*(M)$.
-	We denote the equivalence class of $W$ modulo $Q^*(M)$ by $\uW$. 
+	We denote the equivalence class of $W$ modulo $Q^*(M)$ by $\uW$.
 \end{definition}
 
 The definitions are arranged so that geometric cochains form a chain complex.
@@ -217,14 +217,14 @@ The definitions are arranged so that geometric cochains form a chain complex.
 Details can be found in \cite{Lipy14, FMS-foundations}.
 Briefly, $\partial^2 W$ always has a $C_2$-action, permuting the local boundary components attached to points in $S^2(W)$.
 Moreover, under our co-orientation conventions, the two vectors appended to the co-orientation of $W$ to obtain one for $\partial^2 W$ over the same point in $S^2(W)$ differ by a transposition, so this $C_2$-action is co-orientation reversing.
-This fact about $\partial^2$ not only eventually shows that $d_\Gamma^{\,2} = 0$ but is first needed to show that the boundary of a degenerate map is degenerate. 
+This fact about $\partial^2$ not only eventually shows that $d_\Gamma^{\,2} = 0$ but is first needed to show that the boundary of a degenerate map is degenerate.
 
 \begin{definition}
 	Define a differential $d_\Gamma \colon C_\Gamma^*(M) \to C_\Gamma^{*+1}(M)$ by sending $\uW$ to $ \underline{\partial W}$, making $C_\Gamma^*(M)$ into a chain complex called the {\bf geometric cochain complex}.
-	We denote its homology by $H^*_\Gamma(M)$, the \textbf{geometric cohomology} of $M$. 
+	We denote its homology by $H^*_\Gamma(M)$, the \textbf{geometric cohomology} of $M$.
 \end{definition}
 
-We focus on the case in which $M$ is a manifold without boundary primarily because 
+We focus on the case in which $M$ is a manifold without boundary primarily because
 the theory with boundary requires relative constructions.
 For example, the identity $\R\to\R$ generates $H_\Gamma^0(\R)\cong \Z$, but the identity $[0,1] \to [0,1]$ is not a cocycle unless we quotient out by mappings to the boundary.
 A definition for manifolds with boundary, or more generally corners, would also require boundary restrictions for transversality of weakly smooth maps, as developed for example in \cite{Joy12}.
@@ -233,7 +233,7 @@ We leave such generalizations to further work.
 Lipyanskiy also develops a theory of geometric chains, as opposed to cochains, using compact domains and orientations.
 In Section 6 of \cite{Lipy14}, he shows that the homology theory based on geometric chains satisfies some of the Eilenberg-Steenrod axioms, which is is enough to deduce in Section 10 that geometric homology is isomorphic to singular homology.
 Lipyanskiy does not treat geometric cohomology in the same detail, and in particular he does not claim that it is isomorphic to singular cohomology.
-We prove this is true in \cite{FMS-foundations}, but the proof requires the development of additional tools -- either cubulations (or triangulations) and the 
+We prove this is true in \cite{FMS-foundations}, but the proof requires the development of additional tools -- either cubulations (or triangulations) and the
 intersection homomorphism as in Definition~\ref{D: intersection homomorphism} below, or by using work of Kreck and Singhof \cite{Krec10, Krec10b}.
 
 \begin{theorem} \label{T: geometric singular isomorphism}
@@ -242,7 +242,7 @@ intersection homomorphism as in Definition~\ref{D: intersection homomorphism} be
 \end{theorem}
 
 The functoriality here at the cohomology level is fully defined with respect to all continuous maps.
-Given an element of cohomology represented by $r_W \colon W \to M$, choose a smooth map in the homotopy class of $f$ that is transverse to $r_W$ and then pull back. 
+Given an element of cohomology represented by $r_W \colon W \to M$, choose a smooth map in the homotopy class of $f$ that is transverse to $r_W$ and then pull back.
 It is shown in \cite{FMS-foundations} that this process gives a well-defined induced map $f^*$.
 
 There is no full functoriality at the cochain level, since an $f$ cannot be transverse to all c-manifolds over $M$.
@@ -259,7 +259,7 @@ For geometric cochains the intersection homomorphism plays a similar role.
 
 A smooth cubulation is one for which characteristic maps are smooth maps of manifolds with corners.
 Smooth cubulations exist for any smooth manifold, as in the following construction of \cite{ShSh92}.
-Start with a smooth triangulation (see for example \cite[Theorem 10.6]{MUNK66} for the existence of such). 
+Start with a smooth triangulation (see for example \cite[Theorem 10.6]{Munk66} for the existence of such).
 Consider the cell complex that is dual to its barycentric subdivision. Intersecting those dual cells with each simplex in the triangulation provides a subdivision of the simplex into cells that are linearly isomorphic to cubes.
 Moreover, starting with an ordered triangulation -- obtained for example by taking a barycentric subdivision -- such a cubical decomposition embeds cellularly into the cubical lattice of $\R^\infty$, and thus it is the geometric realization of a cubical complex.
 
@@ -273,10 +273,10 @@ But in contrast with the evaluation of singular cochains on singular chains, whi
 	We denote by $\cman_{\pf X}^*(M)$ the subcomplex of $\cman(M)$ generated by maps transverse to $X$ and by $C^*_{\Gamma \pf X}(M)$ the corresponding quotient by its intersection with $Q^*(M)$.
 \end{definition}
 
-We will not reference $X$ when it is clear from the context. 
+We will not reference $X$ when it is clear from the context.
 The subsets $\cman_\pf^*(M)$ and $C^*_{\Gamma \pf}(M)$ are well-defined chain complexes since transversality of the maps representing geometric cochains by definition includes transversality of their restrictions to all strata, in particular their boundaries.
 
-A key technical result, whose proof is given in \cite{FMS-foundations}, 
+A key technical result, whose proof is given in \cite{FMS-foundations},
 is that these transversality conditions do not change cohomology.
 
 \begin{theorem} \label{T: transverse complex}
@@ -294,7 +294,7 @@ We will require reference to various components of the intersection homomorphism
 The signed sets we count are discrete intersections -- or more generally pull-backs -- of manifolds with corners.
 
 \begin{definition}
-	We say that c-manifolds over a c-manifold $N$ are \textbf{complementary} if 
+	We say that c-manifolds over a c-manifold $N$ are \textbf{complementary} if
 
 \begin{itemize}
 \item their codimensions -- or equivalently dimensions --
@@ -308,17 +308,17 @@ The signed sets we count are discrete intersections -- or more generally pull-ba
 
 The disjointedness condition over strata is also a transversality condition, which can be viewed as a special case of a full notion of transversality over a manifold with corners as in \cite{Joy12}.
 By focusing on complementary manifolds, the stringent boundary conditions for general transversality reduce to an expected disjointedness over all but the interior.
- 
+
 If $W$ is a c-manifold over $M$ that is transverse to a cubulation and $E$ is a cube of complementary dimension, then the intersection of the image of $W$ with $E$ is discrete.
 Furthermore, the pull-back $W \times_M E$ is finite since $r_W$ is proper.
 About any point $p \in r_W^{-1}(E) \subset W$, the reference map $r_W$ is locally an embedding, and thus locally has a normal bundle.
-As noted above, the co-orientation of $W$ determines an orientation of the normal bundle, 
+As noted above, the co-orientation of $W$ determines an orientation of the normal bundle,
 which at the intersection point $r_W(p)$ can be identified with its tangent space in $E$.
 Thus this orientation of the normal bundle can be compared with the standard ordering of basis vectors of $E$ at $r_W(p)$, when identified with a standard cube via its characteristic map.
 (This local orientation of $E$ is not immediately related to an orientation of $M$.)
 
 \begin{definition} \label{D: intersection number}
-	Let $W, E \in \cman({N})$ be complementary, and let $W$ be co-oriented while $E$ is oriented. Define $\mathrm{Int}_N(W, E)$ to be the signed set given 
+	Let $W, E \in \cman({N})$ be complementary, and let $W$ be co-oriented while $E$ is oriented. Define $\mathrm{Int}_N(W, E)$ to be the signed set given
 	by the pull-back, with sign function given by comparing the normal co-orientation of $W$ with the orientation of $E$.
 	Define the intersection number $I_N(W,E)$ to be $\alpha(\rm{Int}_N(W, E))$.
 \end{definition}
@@ -334,7 +334,7 @@ Thus this orientation of the normal bundle can be compared with the standard ord
 
 The intersection of a cube with an element of $\cman(M)$ that is trivial, as in Definition \ref{D: cman types}, will give a canceling count, and there can be no intersections with small rank reference maps.
 Therefore, the intersection homomorphism vanishes on $Q^*(M)$, and there is an induced a map on geometric cochains.
-We show in \cite{FMS-foundations} that this is a chain map. 
+We show in \cite{FMS-foundations} that this is a chain map.
 The proof  is akin to the proof that degree of a smooth map is homotopy invariant, through the classification of compact one-manifolds.
 Indeed, on some $(n+1)$-cube $E$ both $\delta \cI(\uW)$ and $\cI(\underline{\partial W})$ are counts of $0$-manifolds over $E$, which together are boundaries of the pull-back of $W$ and $E$, a $1$-manifold.
 
@@ -344,7 +344,7 @@ We refer to this induced map as the \textbf{intersection chain map} and denote i
 	The map $C^*_{\Gamma \pf X}(M) \to \cochains(X)$ induced by the intersection homomorphism is a surjective quasi-isomorphism.
 \end{theorem}
 
-Surjectivity is clear since we can find for any cube a small submanifold transversally passing through it at one point. 
+Surjectivity is clear since we can find for any cube a small submanifold transversally passing through it at one point.
 The quasi-isomorphism result is proven in \cite{FMS-foundations}.
 
 \subsection{Fiber product} \label{S: fiber product section}
@@ -358,7 +358,7 @@ Joyce's M-cohomology \cite{Joyc15}, which has more complicated representing obje
 
 We start at the level of c-manifolds over $M$, a manifold with no boundary.
 Even here, substantial care in \cite{FMS-foundations} is taken to define a co-orientation
-on the fiber product of co-oriented maps. We summarize the results as follows, recalling that $|V|$ stands for the codimension $\dim(M)-\dim(V)$. 
+on the fiber product of co-oriented maps. We summarize the results as follows, recalling that $|V|$ stands for the codimension $\dim(M)-\dim(V)$.
 
 \begin{theorem} \label{T: pull-back co-or}
 	Let $V$ and $W$ be transverse c-manifolds over $M$, a manifold without boundary,
@@ -366,11 +366,11 @@ on the fiber product of co-oriented maps. We summarize the results as follows, r
 	There is a unique co-orientation $\omega_P$ of $P = V \times_M W$, which depends on $\omega_V$ and $\omega_W$, with the following properties:
 	\begin{enumerate}
 	\item Reversing either $\omega_V$ or $\omega_W$ results in reversing $\omega_P$.
-	\item The co-orientations of $V \times_M W$ and $W \times_M V$, when compared by composition with the restriction of the diffeomorphism which sends 
+	\item The co-orientations of $V \times_M W$ and $W \times_M V$, when compared by composition with the restriction of the diffeomorphism which sends
 	$V \times W$ to $W \times V$, differ by the sign $(-1)^{|V||W|}$.
 	\item $\partial ( V \times_M W) = (\partial V) \times_M W \sqcup (-1)^{|V|} V \times_M (\partial W)$.
 	\item Let $r_V$ and $r_W$ be immersions with oriented normal bundles, so $V \times_M W$ itself is an immersion whose
-	normal bundle $\nu$ is isomorphic to the direct sum of the normal bundles of $V$ and $W$. 
+	normal bundle $\nu$ is isomorphic to the direct sum of the normal bundles of $V$ and $W$.
 	Orient $\nu$ by the orientation of the normal bundle of $V$ followed by that of $W$.
 	Then the co-orientation $\omega_P$ agrees with $\omega_{\nu}$.
 	\end{enumerate}
@@ -386,15 +386,15 @@ By Theorem~\ref{T: pull-back co-or}, $ \cman^*(M)$ is thus a partially-defined g
 We next address the passage to cochains, giving a partially defined differential graded commutative algebra.
 
 \begin{definition} \label{D: cochain trans}
-	We say that two geometric cochains $\uV, \uW \in C^*_{\Gamma}(M)$ are \textbf{transverse} if they possess representative elements in $\cman^*(M)$ of the form 
+	We say that two geometric cochains $\uV, \uW \in C^*_{\Gamma}(M)$ are \textbf{transverse} if they possess representative elements in $\cman^*(M)$ of the form
 	$V = V_T + V_Q$ and $W = W_T + W_Q$
 	such that:
 	\begin{enumerate}
 	\item ${V_T}$ and ${W_T}$ are transverse, and
 	\item ${V_Q}$ and ${W_Q}$ are elements of $Q^\ast(M)$.
 	\end{enumerate}
-	
-	With such decompositions fixed, we define the fiber product $\uV \bullet_M \uW \in C^*_\Gamma(M)$ 
+
+	With such decompositions fixed, we define the fiber product $\uV \bullet_M \uW \in C^*_\Gamma(M)$
 	to be the geometric cochain represented by $V_T \bullet_M W_T$.
 \end{definition}
 
@@ -404,7 +404,7 @@ A delicate argument in \cite{FMS-foundations} gives the following.
 	The fiber product $\bullet_M$ descends to a well-defined, though only partially-defined, product on $C_\Gamma^*(M)$, which in turn passes to a fully-defined product on $H_\Gamma^*(M)$. Under the isomorphism of Theorem~\ref{T: geometric singular isomorphism}, the induced product on geometric cohomology agrees with cup product on singular cohomology.
 \end{theorem}
 
-The agreement of fiber product with cup product at the cohomology level will also follow from our main cochain-level result, Theorem~\ref{T: main theorem}. 
+The agreement of fiber product with cup product at the cohomology level will also follow from our main cochain-level result, Theorem~\ref{T: main theorem}.
 But there are more direct elementary arguments, given in \cite{FMS-foundations}, that prove agreement at the cohomology level without yielding any insight at the cochain level.
 
 %%% Local Variables:

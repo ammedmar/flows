@@ -5,9 +5,9 @@
 
 de Rham cohomology has long been lauded as a perfect cohomology theory by champions such as Sullivan \cite{sullivan1977infinitesimal} and Bott \cite{BoTu82}.
 A combination of geometric underpinning and commutativity at the cochain level make it a remarkably effective tool for many applications of rational homotopy theory.
-Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains \cite{Lipy14} with a partially defined commutative 
+Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains \cite{Lipy14} with a partially defined commutative
 product \cite{Joyc15, FMS-foundations}.
-But the obstructions to commutativity witnessed by Steenrod operations show that intersection alone cannot capture the cochain quasi-isomorphism type multiplicatively without additional machinery, such as a combination of McClure’s partial intersection algebras \cite{McCl06} and Wilson’s algebraic rectification \cite{Wils10}. One of our goals is to provide a more direct geometric reconciliation of these structures. 
+But the obstructions to commutativity witnessed by Steenrod operations show that intersection alone cannot capture the cochain quasi-isomorphism type multiplicatively without additional machinery, such as a combination of McClure’s partial intersection algebras \cite{McCl06} and Wilson’s algebraic rectification \cite{Wils10}. One of our goals is to provide a more direct geometric reconciliation of these structures.
 
 In this paper we start to marry two imperfect theories, relating multiplicative structures of, on one hand, geometric cochains defined using manifolds with corners, and, on the other, standard cubical cochains.
 The comparison chain map $\cI$ between these ``analog" and ``digital" presentations of ordinary cohomology of a closed manifold is defined through counting intersections of geometric cochains with a given cubulation. With the proper definitions, which we set up in detail Section \ref{S: geometric cochains}, the map $\cI$ is a quasi-isomorphism.
@@ -15,12 +15,12 @@ In the domain of this comparison map there is a natural partially defined produc
 Both of these multiplicative structures induce the standard cup product in cohomology, but at the cochain level they are not immediately compatible.
 We bind them using the flow of a vector field canonically defined using the cubulation.
 
-\begin{figure}[h] 
+\begin{figure}[h]
 	\centering
 	\hfill
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[scale=.6]{figures/logistic.pdf}
-		\caption{The logistic vector field on $\interval^2$. 
+		\caption{The logistic vector field on $\interval^2$.
 			Because logistic vector fields are consistent across cubical faces, this vector field extends to any cubulated surface.}
 	\end{subfigure}
 	\hspace{0.2 in}
@@ -32,7 +32,7 @@ We bind them using the flow of a vector field canonically defined using the cubu
 	\label{F: logistic}
 \end{figure}
 
-The basic idea of the construction is given in Figure~\ref{F: logistic}. The logistic vector field is pictured in part (A) of the figure with its time $t$ flow denoted by 
+The basic idea of the construction is given in Figure~\ref{F: logistic}. The logistic vector field is pictured in part (A) of the figure with its time $t$ flow denoted by
 $\f_t$.  Part (B) of the figure illustrates the main idea of how the flow reconciles multiplications.
 Here $W$ and $V$ are manifolds with corners mapping to a closed manifold $M$ which we assume cubulated, focusing the picture on a single square.
 As explained in Section~\ref{S: geometric cochains}, such maps represent geometric cochains of $M$, and integer coefficients can be considered if additional (co)orientation data is included.
@@ -47,7 +47,7 @@ Our main result is that logistic flow performs such reconciliation in general.
 We write $W \times_MV$ for the fiber product of $W$ and $V$ over $M$, which gives rise to the partially defined product on geometric cochains,
 defined when $W$ and $V$ are transverse.
 With this notation we now present the main result of this work.
- 
+
 \begin{theorem} \label{T:main1}
 	Let $M$ be a cubulated closed manifold and $W$ and $V$ two compact co-oriented manifolds with corners over $M$ which are transverse to the cubulation. Then, for $t$ sufficiently large:
 	\begin{enumerate}
@@ -63,13 +63,13 @@ With this notation we now present the main result of this work.
 	\end{enumerate}
 \end{theorem}
 
-It is classically known that the intersection and cup products are Poincar\'e dual at the level of homology and cohomology, but, to our knowledge, this result is the first to give an explicitly connection between these products at the cochain level. 
+It is classically known that the intersection and cup products are Poincar\'e dual at the level of homology and cohomology, but, to our knowledge, this result is the first to give an explicitly connection between these products at the cochain level.
 
 Turning to applications, manifold cochains have primarily been developed as a parallel to, or for application in, string topology \cite{chas1999string}, Floer theory \cite{Lipy08}, and other types of moduli questions \cite{BoJo17}.
-More work needs to be done for our viewpoint to connect with these  fields, but as they stand, the results of this paper are applicable, for example, in using the bar construction on cochains to define knot invariants through induced maps on configuration spaces \cite{BCSS05, SiWa13, BCKS17}. 
+More work needs to be done for our viewpoint to connect with these  fields, but as they stand, the results of this paper are applicable, for example, in using the bar construction on cochains to define knot invariants through induced maps on configuration spaces \cite{BCSS05, SiWa13, BCKS17}.
 
-Since the logistic flow interpolates between commutative and noncommutative worlds, in future work we plan to connect it to cup-$i$ products \cite{steenrod1947cocycles, medina2018axiomatic} and higher derived structures \cite{medina2020cartan, medina2020adem}.
-More generally, as has been done for combinatorial cochains \cite{mcclure2003multivariate, berger2004combinatorial, medina2020prop1, medina2021cubical}, our work invites the possibility of defining \mbox{$E_\infty$ structures} on geometric cochains and the description of cohomology operations at the cochain level \cite{medina2020odd} using geometric language.
+Since the logistic flow interpolates between commutative and noncommutative worlds, in future work we plan to connect it to cup-$i$ products \cite{steenrod1947products, medina2022axiomatic} and higher derived structures \cite{medina2020cartan, medina2021adem}.
+More generally, as has been done for combinatorial cochains \cite{mcclure2003multivariable, berger2004combinatorial, medina2020prop1, medina2022cube_einfty}, our work invites the possibility of defining \mbox{$E_\infty$ structures} on geometric cochains and the description of cohomology operations at the cochain level \cite{medina2021may_st} using geometric language.
 We are particularly interested in building on the work of Mandell \cite{Mand01} and others to model homotopy types of manifolds via geometric cochains.
 
 The question of relating vector field flows to finer cochain structures has also recently arisen in mathematical physics \cite{Thor18, Tata20}, but the vector fields in \cite{Tata20} are non-continuous.
@@ -78,13 +78,13 @@ Our flow is globally smooth and thus should serve as a strong bridge between phy
 There are two variants of Theorem~\ref{T:main1} which are likely of interest but which will not be addressed in this paper.
 First, one can use simplices instead of cubes.
 Working with cubulations simplifies our treatment since the logistic flow on standard cubes is given coordinate-wise by the logistic flow on the interval.
-But the simplicial version of Theorem~\ref{T:main1} can be proven for simplicial cochains with the Alexander-Whitney product, using the results of this paper and the model of standard simplices as subsets of cubes with non-increasing coordinates.  
+But the simplicial version of Theorem~\ref{T:main1} can be proven for simplicial cochains with the Alexander-Whitney product, using the results of this paper and the model of standard simplices as subsets of cubes with non-increasing coordinates.
 We leave the details to the interested reader.
 Secondly, we conjecture that there is a version of Theorem~\ref{T:main1} in which some finite subcomplex of geometric cochains maps to a version of transverse smooth singular cochains.
 Precise formulation of such a comparison map is one of the topics we plan to address in \cite{FMS-foundations}, so for now we leave this idea undeveloped.
 
 We begin the paper by reviewing in Section~\ref{S: cubical topology} basic material on cubical structures.
-We then describe geometric cochains defined using manifolds with corners, a notion that arises naturally when considering fiber products of manifolds with boundary. 
+We then describe geometric cochains defined using manifolds with corners, a notion that arises naturally when considering fiber products of manifolds with boundary.
 But for manifolds with corners, the boundary of a boundary is not empty, so one must impose a quotient at the cochain level to obtain a cochain complex.
 In Section~\ref{S: geometric cochains}, we review the needed parts of the this theory as given in \cite{FMS-foundations} and based on the original definition of Lipyanskiy \cite{Lipy14}.
 In Section~\ref{S: logistic}, we then develop logistic vector fields, for which the analysis is thankfully simple to manage.
