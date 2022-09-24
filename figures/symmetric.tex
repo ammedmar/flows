@@ -1,0 +1,31 @@
+\documentclass[border=5pt, multi, tikz]{standalone}
+\definecolor{red}{rgb}{1,.5,.6}
+\definecolor{blue}{rgb}{.5,.5,1}
+
+\begin{document}
+\begin{tikzpicture} [scale=.7]
+\draw (0,0)--(0,12)--(12,12)--(12,0)--(0,0);
+\draw[thick] (12,0)--(12,3)--(9,3)--(9,0)--(12,0);
+\node at (-.4,-.4){$\underline 0$};
+\node at (12.4,12.4){$\underline 1$};
+\node at (12.4,-.4){$v$};
+
+\node[above] at (9,3){$\overline N_\epsilon(v)$};
+\node[right] at (12,8){$v^+$};
+\node[below] at (4,0){$v^-$};
+\node[right] at (12,1.5){$\overline N^+_\epsilon$};
+\node[below] at (10.5,0){$\overline N^-_\epsilon$};
+
+\draw[blue] (1, 1) .. controls (6, 0) and (10, 1.1) .. (12, 1);
+\draw[blue] (9, 10) .. controls (10, 9) and (11, 10.5) .. (12, 10);
+
+\draw[red] (11, 11) .. controls (11.5, 7) and (11.3, 3) .. (11, 0);
+\draw[red] (3, 0) .. controls (3.5, 1) and (3.3, 2) .. (3, 3);
+
+\node[above] at (3,3){$s^+(D^+)$};
+\node[left] at (9,10){$s^-(D^-)$};
+
+\node at (6,1){$f_{-t} \circ s^-(D^-)$};
+\node at (9.8, 6){$f_t \circ s^+(D^+)$};
+\end{tikzpicture}
+\end{document}

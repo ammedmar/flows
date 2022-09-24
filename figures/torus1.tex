@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+
+\newcommand*{\xMin}{0}%
+\newcommand*{\xMax}{4}%
+\newcommand*{\yMin}{0}%
+\newcommand*{\yMax}{4}%
+\begin{document}
+	\begin{tikzpicture}[scale=.8]
+	\draw[-{Latex[length=2mm]}] (-.5,\yMin)--(-.5,\yMax);
+	\draw[-{Latex[length=2mm]}] (-.5,\yMin)--(-.5,\yMax-.5);
+	\draw[-{Latex[length=2mm]}] (4.5,\yMin)--(4.5,\yMax);
+	\draw[-{Latex[length=2mm]}] (4.5,\yMin)--(4.5,\yMax-.5);
+	
+	\draw[-{Latex[length=2mm]}] (\xMin, -.5)--(\xMax, -.5);
+	\draw[-{Latex[length=2mm]}] (\xMin, 4.5)--(\xMax, 4.5);
+	
+	\draw [very thin,gray] (\xMin, \yMin) -- (\xMin, \yMax) -- (\xMax, \yMax) -- (\xMax, \yMin) -- (\xMin, \yMin);
+	
+	\draw [very thin,gray] (0.5*\xMax, \yMin) -- (0.5*\xMax, \yMax);
+	
+	\draw [very thin,gray] (\xMin, 0.5*\yMax) -- (\xMax, 0.5*\yMax);
+	\end{tikzpicture}
+\end{document}
