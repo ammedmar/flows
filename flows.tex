@@ -1,0 +1,117 @@
+\documentclass{amsart}
+\usepackage{amssymb, amsmath, amsfonts}
+\usepackage{tikz-cd}
+\usepackage{subcaption}
+\usepackage[bookmarks=true, linktocpage=true,
+bookmarksnumbered=true, breaklinks=true,
+pdfstartview=FitH, hyperfigures=false,
+plainpages=false, naturalnames=true,
+colorlinks=true, pagebackref=true,
+pdfpagelabels]{hyperref}
+\hypersetup{
+	linkcolor = blue,
+	citecolor = blue,
+	urlcolor = blue,
+	colorlinks = true,
+}
+
+% layout
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2in}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-2in}
+\calclayout
+
+% environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem*}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+% math commands
+\newcommand{\R}{\mathbb{R}}              % reals
+\newcommand{\Z}{\mathbb{Z}}              % integers
+\newcommand{\N}{\mathbb{N}}              % natural
+\newcommand{\norm}[1]{\Vert{#1}\Vert}    % norm
+\newcommand{\id}{\mathrm{id}}            % identity
+\newcommand{\e}{\mathbf{e}}              % canonical v-field
+\newcommand{\f}{\mathbf{f}}              % logistic v-field
+\newcommand{\interval}{\mathbb{I}}       % geometric interval
+\newcommand{\chains}{C_{\ast}}           % chains
+\newcommand{\cochains}{C^{\ast}}         % cochains
+\newcommand{\chain}[1]{C_{#1}}           % chains one degree
+\newcommand{\cochain}[1]{C^{#1}}         % cochains one degree
+\newcommand{\sh}{\mathfrak{sh}}          % shuffle sign
+\newcommand{\Or}{{\rm Det}}              % orientation bundle
+\newcommand{\cman}{\mathrm{cMan}}        % c-manifolds
+\newcommand{\cI}{\mathcal{I}}            % comparison map
+\newcommand{\Hom}{\textup{Hom}}          % Hom complex
+\newcommand{\init}{{\rm Init}}           % initial faces
+\newcommand{\term}{{\rm Term}}           % terminal faces
+\newcommand{\vertices}{{\rm Vert}}       % vertices
+\newcommand{\uW}{\underline{W}}          % geometric cochain W
+\newcommand{\uV}{\underline{V}}          % geometric cochain V
+\newcommand{\Ginit}{G^{\mathrm{init}}}   % initial graph-like nbhd
+\newcommand{\Gterm}{G^{\mathrm{term}}}   % initial graph-like nbhd
+
+% typing shortcuts
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\xr}{\xrightarrow}
+\newcommand{\sms}{\smallsmile}
+\newcommand{\pf}{\pitchfork}
+\renewcommand{\th}{^{\mathrm{th}}}
+
+% update to MSC2020
+\makeatletter
+\@namedef{subjclassname@2020}{%
+	\textup{2020} Mathematics Subject Classification}
+\makeatother
+
+\hyphenation{to-pol-o-gy}
+
+\newcommand{\anibal}[1]{\textcolor{brown}{*Anibal: #1}}
+\newcommand{\dev}[1]{\textcolor{blue}{*Dev: #1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+
+\title{Flowing from intersection product to cup product}
+
+\author[G. Friedman]{Greg Friedman}
+\address{Department of Mathematics, Texas Christian University}
+\email{g.friedman@tcu.edu}
+
+\author[A. Medina-Mardones]{Anibal M. Medina-Mardones}
+\address{Max Planck Institute for Mathematics, Bonn, Germany}
+\email{ammedmar@mpim-bonn.mpg.de}
+\address{Department of Mathematics, University of Notre, Notre Dame, IN, USA}
+\email{amedinam@nd.edu}
+\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1} and the hospitality of the Laboratory for Topology and Neuroscience at EPFL where part of this work developed.}
+
+\author[D. Sinha]{Dev Sinha}
+\address{Mathematics Department, University of Oregon}
+\email{dps@uoregon.edu}
+\thanks{D.S. acknowledges financial support from the Simons Foundation.}
+
+\subjclass[2020]{55N45, 57R19, 57R25}
+\keywords{Geometric cohomology, intersection product, cup product, vector field flow, manifolds with corners}
+
+\begin{abstract}
+	We use a vector field flow defined through a cubulation of a closed manifold to reconcile the partially defined commutative product on geometric cochains with the standard cup product on cubical cochains, which is fully defined and commutative only up to coherent homotopies. The interplay between intersection and cup product dates back to the beginnings of homology theory, but, to our knowledge, this result is the first to give an explicit cochain level comparison between these approaches.
+\end{abstract}
+
+\maketitle
+\tableofcontents
+\input{s1} % Introduction
+\input{s2} % Cubical topology
+\input{s3} % Geometric cochains
+\input{s4} % Logistic vector field
+\input{s5} % Flow comparison theorem
+
+\bibliographystyle{alpha}
+\bibliography{flows}
+
+\end{document}
