@@ -1,31 +1,31 @@
+\immediate\write18{biber \jobname}
 \documentclass{amsart}
 
+%%%%%%%%%%%%%%%%%%%%%%
 \input{other/style}
 \input{other/usualcmds}
 \addbibresource{other/usualpapers.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%
-\input{other/commands} % add commands here
-\addbibresource{other/bibliography.bib} % add references here
-\usepackage{subcaption}  % add packages here
+\input{other/commands}                   % add commands here
+\addbibresource{other/bibliography.bib}  % add references here
+\usepackage{subcaption}                  % add packages below
 
 %%%%%%%%%%%%%%%%%%%%%%
 \title{Flowing from intersection product to cup product}
 
 \author[G. Friedman]{Greg Friedman}
 \address{Department of Mathematics, Texas Christian University}
-\email{g.friedman@tcu.edu}
+\email{\href{mailto:g.friedman@tcu.edu}{g.friedman@tcu.edu}}
 
 \author[A. Medina-Mardones]{Anibal M. Medina-Mardones}
-\address{Max Planck Institute for Mathematics, Bonn, Germany}
-\email{ammedmar@mpim-bonn.mpg.de}
-\address{Department of Mathematics, University of Notre, Notre Dame, IN, USA}
-\email{amedinam@nd.edu}
-\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1IP-ICT-1} and the hospitality of the Laboratory for Topology and Neuroscience at EPFL where part of this work developed.}
+\address{Universit\'e Sorbonne Paris Nord \and Max Planck Institute for Mathematics}
+\email{\href{mailto:medina-mardones@math.univ-paris13.fr}{medina-mardones@math.univ-paris13.fr}}
+\thanks{A.M-M. acknowledges support from Innosuisse \mbox{32875.1IP-ICT-1} and the hospitality of the Topology and Neuroscience Lab at EPFL}
 
 \author[D. Sinha]{Dev Sinha}
 \address{Mathematics Department, University of Oregon}
-\email{dps@uoregon.edu}
+\email{\href{mailto:dps@uoregon.edu}{dps@uoregon.edu}}
 \thanks{D.S. acknowledges financial support from the Simons Foundation.}
 
 \subjclass[2020]{55N45, 57R19, 57R25}
@@ -34,11 +34,11 @@
 \begin{document}
 	\input{sec/abstract}
 	\maketitle
-	\input{sec/s1} % Introduction
-	\input{sec/s2} % Cubical topology
-	\input{sec/s3} % Geometric cochains
-	\input{sec/s4} % Logistic vector field
-	\input{sec/s5} % Flow comparison theorem
+	\input{sec/s1}  % Introduction
+	\input{sec/s2}  % Cubical topology
+	\input{sec/s3}  % Geometric cochains
+	\input{sec/s4}  % Logistic vector field
+	\input{sec/s5}  % Flow comparison theorem
 	\sloppy
 	\printbibliography
 \end{document}
