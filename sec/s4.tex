@@ -1,22 +1,21 @@
-
 % !TEX root = flows.tex
 
-\section{Logistic vector field} \label{S: logistic}
+\section{Logistic vector field}\label{S: logistic}
 
 We construct a vector field associated to a cubulation on a manifold that, in a sense, gives a smooth extension of the cubical poset structure.
 This vector field is a cousin of the standard vector field on a triangulated manifold whose zeros coincide with barycenters of the triangulation.
 They can both, for example, be used to prove the Poincar\'e-Hopf theorem, equating the signed count of zeros of a generic vector field and the Euler characteristic of a manifold.
 
 For our applications, as in the Poincar\'e-Hopf theorem, the most significant aspect of the considered vector field is its zero locus.
-In the cubical context, one can naturally take products of vector fields, and in particular define a family of vector fields on cubes starting with any vector field on the interval.  
+In the cubical context, one can naturally take products of vector fields, and in particular define a family of vector fields on cubes starting with any vector field on the interval.
 Such families are compatible across face structures if the vector field is zero on the boundary of the interval.
-We require a vector field on the interval whose only zeros are at the boundary, in which case the vector fields on cubes will only have zeros at their corners.  
+We require a vector field on the interval whose only zeros are at the boundary, in which case the vector fields on cubes will only have zeros at their corners.
 We choose to start from arguably the simplest such vector field, which is amenable to explicit analysis and whose dynamics have been extensively studied.
 
 \begin{definition}
 	The \textbf{logistic vector field} $\f^n$ over $\R^n$ is defined by
-	\begin{align*} 
-	\f^n(x) & = \sum_{i=1 }^n x_{i} (1 - x_{i}) \e_{i}
+	\begin{align*}
+		\f^n(x) & = \sum_{i=1 }^n x_{i} (1 - x_{i}) \e_{i}
 	\end{align*}
 	where $\e_i = \frac{\partial\ }{\partial x_i}$.
 	We denote the time $t$ flow of $x$ along it by $\f_t^n(x)$.
@@ -26,23 +25,23 @@ We choose to start from arguably the simplest such vector field, which is amenab
 
 We will exclusively consider the restriction of $\f^n$ to the unit cube $\interval^n$, where we have the following key compatibility, which allows us to extend this vector field to any cubulated manifold.
 
-\begin{lemma} \label{L: f is natural}
+\begin{lemma}\label{L: f is natural}
 	The vector fields $\f^n$ are natural with respect to face inclusions. That is, for integers $k$ and $n$ with $1 \leq k \leq n$,
 	\begin{equation*}
-	\f^n|_{\delta_{k}^\varepsilon(\interval^{n-1})}=(\delta_{k}^\varepsilon)_*(\f^{n-1}).
+		\f^n|_{\delta_{k}^\varepsilon(\interval^{n-1})}=(\delta_{k}^\varepsilon)_*(\f^{n-1}).
 	\end{equation*}
 \end{lemma}
 
 \begin{proof}
-	We compute 
+	We compute
 	\begin{align*}
-	(\delta_{k}^\varepsilon)_*(\f^{n-1}_x) & = (\delta_{k}^\varepsilon)_* \left(\sum_{i=1}^{n-1 } x_{i} (1 - x_{i}) \e_{i} \right) \\ & = 
-	\sum_{i=1 }^{k-1} x_{i} (1 - x_{i}) \e_{i}\ +\
-	\sum_{i=k}^{n-1} x_{i+1} (1 - x_{i+1}) \e_{i+1} \\ & =
-	\sum_{i=1}^{k-1} x_{i} (1 - x_{i}) \e_{i}\ +\
-	0 \cdot \e_k\, + \
-	\sum_{i=k+1}^n x_{i} (1 - x_{i}) \e_{i} \\ & =
-	\f^n|_{\delta_k^\varepsilon(x)}
+		(\delta_{k}^\varepsilon)_*(\f^{n-1}_x) & = (\delta_{k}^\varepsilon)_* \left(\sum_{i=1}^{n-1 } x_{i} (1 - x_{i}) \e_{i} \right) \\ & =
+		\sum_{i=1 }^{k-1} x_{i} (1 - x_{i}) \e_{i}\ +\
+		\sum_{i=k}^{n-1} x_{i+1} (1 - x_{i+1}) \e_{i+1} \\ & =
+		\sum_{i=1}^{k-1} x_{i} (1 - x_{i}) \e_{i}\ +\
+		0 \cdot \e_k\, + \
+		\sum_{i=k+1}^n x_{i} (1 - x_{i}) \e_{i} \\ & =
+		\f^n|_{\delta_k^\varepsilon(x)}
 	\end{align*}
 	as claimed.
 \end{proof}
@@ -50,90 +49,90 @@ We will exclusively consider the restriction of $\f^n$ to the unit cube $\interv
 Given these face compatibilities, we will typically leave off the dimension index and simply write $\f$, allowing context to determine whether we consider $\f^n$ on $\interval^n$ or $\f^k$, $k<n$, on one of the $k$-faces of $\interval^n$.
 
 \begin{definition}
-Let $ |X| \to M$ be a smooth cubulation of a manifold $M$ with $\iota_c : \interval^d \to M$  the characteristic map of a cube $c$.
- Define the logistic vector field on $M$ associated to this cubulation by, for each $c$, applying the derivative
-of $\iota_c$ to the logistic vector field on $\interval^d$.  
+	Let $ |X| \to M$ be a smooth cubulation of a manifold $M$ with $\iota_c : \interval^d \to M$ the characteristic map of a cube $c$.
+	Define the logistic vector field on $M$ associated to this cubulation by, for each $c$, applying the derivative
+	of $\iota_c$ to the logistic vector field on $\interval^d$.
 \end{definition}
 
-By the fact that characteristic maps are each homeomorphisms onto their  images, Lemma ~\ref{L: f is natural} implies the logistic vector field on $M$ associated to $|X| \to M$ is well defined.  
+By the fact that characteristic maps are each homeomorphisms onto their images, Lemma ~\ref{L: f is natural} implies the logistic vector field on $M$ associated to $|X| \to M$ is well defined.
 
 We can now formulate precisely a sense in which the logistic vector field gives an extension of the vertex ordering of the cubical set $X$ that cubulates $M$.
-In general, the flow of a vector field at a point in a manifold  defines a flow-line map $(a,b) \subset \R \to M$ or in some cases $[-\infty, \infty] \to M$.  
-The poset structure on $(a,b)$ or 
+In general, the flow of a vector field at a point in a manifold defines a flow-line map $(a,b) \subset \R \to M$ or in some cases $[-\infty, \infty] \to M$.
+The poset structure on $(a,b)$ or
 $[-\infty, \infty]$ can then be imposed on the flow-line, well defined as it is independent of point at which the flow-line is centered.
-In some cases these flow-line posets extend to a poset structure on all of $M$.  
-The logistic flow is one such case, and the resulting poset structure when restricted to vertices agrees with  the poset structure, 
- which is part of the cubical structure as in 
-Definition~\ref{D:cubical}.  Indeed, as will be immediate from our next discussion,
-flow-lines all extend to $[-\infty, \infty]$, starting at some vertex $v$ and ending at a vertex $w$ with $v \leq w$ in the cubical ordering. 
+In some cases these flow-line posets extend to a poset structure on all of $M$.
+The logistic flow is one such case, and the resulting poset structure when restricted to vertices agrees with the poset structure,
+which is part of the cubical structure as in
+Definition~\ref{D:cubical}. Indeed, as will be immediate from our next discussion,
+flow-lines all extend to $[-\infty, \infty]$, starting at some vertex $v$ and ending at a vertex $w$ with $v \leq w$ in the cubical ordering.
 
 \subsection{Logistic flow}
 
 We next explicitly describe the logistic flow diffeomorphism.
 
-\begin{lemma} \label{L: bernoulli equation}
+\begin{lemma}\label{L: bernoulli equation}
 	The {\bf logistic flow} $\f_t(x) = (x_1(t), \dots, x_n(t))$ exists for any $t \in \R$ and any $x \in \interval^n$,
 	and is explicitly given by the logistic function
 	\begin{equation*}
-	x_i(t) = \frac{x_i(0) \; e^t}{x_i(0)(e^t-1)+1.}
+		x_i(t) = \frac{x_i(0) \; e^t}{x_i(0)(e^t-1)+1.}
 	\end{equation*}
 	In particular, $x_i(t) = \varepsilon$ if $x_i(0) = \varepsilon$ for $\varepsilon \in \{0, 1\}$.
 \end{lemma}
 
 The proof is to check that the $x_i(t)$ given satisfy $\frac{d x_i}{dt} = x_i(1- x_i)$ -- indeed, these $x_i$ are standard and can be found using separation of variables -- and then appeal to existence and uniqueness of single variable ordinary differential equations.
 
-The inverse function associated to this flow is also elementary. In a single variable, if $y = \f_t(x)$ then solving the flow as expressed in Lemma \ref{L: bernoulli equation} in terms of $x$ gives us 
-\begin{equation} \label{E: inverse flow}
-x = \frac{y}{e^t - y(e^t-1)}.
+The inverse function associated to this flow is also elementary. In a single variable, if $y = \f_t(x)$ then solving the flow as expressed in Lemma \ref{L: bernoulli equation} in terms of $x$ gives us
+\begin{equation}\label{E: inverse flow}
+	x = \frac{y}{e^t - y(e^t-1)}.
 \end{equation}
 
-Since 
+Since
 \begin{equation*}
-\lim_{t \to + \infty} \frac{e^t}{e^t + c} = 1
-\quad \text{ and } \quad
-\lim_{t \to - \infty} \frac{e^t}{e^t + c} = 0,
+	\lim_{t \to + \infty} \frac{e^t}{e^t + c} = 1
+	\quad \text{ and } \quad
+	\lim_{t \to - \infty} \frac{e^t}{e^t + c} = 0,
 \end{equation*}
-for $c\neq 0$, we have the following. 
+for $c\neq 0$, we have the following.
 
-\begin{corollary} \label{C: limit of points along the flow}
+\begin{corollary}\label{C: limit of points along the flow}
 	For every $x \in \interval^n$, the limits $x^\pm = \lim_{t \to \pm \infty} \f_t(x)$ 	exist, and we have
 	\begin{equation*}
-	x^+_i = \begin{cases}
-	0, & \text{ if } x_i(0) = 0, \\ 1, & \text{ otherwise,}
-	\end{cases}
-	\quad \text{ and } \quad
-	x^-_i = \begin{cases}
-	1, & \text{ if } x_i(0) = 1, \\ 0, & \text{ otherwise.}
-	\end{cases}
+		x^+_i = \begin{cases}
+			0, & \text{ if } x_i(0) = 0, \\ 1, & \text{ otherwise,}
+		\end{cases}
+		\quad \text{ and } \quad
+		x^-_i = \begin{cases}
+			1, & \text{ if } x_i(0) = 1, \\ 0, & \text{ otherwise.}
+		\end{cases}
 	\end{equation*}
 \end{corollary}
 
 By taking derivatives of the formulas in Lemma \ref{L: bernoulli equation} with respect to the $x_i(0)$, treated as coordinates, we immediately identify the flow diffeomorphism on tangent spaces.
 
-\begin{corollary} \label{C: pushforward of vectors along the flow}
+\begin{corollary}\label{C: pushforward of vectors along the flow}
 	The Jacobian matrix representing the differential of the diffeomorphism $\f_t:\interval^n \to \interval^n$ for a fixed time $t$	is diagonal with entries
 	\begin{equation*}
-	\left(D_x \f_t\right)_{i,i} = \frac{e^t}{(x_i(e^t -1) + 1)^2.}
+		\left(D_x \f_t\right)_{i,i} = \frac{e^t}{(x_i(e^t -1) + 1)^2.}
 	\end{equation*}
 \end{corollary}
 
-\subsection{Neighborhoods} \label{S: neighborhoods}
+\subsection{Neighborhoods}\label{S: neighborhoods}
 
 Given a face $F$ of $\interval^n$, we will focus on two families of subsets of $F$ that are parameterized by real numbers $u \in (0,1)$, the \textbf{lower} and \textbf{upper subsets} of $F$
 \begin{align*}
-L_u(F) & = \{x \in F\ |\ \forall j \in F_{01},\ x_j \leq u\}, \\
-U_u(F) & = \{x \in F\ |\ \forall j \in F_{01},\ x_j \geq u\}.
+	L_u(F) & = \{x \in F\ |\ \forall j \in F_{01},\ x_j \leq u\}, \\
+	U_u(F) & = \{x \in F\ |\ \forall j \in F_{01},\ x_j \geq u\}.
 \end{align*}
 We also need sets that are neighborhoods of these in the bound directions.
 Let $N_\epsilon L_u(F)$ and $N_\epsilon U_u(F)$ consist of those points whose free variables are constrained as above and whose bound variables are within $\epsilon$ of those of $F$.
 For example, the first set can be described explicitly as
 \begin{align*}
-N_\epsilon L_u (F) & = \left\{(x_1,\ldots, x_n) \in \interval^n\ \middle| 
-\begin{array}{ll}
-\forall j \in F_0, & x_j < \epsilon, \\
-\forall j \in F_{01}, & x_j \leq u, \\
-\forall j \in F_1, & x_j>1-\epsilon,
-\end{array}\right\},
+	N_\epsilon L_u (F) & = \left\{(x_1,\ldots, x_n) \in \interval^n\ \middle|
+	\begin{array}{ll}
+		\forall j \in F_0, & x_j < \epsilon, \\
+		\forall j \in F_{01}, & x_j \leq u, \\
+		\forall j \in F_1, & x_j>1-\epsilon,
+	\end{array}\right\},
 \end{align*}
 and the second can be described analogously.
 We will refer to $N_\epsilon L_u(F)$ and $N_\epsilon U_u(F)$ respectively as a \textbf{lower} and \textbf{upper neighborhood} of $F$ despite $F$ not being a subset of either.
@@ -157,14 +156,14 @@ In particular, if $F$ is a terminal face then $N_\epsilon(F)=\{ (x_1,\ldots, x_n
 \end{figure}
 
 Just as flow lines go between vertices of the cubulation, respecting their order, we now show that the flow takes a lower neighborhood of
- one face $F$ to a neighborhood of the ``next'' face $F^+$, 
+one face $F$ to a neighborhood of the ``next'' face $F^+$,
 whose initial vertex is the terminal vertex of $F$.
 
-\begin{lemma} \label{L: flow to initial and terminal faces}
+\begin{lemma}\label{L: flow to initial and terminal faces}
 	Let $F$ be a face of $\interval^n$. For any $\epsilon > 0$ and $u,r \in (0, 1)$ we have
 	\begin{align*}
-	\f_{t}(N_r U_u (F)) &\subseteq N_\epsilon (F^+), \\
-	\f_{-t}(N_r L_u (F)) &\subseteq N_\epsilon (F^-),
+		\f_{t}(N_r U_u (F)) &\subseteq N_\epsilon (F^+), \\
+		\f_{-t}(N_r L_u (F)) &\subseteq N_\epsilon (F^-),
 	\end{align*}
 	for all $t$ sufficiently large.
 \end{lemma}
@@ -175,33 +174,33 @@ whose initial vertex is the terminal vertex of $F$.
 	The case when $t \to -\infty$ is proven similarly.
 \end{proof}
 
-The next lemma says something about the ``aspect ratios'' of tangent spaces under the flow $\f_t$, comparing the amount of stretching/compressing in directions orthogonal to an initial or terminal face to the amount of stretching/compressing parallel to the face as we move from $T_x\interval^n$ to $T_{y}\interval^n$ with $y=\f_t(x)$. In particular, if we flow long enough and stay close to appropriate upper or lower neighborhoods, we can make these ratios arbitrarily small. 
+The next lemma says something about the ``aspect ratios'' of tangent spaces under the flow $\f_t$, comparing the amount of stretching/compressing in directions orthogonal to an initial or terminal face to the amount of stretching/compressing parallel to the face as we move from $T_x\interval^n$ to $T_{y}\interval^n$ with $y=\f_t(x)$. In particular, if we flow long enough and stay close to appropriate upper or lower neighborhoods, we can make these ratios arbitrarily small.
 
-\begin{lemma} \label{L: jacobian ratios}
+\begin{lemma}\label{L: jacobian ratios}
 	Let $F$ be a face in $\interval^n$. For any $\varepsilon > 0$ and $u \in (0,1)$ there exist $\delta > 0$ and $T\in \R$ such that for any $y \in N_\delta L_u(F^+)$ and $t>T$ we have the bound on ratios
-	\begin{equation} \label{E: jacobian ratios}
-	\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
-	{\left|\left(D_{x}\f_t\right)_{j,j}\right|} < \varepsilon,
+	\begin{equation}\label{E: jacobian ratios}
+		\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
+		{\left|\left(D_{x}\f_t\right)_{j,j}\right|} < \varepsilon,
 	\end{equation}
 	where $x$ is such that $y = f_t(x)$, $i \not\in F^+_{01}$, and $j \in F^+_{01}$. Similarly, $\delta > 0$ and $T\in \R$ can be chosen such that \eqref{E: jacobian ratios} holds for any $y \in N_\delta U_u(F^-)$ and $t>T$ with $y = f_{-t}(x)$, $i \not\in F^-_{01}$, and $j \in F^-_{01}$.
 \end{lemma}
-In other words, given an $\epsilon$, there is a neighborhood $N_\delta L_u(F^+)$ and a time $T$ so that for all greater times every point that has flowed into $N_\delta L_u(F^+)$ has its tangent space sufficiently ``squashed'' by the flow that the ratios in the normal directions to $F^+$ versus the tangential directions are all smaller than $\epsilon$. 
+In other words, given an $\epsilon$, there is a neighborhood $N_\delta L_u(F^+)$ and a time $T$ so that for all greater times every point that has flowed into $N_\delta L_u(F^+)$ has its tangent space sufficiently ``squashed'' by the flow that the ratios in the normal directions to $F^+$ versus the tangential directions are all smaller than $\epsilon$.
 
 \begin{proof}
 	We only prove the forward flow case since the backward flow case is analogous.
-	Recall from Equation~\eqref{E: inverse flow} that if $y = \f_t(x)$ then $x = \frac{y}{e^t-y(e^t-1)}$. 
+	Recall from Equation~\eqref{E: inverse flow} that if $y = \f_t(x)$ then $x = \frac{y}{e^t-y(e^t-1)}$.
 	Plugging this into the Jacobian formula of Corollary \ref{C: pushforward of vectors along the flow} gives diagonals of the Jacobian of the form
 	\begin{equation*}
-	\frac{e^t}{\left(\frac{y}{e^t-y(e^t-1)}(e^t -1) + 1\right)^2} \ = \
-	\frac{e^t}{\left(\frac{e^t}{e^t-y(e^t-1)}\right)^2} \ = \
-	\frac{\left(e^t-y(e^t-1)\right)^2}{e^t}.
+		\frac{e^t}{\left(\frac{y}{e^t-y(e^t-1)}(e^t -1) + 1\right)^2} \ = \
+		\frac{e^t}{\left(\frac{e^t}{e^t-y(e^t-1)}\right)^2} \ = \
+		\frac{\left(e^t-y(e^t-1)\right)^2}{e^t}.
 	\end{equation*}
-	For any two coordinates we obtain 
+	For any two coordinates we obtain
 	\begin{equation*}
-	\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
-	{\left|\left(D_{x}\f_t\right)_{j,j}\right|} = \left(\frac{e^t-y_i(e^t-1)}{e^t-y_j(e^t-1)}\right)^2,
+		\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
+		{\left|\left(D_{x}\f_t\right)_{j,j}\right|} = \left(\frac{e^t-y_i(e^t-1)}{e^t-y_j(e^t-1)}\right)^2,
 	\end{equation*}
-	whose limit as $t$ goes to infinity is equal to $\frac{1-y_i}{1-y_j}$. 
+	whose limit as $t$ goes to infinity is equal to $\frac{1-y_i}{1-y_j}$.
 	Thus, a given bound $y_j \leq u<1$ for $j \in F^+_{01}$ allows us to find a bound $y_i > 1- \delta$ for $i \not\in F^+_{01}$ making this ratio as small as desired for sufficiently large $t$.
 \end{proof}
 
@@ -219,7 +218,7 @@ We will also need the following simple lemma.
 
 In this subsection we show that the logistic flow on a manifold cubulated by $|X| \to M$ is compatible with key geometric cochain structures.
 
-\begin{lemma} \label{l:flow preserves transversality}
+\begin{lemma}\label{l:flow preserves transversality}
 	If $W \in \cman_{\pf}(M)$, then $\f_t(W)\in \cman_{\pf}(M)$ for all $t \in \R$.
 \end{lemma}
 
@@ -230,7 +229,7 @@ In this subsection we show that the logistic flow on a manifold cubulated by $|X
 \begin{lemma}
 	For any $W \in \cman_{\pf}(M)$ and complementary cube $E$,
 	\begin{equation*}
-	I_M(W, E) = I_M(\f_t(W), E)
+		I_M(W, E) = I_M(\f_t(W), E)
 	\end{equation*}
 	for all $t \in \R$.
 \end{lemma}
@@ -244,6 +243,6 @@ In this subsection we show that the logistic flow on a manifold cubulated by $|X
 	The logistic flow is well defined on geometric cochains in $C^*_{\Gamma \pf}(M)$.
 \end{lemma}
 
-\begin{proof}	
-	If ${W}$ and ${W}'$ represent the same element of $C^*_{\Gamma \pf}(M)$, then $ W- W' = A \in Q^*(M)$. By applying $\f_t$ we see that $\f_t( W)-\f_t( W') = \f_t( W - W') = \f_t(A)$, but the flow $\f_t$ is a diffeomorphism and so preserves membership in $Q^*(M)$.	
+\begin{proof}
+	If ${W}$ and ${W}'$ represent the same element of $C^*_{\Gamma \pf}(M)$, then $ W- W' = A \in Q^*(M)$. By applying $\f_t$ we see that $\f_t( W)-\f_t( W') = \f_t( W - W') = \f_t(A)$, but the flow $\f_t$ is a diffeomorphism and so preserves membership in $Q^*(M)$.
 \end{proof}

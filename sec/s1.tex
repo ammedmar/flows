@@ -1,7 +1,6 @@
-
 % !TEX root = flows.tex
 
-\section{Introduction} \label{S: intro}
+\section{Introduction}\label{S: intro}
 
 de Rham cohomology has long been lauded as a perfect cohomology theory by champions such as Sullivan \cite{sullivan1977infinitesimal} and Bott \cite{BoTu82}.
 A combination of geometric underpinning and commutativity at the cochain level make it a remarkably effective tool for many applications of rational homotopy theory.
@@ -33,7 +32,8 @@ We bind them using the flow of a vector field canonically defined using the cubu
 \end{figure}
 
 The basic idea of the construction is given in Figure~\ref{F: logistic}. The logistic vector field is pictured in part (A) of the figure with its time $t$ flow denoted by
-$\f_t$.  Part (B) of the figure illustrates the main idea of how the flow reconciles multiplications.
+$\f_t$.
+Part (B) of the figure illustrates the main idea of how the flow reconciles multiplications.
 Here $W$ and $V$ are manifolds with corners mapping to a closed manifold $M$ which we assume cubulated, focusing the picture on a single square.
 As explained in Section~\ref{S: geometric cochains}, such maps represent geometric cochains of $M$, and integer coefficients can be considered if additional (co)orientation data is included.
 Geometric cochains that are transverse to the cubulation, as we are assuming $W$ and $V$ are, define cubical cochains $\cI(W)$ and $\cI(V)$ by a count of signed intersection numbers with the cubical faces.
@@ -42,13 +42,11 @@ As explained in Section~\ref{S: cubical topology}, because the bottom edge and r
 As $W$ and $V$ do not intersect each other, their intersection product evaluates to 0 on the square, and thus disagrees with the cup product at the cochain level.
 Yet, for $t$ sufficiently large, $\f_t(W)$ and $\f_{-t}(V)$ intersect while maintaining $\cI(W) = \cI(\f_t(W))$ and $\cI(V) = \cI(\f_{-t}(V))$, now yielding agreement between the intersection and cup products at the cochain level.
 
-
 Our main result is that logistic flow performs such reconciliation in general.
-We write $W \times_MV$ for the fiber product of $W$ and $V$ over $M$, which gives rise to the partially defined product on geometric cochains,
-defined when $W$ and $V$ are transverse.
+We write $W \times_MV$ for the fiber product of $W$ and $V$ over $M$, which gives rise to the partially defined product on geometric cochains, defined when $W$ and $V$ are transverse.
 With this notation we now present the main result of this work.
 
-\begin{theorem} \label{T:main1}
+\begin{theorem}\label{T:main1}
 	Let $M$ be a cubulated closed manifold and $W$ and $V$ two compact co-oriented manifolds with corners over $M$ which are transverse to the cubulation. Then, for $t$ sufficiently large:
 	\begin{enumerate}
 		\item $\f_t(W)$ and $\f_{-t}(V)$ are transverse and
@@ -66,7 +64,7 @@ With this notation we now present the main result of this work.
 It is classically known that the intersection and cup products are Poincar\'e dual at the level of homology and cohomology, but, to our knowledge, this result is the first to give an explicitly connection between these products at the cochain level.
 
 Turning to applications, manifold cochains have primarily been developed as a parallel to, or for application in, string topology \cite{chas1999string}, Floer theory \cite{Lipy08}, and other types of moduli questions \cite{BoJo17}.
-More work needs to be done for our viewpoint to connect with these  fields, but as they stand, the results of this paper are applicable, for example, in using the bar construction on cochains to define knot invariants through induced maps on configuration spaces \cite{BCSS05, SiWa13, BCKS17}.
+More work needs to be done for our viewpoint to connect with these fields, but as they stand, the results of this paper are applicable, for example, in using the bar construction on cochains to define knot invariants through induced maps on configuration spaces \cite{BCSS05, SiWa13, BCKS17}.
 
 Since the logistic flow interpolates between commutative and noncommutative worlds, in future work we plan to connect it to cup-$i$ products \cite{steenrod1947products, medina2022axiomatic} and higher derived structures \cite{medina2020cartan, medina2021adem}.
 More generally, as has been done for combinatorial cochains \cite{mcclure2003multivariable, berger2004combinatorial, medina2020prop1, medina2022cube_einfty}, our work invites the possibility of defining \mbox{$E_\infty$ structures} on geometric cochains and the description of cohomology operations at the cochain level \cite{medina2021may_st} using geometric language.

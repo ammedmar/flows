@@ -1,12 +1,11 @@
-
 % !TEX root = flows.tex
 
-\section{Cubical topology} \label{S: cubical topology}
+\section{Cubical topology}\label{S: cubical topology}
 
 \subsection{Cubical complexes}
 
 The interpolation we develop between combinatorial and smooth topology proceeds through a cubulation of a manifold -- that is, a cubical complex homeomorphic to the manifold.
-Such a structure is less common than that of a triangulation, so we present basic definitions,  in a form best suited to our applications.
+Such a structure is less common than that of a triangulation, so we present basic definitions, in a form best suited to our applications.
 
 For simplicial complexes, vertices can always be given a partial order that restricts to a total order on each simplex, providing a way to identify each simplex with the standard simplex.
 Furthermore, when two simplices meet along a common face, the induced ordering data for that face is consistent.
@@ -17,13 +16,13 @@ We thus begin with a formulation of cubical complexes containing such extra orde
 
 The \textbf{standard $n$-cube} is the subset of $\R^n$ defined by
 \begin{equation*}
-\interval^n = \big\{ (x_1, \dots, x_n) \in \R^n\ |\ 0 \leq x_i \leq 1 \big\},
+	\interval^n = \big\{ (x_1, \dots, x_n) \in \R^n\ |\ 0 \leq x_i \leq 1 \big\},
 \end{equation*}
 with the standard topology but with our preferred metric being the $L^\infty$ metric.
 Denote $\{1, \dots, n\}$ by $\overline{n}$.
 A partition $F = (F_0, F_{01}, F_1)$ of $\overline n$ defines a \textbf{face} of $\interval^n$ given by
 \begin{equation*}
-\{(x_1, \dots, x_n) \in \interval^n\ |\ \forall \varepsilon \in \{0, 1\},\ i \in F_\varepsilon \Rightarrow x_i = \varepsilon\}.
+	\{(x_1, \dots, x_n) \in \interval^n\ |\ \forall \varepsilon \in \{0, 1\},\ i \in F_\varepsilon \Rightarrow x_i = \varepsilon\}.
 \end{equation*}
 
 We abuse notation and use the same notation for the partition and its associated face, referring to coordinates $x_i$ with $i \in F_{01}$ as \textbf{free}
@@ -50,21 +49,21 @@ Let $\init_k(\interval^n)$ be the union of initial faces of dimension $k$ and $\
 		\includegraphics[scale=.7]{figures/l_infty_nbhd.pdf}
 	\end{subfigure}
 	\caption{On the left we have a representation of the standard $3$-cube $\interval^3$.
-	In the center we depict $\init_1(\interval^3)$, the initial 1-dimensional faces, in blue and $\term_1(\interval^3)$, the terminal 1-dimensional faces, in red. On the right we depict an  $\epsilon$-neighborhood of $F = (\{2\}, \{3\}, \{1\})$ in the $L^\infty$ metric.}
+		In the center we depict $\init_1(\interval^3)$, the initial 1-dimensional faces, in blue and $\term_1(\interval^3)$, the terminal 1-dimensional faces, in red. On the right we depict an $\epsilon$-neighborhood of $F = (\{2\}, \{3\}, \{1\})$ in the $L^\infty$ metric.}
 \end{figure}
 
 The maps $\delta_i^\varepsilon \colon \interval^{n-1} \to \interval^{n}$ are defined for $\varepsilon \in \{0, 1\}$ and $i \in \overline{n}$ by
 \begin{align*}
-\delta_i^\varepsilon(x_1, \dots, x_{n-1}) & = (x_1, \dots, x_{i-1}, \varepsilon, x_i, \dots, x_{n-1}),
+	\delta_i^\varepsilon(x_1, \dots, x_{n-1}) & = (x_1, \dots, x_{i-1}, \varepsilon, x_i, \dots, x_{n-1}),
 \end{align*}
 and any composition of these is referred to as a \textbf{face inclusion map}.
 
 For $v \in \vertices(\interval^n)$ all coordinates are bound -- that is, $v_{01} = \emptyset$. Thus
- $v$ is determined by the partition of $\overline n$ into $v_0$ and $v_1$, so
+$v$ is determined by the partition of $\overline n$ into $v_0$ and $v_1$, so
 we have a bijection from the set of vertices of $\interval^n$ to the power set $\mathcal P(\overline n)$ of $\overline n$, sending $v$ to $v_1$.
 The inclusion relation in the power set induces a poset structure on $\vertices(\interval^n)$ given explicitly by
 \begin{equation*}
-v = (\epsilon_1, \dots, \epsilon_n) \leq w = (\eta_1, \dots, \eta_n) \iff \forall i,\ \epsilon_i \leq \eta_i.
+	v = (\epsilon_1, \dots, \epsilon_n) \leq w = (\eta_1, \dots, \eta_n) \iff \forall i,\ \epsilon_i \leq \eta_i.
 \end{equation*}
 We will freely use the identification of these posets.
 The smallest and largest elements in $\mathcal P(\overline{n})$, which we denote $\underline{0}$ and $\underline{1}$, are the
@@ -83,11 +82,11 @@ We have the following cubical analogue.
 		\item For all $v \in \vertices(X)$, $\{v\} \in X$,
 		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w]) \in X$ and the following commutes
 		\begin{equation*}
-		\begin{tikzcd} [row sep = tiny, column sep= small]
-		\sigma \arrow[rr, "\iota_\sigma"] && \mathcal P(\overline n) \\
-		& [-5pt] {[}u,w{]} \arrow[ur, hook] & \\
-		\rho \arrow[uu, hook] \arrow[rr, "\iota_\rho"'] && \mathcal P(\overline m). \arrow[ul, "\cong"'] \arrow[uu, dashed]
-		\end{tikzcd}
+			\begin{tikzcd} [row sep = tiny, column sep= small]
+				\sigma \arrow[rr, "\iota_\sigma"] && \mathcal P(\overline n) \\
+				& [-5pt] {[}u,w{]} \arrow[ur, hook] & \\
+				\rho \arrow[uu, hook] \arrow[rr, "\iota_\rho"'] && \mathcal P(\overline m). \arrow[ul, "\cong"'] \arrow[uu, dashed]
+			\end{tikzcd}
 		\end{equation*}
 	\end{enumerate}
 	We refer to an element $\sigma \in X$ as a \textbf{cube} of $X$, refer to $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ as its \textbf{characteristic map},
@@ -125,13 +124,12 @@ Just as is the case for simplicial complexes, faces in cubical complexes are com
 The vector field flow we define on cubulated manifolds in Section~\ref{S: logistic} can be viewed as a smooth extension of the cubical poset structure.
 We refine our description of this poset structure through identifying ``previous'' and ``next'' faces in a cube.
 
-\begin{definition} \label{D: F decomposition}
+\begin{definition}\label{D: F decomposition}
 	Let $F = (F_0, F_{01}, F_1)$ be a face of $\interval^n$. The $F$-\textbf{decomposition} of $\interval^n$ is the isomorphism $\interval^n \cong F^- \times F \times F^+$ where $F^- = (F_0 \cup F_{01}, F_1, \emptyset)$ and $F^+ = (\emptyset, F_0, F_1 \cup F_{01})$.
 \end{definition}
 
 An alternate definition of $F^+$ is as the face whose initial vertex is the terminal vertex of $F$ and whose terminal vertex is $\underline{1}$,
 the terminal vertex of $\interval^n$.Similarly, $F^-$ is the face whose terminal vertex is the initial vertex of $F$ and whose initial vertex is $\underline{0}$, the initial vertex of $\interval^n$. See Figure~\ref{F: decomposition}.
-
 
 \begin{figure}[h!]
 	\begin{subfigure}[b]{0.35\textwidth}
@@ -158,7 +156,7 @@ We define the \textbf{shuffle sign} of $F$, denoted by $\sh(F) \in \{\pm 1\}$, t
 More explicitly, $\sh(F) = +1$ if the concatenation of the ordered sets $\beta_{F^-}$, $\beta_{F}$, and $\beta_{F^+}$ represents the same orientation as $\{\e_1, \dots, \e_n\}$, and $\sh(F) = -1$ otherwise.
 This sign plays a key role in our applications, since we work over the ring of integers and this sign occurs in comparing products.
 
-\subsection{Cubical cochains} \label{SS: cubical cochains}
+\subsection{Cubical cochains}\label{SS: cubical cochains}
 
 We can also define an ``algebraic realization" for a cubical complex in analogy to its geometric realization.
 Let $\chains(\interval^1)$ be the usual cellular chain complex of the interval with integral coefficients.
@@ -167,8 +165,8 @@ Explicitly, $\chain0(\interval^1)$ is generated by the vertices $[\underline{0}]
 Let $\chains(\interval^n) = \chains(\interval^1)^{\otimes n}$, with differential defined by the graded Leibniz rule.
 Given a face inclusion $\delta_i^{\varepsilon} \colon \interval^n \to \interval^{n+1}$ the natural chain map $\chains(\delta_i^{\varepsilon}) \colon \chains(\interval^1)^{\otimes n} \to \chains(\interval^1)^{\otimes n+1}$ is defined on basis elements by
 \begin{equation*}
-x_1 \otimes \cdots \otimes x_n \mapsto
-x_1 \otimes \cdots \otimes [\underline{\varepsilon}] \otimes \cdots \otimes x_n.
+	x_1 \otimes \cdots \otimes x_n \mapsto
+	x_1 \otimes \cdots \otimes [\underline{\varepsilon}] \otimes \cdots \otimes x_n.
 \end{equation*}
 Regarding a cubical complex $X$ as a functor to $\mathtt{Cube}$, we can compose it with the chain functor above to obtain a functor to chain complexes.
 The complex of \textbf{cubical chains} of $X$, denoted $C_*(X)$, is defined to be the colimit of this composition.
@@ -181,44 +179,44 @@ and the corresponding basis elements in $\chains(X)$ and $\cochains(X)$.
 
 We next recall the \textbf{Serre diagonal}. Let $\Delta \colon \chains(\interval^1) \to \chains(\interval^1)^{\otimes 2}$ be defined on basis elements by
 \begin{gather*}
-\Delta([\underline{0}]) = [\underline{0}] \otimes [\underline{0}], \qquad
-\Delta([\underline{1}]) = [\underline{1}] \otimes [\underline{1}], \qquad
-\Delta([\underline{0}, \underline{1}]) = [\underline{0}] \otimes [\underline{0}, \underline{1}] + [\underline{0}, \underline{1}] \otimes [\underline{1}].
+	\Delta([\underline{0}]) = [\underline{0}] \otimes [\underline{0}], \qquad
+	\Delta([\underline{1}]) = [\underline{1}] \otimes [\underline{1}], \qquad
+	\Delta([\underline{0}, \underline{1}]) = [\underline{0}] \otimes [\underline{0}, \underline{1}] + [\underline{0}, \underline{1}] \otimes [\underline{1}].
 \end{gather*}
 Then, let
 $\Delta \colon \chains(\interval^n) \to \chains(\interval^n)^{\otimes 2}$
 be the composite
 \begin{equation*}
-\begin{tikzcd}
-\chains(\interval)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\interval)^{\otimes 2} \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\interval)^{\otimes n} \right)^{\otimes 2},
-\end{tikzcd}
+	\begin{tikzcd}
+		\chains(\interval)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\interval)^{\otimes 2} \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\interval)^{\otimes n} \right)^{\otimes 2},
+	\end{tikzcd}
 \end{equation*}
 where $sh$ is the shuffle map that reorders tensor factors so that those in odd positions occur first. More explicitly, using Sweedler's notation,
 if $x_i^{(1)}$ and $x_i^{(2)}$ are defined through the identity
 \begin{equation*}
-\Delta(x_i) = \sum x_i^{(1)} \otimes x_i^{(2)},
+	\Delta(x_i) = \sum x_i^{(1)} \otimes x_i^{(2)},
 \end{equation*}
 then
-\begin{equation} \label{E: Delta}
-\Delta (x_1 \otimes \cdots \otimes x_n) =
-\sum \pm \left( x_1^{(1)} \otimes \cdots \otimes x_n^{(1)} \right) \otimes
-\left( x_1^{(2)} \otimes \cdots \otimes x_n^{(2)} \right),
+\begin{equation}\label{E: Delta}
+	\Delta (x_1 \otimes \cdots \otimes x_n) =
+	\sum \pm \left( x_1^{(1)} \otimes \cdots \otimes x_n^{(1)} \right) \otimes
+	\left( x_1^{(2)} \otimes \cdots \otimes x_n^{(2)} \right),
 \end{equation}
 where the sign is determined by the Koszul convention.
 
 The \textbf{cup product} of cochains $\alpha, \beta \in \cochains(X)$ is defined using the Serre diagonal as follows\footnote{
 	We follow the convention for evaluation of tensor products of cochains on tensor products of chains given by $(\alpha\otimes \beta)(x\otimes y)=\alpha(x)\beta(y)$. This convention is used for defining the cup product, for example, by Munkres \cite[Section 60]{Munk84}, Hatcher \cite[Section 3.2]{Hat02}, and Spanier \cite[Section 5.6]{Spa81}. But it disagrees with the conventions in Dold \cite[Section VII.7]{Dol72}, where there is a sign coming from the Koszul convention.}:
 \begin{equation*}
-(\alpha \sms \beta)(c) = (\alpha \otimes \beta)\Delta(c).
+	(\alpha \sms \beta)(c) = (\alpha \otimes \beta)\Delta(c).
 \end{equation*}
 
 We will use the following more explicit description of Serre's diagonal.
 
-\begin{proposition} \label{P: diagonal in terms of vertices}
+\begin{proposition}\label{P: diagonal in terms of vertices}
 	The map $\Delta \colon \chains(\interval^n) \to \chains(\interval^n)^{\otimes 2}$ satisfies
 	\begin{equation*}
-	\Delta \big([\underline 0, \underline 1]^{\otimes n}\big) \ =
-	\sum_{v \in \vertices(\interval^n)} \sh(v) \cdot v^- \otimes v^+.
+		\Delta \big([\underline 0, \underline 1]^{\otimes n}\big) \ =
+		\sum_{v \in \vertices(\interval^n)} \sh(v) \cdot v^- \otimes v^+.
 	\end{equation*}
 \end{proposition}
 
