@@ -14,8 +14,8 @@ These evaluate on chains through pull-back, generalizing intersection.
 Secondly, we need manifolds with corners to define a product using fiber product, as boundaries are needed to define cohomology and corners arise immediately when taking fiber products of manifolds with boundary. Even though, for example, the collection of smooth maps from simplices constitute a cochain complex additively, taking fiber product quickly leads to more general representing objects.
 
 While there are a number of treatments of homology and cohomology that employ manifolds and their generalizations \cite{Whit47, BRS76, FeSj83, Krec10, Kahn01, Zing08, Joyc15}, we find {geometric cohomology}, first developed by Lipyanskiy in the preprint \cite{Lipy14}, to be the most suitable for connecting differential and combinatorial topology.
-In \cite{FMS-foundations}, we have filled in details of this theory as well as equipping it with a (partially defined) multiplicative structure on cochains.
-We now give an overview of geometric cohomology referring to \cite{FMS-foundations} for a more complete exposition.
+In \cite{medina2022foundations}, we have filled in details of this theory as well as equipping it with a (partially defined) multiplicative structure on cochains.
+We now give an overview of geometric cohomology referring to \cite{medina2022foundations} for a more complete exposition.
 
 \subsection{Manifolds with corners}
 
@@ -73,7 +73,7 @@ If $W$ is oriented, we orient $\partial W$ by stipulating that an outward normal
 Taking boundary satisfies the Leibniz rule.
 
 For geometric cohomology, we need co-orientations rather than orientations.
-These are treated below and are more involved, requiring care to develop in \cite{FMS-foundations}.
+These are treated below and are more involved, requiring care to develop in \cite{medina2022foundations}.
 
 We let $\partial^k W$ denote $\partial (\partial^{k-1} W)$ with $\partial^0 W = W$, and we let $i_{\partial^k W}$, or simply $i_{\partial^k}$, denote the composite of the $i_{\partial^i W}$ maps sending $\partial^k W$ to $W$.
 
@@ -112,7 +112,7 @@ But, unlike de Rham theory, it is defined over the integers.
 Geometric homology and cohomology were defined and developed in a preprint of Lipyanskiy \cite{Lipy14}.
 But this preprint does not develop a multiplicative structure at the cochain level.
 Moreover, while Lipyanskiy shows geometric homology groups are isomorphic to singular homology, he does not state or prove the corresponding fact for cohomology.
-We give a full treatment addressing these points and others in \cite{FMS-foundations}, reviewing here only what we need to compare geometric and cubical cohomology.
+We give a full treatment addressing these points and others in \cite{medina2022foundations}, reviewing here only what we need to compare geometric and cubical cohomology.
 
 We first define co-orientations.
 Recall that one definition of an orientation of a bundle is an equivalence class, up to positive scalar multiplication, of an everywhere non-zero section of the top exterior power of the bundle.
@@ -194,7 +194,7 @@ Our cochains will be equivalence classes of co-oriented c-manifolds over $M$, un
 
 Rather than small rank, Lipyanskiy uses a condition called small image.
 In our notation, $r_W$ has small image if there is an $r_T \colon T \to M$ with $T$ of smaller dimension than $W$ such that $r_W(W) \subseteq r_T(T)$.
-The small rank condition is thus weaker, and we find it more manageable for purposes of defining a product while still providing a theory that is isomorphic to singular cohomology \cite{FMS-foundations}.
+The small rank condition is thus weaker, and we find it more manageable for purposes of defining a product while still providing a theory that is isomorphic to singular cohomology \cite{medina2022foundations}.
 
 A key example is the interval mapping to a point, which has small rank, but its boundary does not have small rank.
 It is nonetheless degenerate because its boundary is trivial.
@@ -213,7 +213,7 @@ The definitions are arranged so that geometric cochains form a chain complex.
 	Moreover, for any $W \in \cman^*(M)$, $\partial^2 W \in Q^*(M)$.
 \end{proposition}
 
-Details can be found in \cite{Lipy14, FMS-foundations}.
+Details can be found in \cite{Lipy14, medina2022foundations}.
 Briefly, $\partial^2 W$ always has a $C_2$-action, permuting the local boundary components attached to points in $S^2(W)$.
 Moreover, under our co-orientation conventions, the two vectors appended to the co-orientation of $W$ to obtain one for $\partial^2 W$ over the same point in $S^2(W)$ differ by a transposition, so this $C_2$-action is co-orientation reversing.
 This fact about $\partial^2$ not only eventually shows that $d_\Gamma^{\,2} = 0$ but is first needed to show that the boundary of a degenerate map is degenerate.
@@ -232,7 +232,7 @@ We leave such generalizations to further work.
 Lipyanskiy also develops a theory of geometric chains, as opposed to cochains, using compact domains and orientations.
 In Section 6 of \cite{Lipy14}, he shows that the homology theory based on geometric chains satisfies some of the Eilenberg-Steenrod axioms, which is is enough to deduce in Section 10 that geometric homology is isomorphic to singular homology.
 Lipyanskiy does not treat geometric cohomology in the same detail, and in particular he does not claim that it is isomorphic to singular cohomology.
-We prove this is true in \cite{FMS-foundations}, but the proof requires the development of additional tools -- either cubulations (or triangulations) and the
+We prove this is true in \cite{medina2022foundations}, but the proof requires the development of additional tools -- either cubulations (or triangulations) and the
 intersection homomorphism as in Definition~\ref{D: intersection homomorphism} below, or by using work of Kreck and Singhof \cite{Krec10, Krec10b}.
 
 \begin{theorem}\label{T: geometric singular isomorphism}
@@ -242,7 +242,7 @@ intersection homomorphism as in Definition~\ref{D: intersection homomorphism} be
 
 The functoriality here at the cohomology level is fully defined with respect to all continuous maps.
 Given an element of cohomology represented by $r_W \colon W \to M$, choose a smooth map in the homotopy class of $f$ that is transverse to $r_W$ and then pull back.
-It is shown in \cite{FMS-foundations} that this process gives a well-defined induced map $f^*$.
+It is shown in \cite{medina2022foundations} that this process gives a well-defined induced map $f^*$.
 
 There is no full functoriality at the cochain level, since an $f$ cannot be transverse to all c-manifolds over $M$.
 But there is a quasi-isomorphic subcomplex of $C_\Gamma^*(M)$ consisting of cochains that are transverse to $f$ which can be pulled back.
@@ -275,7 +275,7 @@ But in contrast with the evaluation of singular cochains on singular chains, whi
 We will not reference $X$ when it is clear from the context.
 The subsets $\cman_\pf^*(M)$ and $C^*_{\Gamma \pf}(M)$ are well-defined chain complexes since transversality of the maps representing geometric cochains by definition includes transversality of their restrictions to all strata, in particular their boundaries.
 
-A key technical result, whose proof is given in \cite{FMS-foundations},
+A key technical result, whose proof is given in \cite{medina2022foundations},
 is that these transversality conditions do not change cohomology.
 
 \begin{theorem}\label{T: transverse complex}
@@ -333,7 +333,7 @@ Thus this orientation of the normal bundle can be compared with the standard ord
 
 The intersection of a cube with an element of $\cman(M)$ that is trivial, as in Definition \ref{D: cman types}, will give a canceling count, and there can be no intersections with small rank reference maps.
 Therefore, the intersection homomorphism vanishes on $Q^*(M)$, and there is an induced a map on geometric cochains.
-We show in \cite{FMS-foundations} that this is a chain map.
+We show in \cite{medina2022foundations} that this is a chain map.
 The proof is akin to the proof that degree of a smooth map is homotopy invariant, through the classification of compact one-manifolds.
 Indeed, on some $(n+1)$-cube $E$ both $\delta \cI(\uW)$ and $\cI(\underline{\partial W})$ are counts of $0$-manifolds over $E$, which together are boundaries of the pull-back of $W$ and $E$, a $1$-manifold.
 
@@ -344,7 +344,7 @@ We refer to this induced map as the \textbf{intersection chain map} and denote i
 \end{theorem}
 
 Surjectivity is clear since we can find for any cube a small submanifold transversally passing through it at one point.
-The quasi-isomorphism result is proven in \cite{FMS-foundations}.
+The quasi-isomorphism result is proven in \cite{medina2022foundations}.
 
 \subsection{Fiber product}\label{S: fiber product section}
 
@@ -356,7 +356,7 @@ Joyce's M-cohomology \cite{Joyc15}, which has more complicated representing obje
 after considerable effort.
 
 We start at the level of c-manifolds over $M$, a manifold with no boundary.
-Even here, substantial care in \cite{FMS-foundations} is taken to define a co-orientation
+Even here, substantial care in \cite{medina2022foundations} is taken to define a co-orientation
 on the fiber product of co-oriented maps. We summarize the results as follows, recalling that $|V|$ stands for the codimension $\dim(M)-\dim(V)$.
 
 \begin{theorem}\label{T: pull-back co-or}
@@ -397,11 +397,11 @@ We next address the passage to cochains, giving a partially defined differential
 	to be the geometric cochain represented by $V_T \bullet_M W_T$.
 \end{definition}
 
-A delicate argument in \cite{FMS-foundations} gives the following.
+A delicate argument in \cite{medina2022foundations} gives the following.
 
 \begin{theorem}\label{P: product}
 	The fiber product $\bullet_M$ descends to a well-defined, though only partially-defined, product on $C_\Gamma^*(M)$, which in turn passes to a fully-defined product on $H_\Gamma^*(M)$. Under the isomorphism of Theorem~\ref{T: geometric singular isomorphism}, the induced product on geometric cohomology agrees with cup product on singular cohomology.
 \end{theorem}
 
 The agreement of fiber product with cup product at the cohomology level will also follow from our main cochain-level result, Theorem~\ref{T: main theorem}.
-But there are more direct elementary arguments, given in \cite{FMS-foundations}, that prove agreement at the cohomology level without yielding any insight at the cochain level.
+But there are more direct elementary arguments, given in \cite{medina2022foundations}, that prove agreement at the cohomology level without yielding any insight at the cochain level.
