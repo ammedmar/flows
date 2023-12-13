@@ -1,6 +1,6 @@
 % !TEX root = flows.tex
 
-\section{Logistic vector field}\label{S: logistic}
+\section{Logistic vector field}\label{S:logistic}
 
 We construct a vector field associated to a cubulation on a manifold that, in a sense, gives a smooth extension of the cubical poset structure.
 This vector field is a cousin of the standard vector field on a triangulated manifold whose zeros coincide with barycenters of the triangulation.
@@ -116,7 +116,7 @@ By taking derivatives of the formulas in Lemma \ref{L: bernoulli equation} with 
 	\end{equation*}
 \end{corollary}
 
-\subsection{Neighborhoods}\label{S: neighborhoods}
+\subsection{Neighborhoods}\label{S:neighborhoods}
 
 Given a face $F$ of $\interval^n$, we will focus on two families of subsets of $F$ that are parameterized by real numbers $u \in (0,1)$, the \textbf{lower} and \textbf{upper subsets} of $F$
 \begin{align*}
@@ -155,9 +155,7 @@ In particular, if $F$ is a terminal face then $N_\epsilon(F)=\{ (x_1,\ldots, x_n
 	\label{F: lower subspace and nbhd}
 \end{figure}
 
-Just as flow lines go between vertices of the cubulation, respecting their order, we now show that the flow takes a lower neighborhood of
-one face $F$ to a neighborhood of the ``next'' face $F^+$,
-whose initial vertex is the terminal vertex of $F$.
+Just as flow lines go between vertices of the cubulation, respecting their order, we now show that the flow takes a upper neighborhood of one face $F$ to a neighborhood of the ``next'' face $F^+$, whose initial vertex is the terminal vertex of $F$.
 
 \begin{lemma}\label{L: flow to initial and terminal faces}
 	Let $F$ be a face of $\interval^n$. For any $\epsilon > 0$ and $u,r \in (0, 1)$ we have
@@ -182,7 +180,7 @@ The next lemma says something about the ``aspect ratios'' of tangent spaces unde
 		\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
 		{\left|\left(D_{x}\f_t\right)_{j,j}\right|} < \varepsilon,
 	\end{equation}
-	where $x$ is such that $y = f_t(x)$, $i \not\in F^+_{01}$, and $j \in F^+_{01}$. Similarly, $\delta > 0$ and $T\in \R$ can be chosen such that \eqref{E: jacobian ratios} holds for any $y \in N_\delta U_u(F^-)$ and $t>T$ with $y = f_{-t}(x)$, $i \not\in F^-_{01}$, and $j \in F^-_{01}$.
+	where $x$ is such that $y = f_t(x)$, $i \not\in F^+_{01} = F_0$, and $j \in F^+_{01} = F_0$. Similarly, $\delta > 0$ and $T\in \R$ can be chosen such that \eqref{E: jacobian ratios} holds for any $y \in N_\delta U_u(F^-)$ and $t>T$ with $y = f_{-t}(x)$, $i \not\in F^-_{01} = F_1$, and $j \in F^-_{01} = F_1$.
 \end{lemma}
 In other words, given an $\epsilon$, there is a neighborhood $N_\delta L_u(F^+)$ and a time $T$ so that for all greater times every point that has flowed into $N_\delta L_u(F^+)$ has its tangent space sufficiently ``squashed'' by the flow that the ratios in the normal directions to $F^+$ versus the tangential directions are all smaller than $\epsilon$.
 
@@ -200,18 +198,22 @@ In other words, given an $\epsilon$, there is a neighborhood $N_\delta L_u(F^+)$
 		\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
 		{\left|\left(D_{x}\f_t\right)_{j,j}\right|} = \left(\frac{e^t-y_i(e^t-1)}{e^t-y_j(e^t-1)}\right)^2,
 	\end{equation*}
-	whose limit as $t$ goes to infinity is equal to $\frac{1-y_i}{1-y_j}$.
+	whose limit as $t$ goes to infinity is equal to $\big(\frac{1-y_i}{1-y_j}\big)^2$.
 	Thus, a given bound $y_j \leq u<1$ for $j \in F^+_{01}$ allows us to find a bound $y_i > 1- \delta$ for $i \not\in F^+_{01}$ making this ratio as small as desired for sufficiently large $t$.
 \end{proof}
 
 We will also need the following simple lemma.
 
 \begin{lemma}\label{L: domain flow}
-	Let $F$ be a terminal face of $\interval^n$, and let $v$ be its initial vertex so that $F=v^+$. Let $0<u<1$, and let $D$ be any neighborhood of $v$ in $F$ containing $L_u(F)$. Then for all $t\geq 0$ we have $L_u(F)\subset \f_t(D)$. Similarly, if $F$ is an initial face of $\interval^n$ and $v$ its initial vertex so that $F=v^-$ and if $D$ is any neighborhood of $v$ in $F$ containing $U_u(F)$ then for all $t\geq 0$ we have $U_u(F)\subset \f_{-t}(D)$.
+	Let $F$ be a terminal face of $\interval^n$, and let $v$ be its initial vertex so that $F=v^+$. Let $0<u<1$, and let $D$ be any neighborhood of $v$ in $F$ containing $L_u(F)$.
+	Then for all $t\geq 0$ we have $L_u(F)\subset \f_t(D)$. Similarly, if $F$ is an initial face of $\interval^n$ and $v$ its terminal vertex so that $F=v^-$ and if $D$ is any neighborhood of $v$ in $F$ containing $U_u(F)$ then for all $t\geq 0$ we have $U_u(F)\subset \f_{-t}(D)$.
 \end{lemma}
 
 \begin{proof}
-	Suppose the first set of hypotheses, and let $y\in L_u(F)$. In particular, this means that if the $i\th$ coordinate of $y$ is a free variables of $F$ we have $y_i<\epsilon$ and otherwise $y_i=1$. As the flow is non-decreasing in each free coordinate and does not move the bound coordinates, we have $\f_{-t}(y)\in L_u(F)$ for $t\geq 0$, and hence $y\in \f_t(L_u(F))\subset \f_t(D)$. The argument for the second set of hypotheses is analogous.
+	Suppose the first set of hypotheses, and let $y \in L_u(F)$.
+	In particular, this means that if the $i\th$ coordinate of $y$ is a free variables of $F$ we have $y_i < u$ and otherwise $y_i = 1$.
+	As the flow is non-decreasing in each free coordinate and does not move the bound coordinates, we have $\f_{-t}(y)\in L_u(F)$ for $t\geq 0$, and hence $y \in \f_t(L_u(F)) \subset \f_t(D)$.
+	The argument for the second set of hypotheses is analogous.
 \end{proof}
 
 \subsection{Geometric cochains and intersections}

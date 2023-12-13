@@ -1,6 +1,6 @@
 % !TEX root = flows.tex
 
-\section{Geometric cochains}\label{S: geometric cochains}
+\section{Geometric cochains}\label{S:geometric cochains}
 
 To specify a cubical cochain in a fixed degree is to give an integer for each and every cube in that dimension, which in practice can be an unwieldy amount of data.
 Submanifolds, which can be simple to describe in cases of interest, can encode such data through intersection.
@@ -77,8 +77,7 @@ These are treated below and are more involved, requiring care to develop in \cit
 
 We let $\partial^k W$ denote $\partial (\partial^{k-1} W)$ with $\partial^0 W = W$, and we let $i_{\partial^k W}$, or simply $i_{\partial^k}$, denote the composite of the $i_{\partial^i W}$ maps sending $\partial^k W$ to $W$.
 
-Recall the standard notion of transversality of two maps, defined locally by having the tangent space at an image point spanned by the images
-of tangent spaces of preimages.
+Recall the standard notion of transversality of two maps, defined locally by having the tangent space at a common image point spanned by the images of tangent spaces of preimages.
 
 \begin{definition}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
@@ -240,13 +239,13 @@ intersection homomorphism as in Definition~\ref{D: intersection homomorphism} be
 	That is, the functors $H^*_\Gamma$ and $H^*(\cdot \,;\Z)$ are naturally isomorphic.
 \end{theorem}
 
-The functoriality here at the cohomology level is fully defined with respect to all continuous maps.
-Given an element of cohomology represented by $r_W \colon W \to M$, choose a smooth map in the homotopy class of $f$ that is transverse to $r_W$ and then pull back.
-It is shown in \cite{medina2022foundations} that this process gives a well-defined induced map $f^*$.
+The functoriality here at the cohomology level is fully defined with respect to all continuous maps $f \colon N \to M$.
+Explicitly, given an element of cohomology represented by $r_W \colon W \to M$, choose a smooth map in the homotopy class of $f$ that is transverse to $r_W$ and then pull back.
+It is shown in \cite{medina2022foundations} that this process gives a well-defined induced map $f^* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$.
 
 There is no full functoriality at the cochain level, since an $f$ cannot be transverse to all c-manifolds over $M$.
 But there is a quasi-isomorphic subcomplex of $C_\Gamma^*(M)$ consisting of cochains that are transverse to $f$ which can be pulled back.
-This is analogous to having only a partially-defined fiber product, as we introduce in Section~\ref{S: fiber product section}.
+This is analogous to having only a partially-defined fiber product, as we introduce in \cref{S:fiber product section}.
 Such ``partial functoriality'' of cochains will be needed for applications of the main results of this paper at the cochain level.
 
 \subsection{Cubical structures and intersections}
@@ -346,7 +345,7 @@ We refer to this induced map as the \textbf{intersection chain map} and denote i
 Surjectivity is clear since we can find for any cube a small submanifold transversally passing through it at one point.
 The quasi-isomorphism result is proven in \cite{medina2022foundations}.
 
-\subsection{Fiber product}\label{S: fiber product section}
+\subsection{Fiber product}\label{S:fiber product section}
 
 We now endow geometric cochains with a (graded) commutative product given by intersection of immersed submanifolds, or fiber product more generally.
 This product is partially defined, as it must be if it is to be commutative and induce the cup product in cohomology.
@@ -381,7 +380,7 @@ We call the co-orientation $\omega_P$ the {\bf product co-orientation}.
 	If $V, W \in \cman^*(M)$ are transverse, define $V \bullet_M W$ to be $V \times_M W$ with the product co-orientation.
 \end{definition}
 
-By Theorem~\ref{T: pull-back co-or}, $ \cman^*(M)$ is thus a partially-defined graded commutative ring.
+By \cref{T: pull-back co-or}, $ \cman^*(M)$ is thus a partially-defined graded commutative ring.
 We next address the passage to cochains, giving a partially defined differential graded commutative algebra.
 
 \begin{definition}\label{D: cochain trans}
@@ -400,8 +399,8 @@ We next address the passage to cochains, giving a partially defined differential
 A delicate argument in \cite{medina2022foundations} gives the following.
 
 \begin{theorem}\label{P: product}
-	The fiber product $\bullet_M$ descends to a well-defined, though only partially-defined, product on $C_\Gamma^*(M)$, which in turn passes to a fully-defined product on $H_\Gamma^*(M)$. Under the isomorphism of Theorem~\ref{T: geometric singular isomorphism}, the induced product on geometric cohomology agrees with cup product on singular cohomology.
+	The fiber product $\bullet_M$ descends to a well-defined, though only partially-defined, product on $C_\Gamma^*(M)$, which in turn passes to a fully-defined product on $H_\Gamma^*(M)$. Under the isomorphism of \cref{T: geometric singular isomorphism}, the induced product on geometric cohomology agrees with cup product on singular cohomology.
 \end{theorem}
 
-The agreement of fiber product with cup product at the cohomology level will also follow from our main cochain-level result, Theorem~\ref{T: main theorem}.
+The agreement of fiber product with cup product at the cohomology level will also follow from our main cochain-level result, \cref{T:main theorem}.
 But there are more direct elementary arguments, given in \cite{medina2022foundations}, that prove agreement at the cohomology level without yielding any insight at the cochain level.
