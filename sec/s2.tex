@@ -124,7 +124,7 @@ Just as is the case for simplicial complexes, faces in cubical complexes are com
 The vector field flow we define on cubulated manifolds in \cref{S:logistic} can be viewed as a smooth extension of the cubical poset structure.
 We refine our description of this poset structure through identifying ``previous'' and ``next'' faces in a cube.
 
-\begin{definition}\label{D: F decomposition}
+\begin{definition}\label{D:F decomposition}
 	Let $F = (F_0, F_{01}, F_1)$ be a face of $\interval^n$. The $F$-\textbf{decomposition} of $\interval^n$ is the isomorphism $\interval^n \cong F^- \times F \times F^+$ where $F^- = (F_0 \cup F_{01}, F_1, \emptyset)$ and $F^+ = (\emptyset, F_0, F_1 \cup F_{01})$.
 \end{definition}
 
@@ -146,7 +146,7 @@ the terminal vertex of $\interval^n$.Similarly, $F^-$ is the face whose terminal
 
 The special case of $F$-decompositions in which $F = v$, a vertex, merits its own consideration.
 
-\begin{definition}\label{D: reciprocal}
+\begin{definition}\label{D:reciprocal}
 	An ordered pair of faces $(F,F^\prime)$ of $\interval^n$ is said to be \textbf{reciprocal} if there exists a vertex $v$ such that $F = v^-$ and $F^\prime = v^+$. Equivalently, $(F, F')$ is reciprocal if and only if $F$ is initial and $F^\prime = F^+$, or if and only if $F'$ is terminal and $F = (F^{\prime})^-$.
 \end{definition}
 
@@ -197,7 +197,7 @@ if $x_i^{(1)}$ and $x_i^{(2)}$ are defined through the identity
 	\Delta(x_i) = \sum x_i^{(1)} \otimes x_i^{(2)},
 \end{equation*}
 then
-\begin{equation}\label{E: Delta}
+\begin{equation}\label{E:Delta}
 	\Delta (x_1 \otimes \cdots \otimes x_n) =
 	\sum \pm \left( x_1^{(1)} \otimes \cdots \otimes x_n^{(1)} \right) \otimes
 	\left( x_1^{(2)} \otimes \cdots \otimes x_n^{(2)} \right),
@@ -221,12 +221,8 @@ We will use the following more explicit description of Serre's diagonal.
 \end{proposition}
 
 \begin{proof}
-	In expression \eqref{E: Delta} each $x_i^{(1)}$ must be $[\underline 0]$ or $[\underline 0, \underline 1]$ and each $x_i^{(2)}$ must be $[\underline 0, \underline 1]$ or $[\underline 1]$.
+	In expression \eqref{E:Delta} each $x_i^{(1)}$ must be $[\underline 0]$ or $[\underline 0, \underline 1]$ and each $x_i^{(2)}$ must be $[\underline 0, \underline 1]$ or $[\underline 1]$.
 	Moreover, if $x_i^{(1)} = [\underline 0]$ then $x_i^{(2)} = [\underline 0, \underline 1]$, and if $x_i^{(1)} = [\underline 0, \underline 1]$ then $x_i^{(2)} = [\underline 1]$.
-	Hence, in each summand of \eqref{E: Delta}, the first and second tensor factors are reciprocal faces of $\interval^n$. Conversely, each vertex of $\interval^n$ determines such a summand.
+	Hence, in each summand of \eqref{E:Delta}, the first and second tensor factors are reciprocal faces of $\interval^n$. Conversely, each vertex of $\interval^n$ determines such a summand.
 	The proposition now follows from the identification of the shuffle sign with the sign arising from applying the Leibniz rule.
 \end{proof}
-
-%%% Local Variables:
-%%% TeX-master: "pd_cubical_v1.tex"
-%%% End:
