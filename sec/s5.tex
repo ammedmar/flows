@@ -88,17 +88,17 @@ is not just over the entire manifold but also for restrictions over any cube.
 	If $\dim(V) = n$, then again the condition is fulfilled vacuously if $V$ does not contain $\underline{1}$, so we assume $\underline{1} \in V$.
 	Because of transversality, the Inverse Function Theorem implies that $V \to \interval^n$ is a local diffeomorphism onto a neighborhood $\mathcal N^0$ of $\underline{1}$ and, therefore, it is transverse to any map therein, so we can take $T^0 = 0$.
 
-	Let us establish now the induction step.
+	Let us establish now the induction step going from $i-1$ to $i$.
 	Consider $F \in \term_{i}(\interval^n)$ and notice that the union of $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ and $\beta_{F^-} = \{\e_i\ |\ i \in F^-_{01}\}$ trivialize the tangent bundle of $\interval^n$.
 
 	Choose $\delta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\delta(F)$ of $F$ is such that for any $y \in V \cap \overline N_\delta(F)$ the affine space $T_yV$ is transverse to the span of $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ at $y$.
 
 	Similarly, consider a $\zeta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\zeta(F^-)$ of $F^-$ is such that either $W \cap \overline N_\zeta(F^-) = \emptyset$ or for any $x \in W \cap \overline N_\zeta(F^-)$ the affine space $T_xW$ is transverse to the span of $\beta_{F^-} = \{\e_i\ |\ i \in F^-_{01}\}$ at $x$.
-	In the latter case, for every such $x$, the transversality implies that $T_xW$ projects surjectively onto $F^-$; in other words, the projection of $W \cap \overline N_\zeta(F^-)$ to $F^-$ is a submersion onto its image.
+	In the latter case, for every such $x$, the transversality implies that $T_xW$ projects surjectively onto $F$; in other words, the projection of $W \cap \overline N_\zeta(F^-)$ to $F$ is a submersion onto its image.
 	Therefore, we may choose continuously with $x$ a subset of $T_xW$ of the form $\beta_x = \{\e_j + v_j\ |\ j \in F_{01}\}$ such that $v_j$ is in the span of $\beta_{F^-}$.
 	As $W \cap \overline N_\zeta(F^-)$ is compact, the $v_j$ have bounded norm.
 
-	By possibly making $\delta$ smaller we can choose $u \in (0, 1)$ such that $\overline N_\delta(F) \setminus \overline N_\delta L_u(F)$ is contained in $\mathcal N^{i-1}$.
+	By possibly making $\delta$ smaller we can choose $u \in (0, 1)$ by inductive hypothesis such that $\overline N_\delta(F) \setminus \overline N_\delta L_u(F)$ is contained in $\mathcal N^{i-1}$.
 
 	By \cref{L:flow to initial and terminal faces} we may choose $t > T^{i-1}$ sufficiently large so that all points in $\f_t(W) \cap V \cap \overline N_\delta L_u(F)$ are of the form $y = \f_t(x)$ for some $x \in W \cap \overline N_\zeta(F^-)$.
 
@@ -194,7 +194,7 @@ For the following lemma, recall Definition \ref{D:intersection number}.
 	Then the sign of the intersection is $1$ if $\beta_W \wedge \beta_V$ agrees with the orientation of $E$ and is $-1$ otherwise.
 
 	Now consider the pullback $(r_{\f_t(W) \times_M V})^{-1}(E)$.
-	As $\f_t( W)$ and $V$ are embedded near $x$ and $y$, we co-orient $\f_t(W) \times_M V = \f_t(W)\cap V$ at $z$ again by $\beta_{\f_t(W)} \wedge \beta_V$ according with the properties of co-orientations of fiber products of embeddings; see Theorem \ref{T: pull-back co-or}.
+	As $\f_t( W)$ and $V$ are embedded near $x$ and $y$, we co-orient $\f_t(W) \times_M V$ at $z$ again by $\beta_{\f_t(W)} \wedge \beta_V$ according with the properties of co-orientations of fiber products of embeddings; see Theorem \ref{T: pull-back co-or}.
 	But now again the contribution to $\cI(\f_t(W) \times_M V)$ is $+1$ or $-1$ as this pair agrees or not with the orientation of $E$.
 \end{proof}
 
@@ -236,12 +236,13 @@ The Implicit Function Theorem guarantees that the following subspaces occur natu
 		\item $C$ is the graph of a smooth map $s: D \to F$, where $D$ is an open neighborhood of $\pi_F^\perp(p)$ in $F^- \times F^+$ such that $D$ intersects only the faces of $F^- \times F^+$ containing $\pi_F^\perp(p)$ and is bounded away from the other faces of $F^- \times F^+$,
 		\item $s(\pi_F^\perp(p)) = p$,
 		\item $C$ is bounded away from the faces of $F$ that do not contain $p$, and
-		\item $C$ is transverse to all faces of $\interval^n$.
+		\item $C$ is transverse to all faces of $\interval^n$,
 	\end{enumerate}
+	where, as usual, two sets are said to be bounded away from each other if there is a positive minimum distance between every point in one and every point in the other.
 \end{definition}
 
 In general $C$ is not actually a neighborhood of $p$ in $\interval^n$ as $\dim(C)=n-\dim F$, with an extreme case being $F =\interval^n$ in which case $C$ is just a point in the interior of $F$.
-For any graph-like neighborhood $C$ of a point in the interior of a face $F$, there exists $r, u \in (0,1)$ such that $C \subseteq N_rL_u(F)$ and $C \subseteq N_rU_u(F)$.
+For any graph-like neighborhood $C$ of a point in the interior of a face $F$, there exists by (3) $r, u \in (0,1)$ such that $C \subseteq N_rL_u(F)$ and $C \subseteq N_rU_u(F)$.
 
 Since the logistic flow can be expressed independently in each coordinate, it preserves the property of being a graph-like neighborhood.
 
@@ -273,7 +274,7 @@ Recall the definition of reciprocal faces of $\interval^n$, \cref{D:reciprocal}.
 	Let us assume $t$ large enough so that $\norm{\f_{\pm t}(s^\pm(v)) - v} < \epsilon$, which is possible because $s^\pm(v)$ are in the interiors of $v^\pm$ by assumption and $v$ is the terminal vertex of $v^-$ and the initial vertex of $v^+$.
 	Let $\overline N_t^\pm = \overline N_\epsilon(v) \cap \big(\f_{\pm t}\circ s^\pm (D^\pm)\big)$.
 	As $\f_t$ flows each coordinate independently, $\f_t(C)$ remains a graph of $\f_t(D)$ for all $t$.
-	Therefore, by Lemmas \ref{L:flow to initial and terminal faces}, \ref{L:jacobian ratios}, and \ref{L:domain flow}, for large enough $t$ the set $\overline N_t^\pm$ will be as small a perturbation as desired of $\overline N_\epsilon^\pm$ and additionally the tangent space at each point of $\overline N_t^\pm$ will be as small a perturbation as desired of the plane containing $v^\pm$.
+	Therefore, by Lemmas \ref{L:flow to initial and terminal faces}, \ref{L:jacobian ratios}, and \ref{L:domain flow}, for large enough $t$ the set $\overline N_t^\pm$ will be as small a perturbation as desired of $\overline N_\epsilon^\pm$ and additionally the tangent space at each point of $\overline N_t^\pm$ will be as small a perturbation as desired of the ``plane" containing $v^\pm$.
 	Therefore, since $\overline N_\epsilon^+ \cap \overline N_\epsilon^- = \{v\}$, the stability of transverse intersections implies that there exists a unique $y_t \in \overline N_t^+ \cap \overline N_t^-$.
 	The lemma follows in this case since there cannot be intersections outside $\overline N_\epsilon(v) = \overline N_\epsilon(v^+) \cap \overline N_\epsilon(v^-)$ since, by \cref{L:flow to initial and terminal faces}, we can assume $t$ large enough so that $\f_t(C) \subseteq \overline N_\epsilon(v^+)$ and $\f_{-t}(C^\prime) \subseteq \overline N_\epsilon(v^-)$.
 
@@ -361,9 +362,9 @@ Explicitly,
 \end{equation*}
 Moreover, let
 \begin{equation*}
-	Z_W^\init =\, W\ \setminus \bigcup_{\Ginit_W} C
+	Z_W^\init =\, W\ \setminus \bigcup_{p \in \Ginit_W} C_p
 	\qquad \text{ and } \qquad
-	Z_V^\term =\, V\ \setminus \bigcup_{\Gterm_V} C^\prime.
+	Z_V^\term =\, V\ \setminus \bigcup_{p \in \Gterm_V} C_p^\prime.
 \end{equation*}
 
 If $\dim V=n$, then $Z_W^\init=\emptyset$, and similarly if $\dim V=0$ then $Z_V^\term=\emptyset$.
@@ -380,13 +381,14 @@ Replacing $t$ with $2t$ in the preceding sentence and then applying $\f_{-t}$ to
 Similarly, we can find $t$ large enough so that $\f_{t}(W) \cap \f_{-t}(Z_V^\term) = \emptyset$.
 This shows that
 \begin{equation}\label{E:reduction to C}
-	\f_t(W) \times_{\interval^n} \f_{-t}(V) = \f_t \left( \bigcup_{\Ginit_W} C \right) \times_{\interval^n} \f_{-t} \left( \bigcup_{\Gterm_V} C^\prime \right).
+	\f_t(W) \times_{\interval^n} \f_{-t}(V) = \f_t \left( \bigcup_{p \in \Ginit_W} C_p \right) \times_{\interval^n} \f_{-t} \left( \bigcup_{p \in \Gterm_V} C_p^\prime \right).
 \end{equation}
 
 \cref{L:flow intersection for graph-like nbhds} now implies that for $t$ large enough the discrete set \eqref{E:reduction to C} is in bijection with the discrete set
 \begin{equation*}
-	S\ \ =\!\! \bigcup_{v \in \vertices(\interval^n)} \left(W \times_{\interval^n} v^-\right) \times \left(V \times_{\interval^n} v^+\right) \ \subseteq\ \Ginit_W \times \Gterm_V.
+	S\ \ =\!\! \bigcup_{v \in \vertices(\interval^n)} \left(W \times_{\interval^n} v^-\right) \times \left(V \times_{\interval^n} v^+\right) \ \subseteq\ \Ginit_W \times \Gterm_V,
 \end{equation*}
+where we are running over vertices so that the sum of the dimensions of $v^-$ and $v^+$ is $n$.
 Considering $\left(W \times_{\interval^n} v^-\right)$ and $\left(V \times_{\interval^n} v^+\right)$ as signed sets as just above, we define a sign function on $S$ by sending a pair $(\xi, \eta) \in S$ to the product of the sign of $\xi \in \left(W \times_{\interval^n} v^-\right)$, the sign of $\eta \in \left(V \times_{\interval^n} v^+\right)$, and the shuffle sign of $v$.
 As described in \cref{L:sign for graph-like nbhds intersection}, this sign function makes the bijection between $\f_t(W) \times_{\interval^n} \f_{-t}(V)$ and $S$ sign-preserving.
 
