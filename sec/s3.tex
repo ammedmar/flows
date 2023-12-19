@@ -234,7 +234,7 @@ Lipyanskiy does not treat geometric cohomology in the same detail, and in partic
 We prove this is true in \cite{medina2022foundations}, but the proof requires the development of additional tools -- either cubulations (or triangulations) and the
 intersection homomorphism as in \cref{D:intersection homomorphism} below, or by using work of Kreck and Singhof \cite{Krec10, Krec10b}.
 
-\begin{theorem}\label{T: geometric singular isomorphism}
+\begin{theorem}\label{T:geometric singular isomorphism}
 	On the category of smooth manifolds (without boundary) and continuous maps, geometric cohomology is isomorphic to singular cohomology with integer coefficients.
 	That is, the functors $H^*_\Gamma$ and $H^*(\cdot \,;\Z)$ are naturally isomorphic.
 \end{theorem}
@@ -276,7 +276,7 @@ The subsets $\cman_\pf^*(M)$ and $C^*_{\Gamma \pf}(M)$ are well-defined chain co
 
 A key technical result, whose proof is given in \cite{medina2022foundations}, is that these transversality conditions do not change cohomology.
 
-\begin{theorem}\label{T: transverse complex}
+\begin{theorem}\label{T:transverse complex}
 	For any cubulated manifold $M$, the inclusion $C^*_{\Gamma \pf}(M) \to C^*_\Gamma(M)$ is a quasi-isomorphism.
 \end{theorem}
 
@@ -324,7 +324,7 @@ Thus this orientation of the normal bundle can be compared with the standard ord
 	is the grading preserving linear map defined by sending $W$ to the cochain whose value on $E \in X$ is $\cI(W)(E) = I_M(W, E)$.
 \end{definition}
 
-The intersection of a cube with an element of $\cman(M)$ that is trivial, as in Definition \ref{D:cman types}, will give a canceling count, and there can be no intersections with small rank reference maps.
+The intersection of a cube with an element of $\cman(M)$ that is trivial, as in \cref{D:cman types}, will give a canceling count, and there can be no intersections with small rank reference maps.
 Therefore, the intersection homomorphism vanishes on $Q^*(M)$, and there is an induced a map on geometric cochains.
 We show in \cite{medina2022foundations} that this is a chain map.
 The proof is akin to the proof that degree of a smooth map is homotopy invariant, through the classification of compact one-manifolds.
@@ -332,7 +332,7 @@ Indeed, on some $(n+1)$-cube $E$ both $\delta \cI(\uW)$ and $\cI(\underline{\par
 
 We refer to this induced map as the \textbf{intersection chain map} and denote it, abusively, also by $\cI \colon C_\Gamma^*(M)\to C^*(X)$.
 
-\begin{theorem}\label{T: stokes}
+\begin{theorem}\label{T:stokes}
 	The map $C^*_{\Gamma \pf X}(M) \to \cochains(X)$ induced by the intersection homomorphism is a surjective quasi-isomorphism.
 \end{theorem}
 
@@ -352,7 +352,7 @@ We start at the level of c-manifolds over $M$, a manifold with no boundary.
 Even here, substantial care in \cite{medina2022foundations} is taken to define a co-orientation
 on the fiber product of co-oriented maps. We summarize the results as follows, recalling that $|V|$ stands for the codimension $\dim(M)-\dim(V)$.
 
-\begin{theorem}\label{T: pull-back co-or}
+\begin{theorem}\label{T:pull-back co-or}
 	Let $V$ and $W$ be transverse c-manifolds over $M$, a manifold without boundary,
 	with co-orientations $\omega_V$ and $\omega_W$.
 	There is a unique co-orientation $\omega_P$ of $P = V \times_M W$, which depends on $\omega_V$ and $\omega_W$, with the following properties:
@@ -374,7 +374,7 @@ We call the co-orientation $\omega_P$ the {\bf product co-orientation}.
 	If $V, W \in \cman^*(M)$ are transverse, define $V \bullet_M W$ to be $V \times_M W$ with the product co-orientation.
 \end{definition}
 
-By \cref{T: pull-back co-or}, $ \cman^*(M)$ is thus a partially-defined graded commutative ring.
+By \cref{T:pull-back co-or}, $ \cman^*(M)$ is thus a partially-defined graded commutative ring.
 We next address the passage to cochains, giving a partially defined differential graded commutative algebra.
 
 \begin{definition}\label{D:cochain trans}
@@ -390,9 +390,9 @@ We next address the passage to cochains, giving a partially defined differential
 
 A delicate argument in \cite{medina2022foundations} gives the following.
 
-\begin{theorem}\label{P: product}
+\begin{theorem}\label{P:product}
 	The fiber product $\bullet_M$ descends to a well-defined, though only partially-defined, product on $C_\Gamma^*(M)$, which in turn passes to a fully-defined product on $H_\Gamma^*(M)$.
-	Under the isomorphism of \cref{T: geometric singular isomorphism}, the induced product on geometric cohomology agrees with cup product on singular cohomology.
+	Under the isomorphism of \cref{T:geometric singular isomorphism}, the induced product on geometric cohomology agrees with cup product on singular cohomology.
 \end{theorem}
 
 The agreement of fiber product with cup product at the cohomology level will also follow from our main cochain-level result, \cref{T:main theorem}.

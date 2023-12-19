@@ -11,7 +11,7 @@ We now come to the main result of this paper.
 The time needed to flow to obtain the equality between intersection and cup product will vary depending on $W$ and $V$, but on any finite subcomplex we have the following uniformity.
 
 \begin{corollary}\label{C:finite diagram}
-	Let $M$ be a closed manifold with smooth cubulation $|X|\to M$, and let $F^*$ be a finitely-generated chain complex with chain map $g:F^*\to C^*_{\Gamma \pf}(M)$.
+	Let $M$ be a closed manifold with smooth cubulation $|X| \to M$, and let $F^*$ be a finitely-generated chain complex with chain map $g:F^*\to C^*_{\Gamma \pf}(M)$.
 	Then, there is a $T \in \R$ such that for all $t > T$ the following diagram commutes:
 	\begin{equation*}
 		\begin{tikzcd} [row sep=tiny]
@@ -36,7 +36,7 @@ Using the orientation $\beta_M$ of $M$, every simplicial face inclusion $\sigma\
 Thus we have an inclusion homomorphism $C_*(K)\into C^{m-*}_\Gamma(M)$, where $m = \dim(M)$.
 This inclusion is a quasi-isomorphism, as the inclusion of $C_*(K)$ into the smooth singular chain complex $C_*^{ssing}(M)$ of $M$ is a known quasi-isomorphism, the map $C_*^{ssing}(M) \to C_*^\Gamma(M)$ is observed to be a quasi-isomorphism in \cite[Section 10]{Lipy14}, and $C_*^\Gamma(M)=C^{m-*}_\Gamma(M)$ for $M$ closed and oriented (see \cite[Section 12]{Lipy14}).
 We may then modify the triangulation $|K|\to M$ by postcomposing with a map $f \colon M\to M$ that is homotopic to the identity but which shifts each simplex of $K$ into general position with respect to every face inclusion of the cubulation $|X|\to M$.
-This can be done as in the proof of Theorem \ref{T: transverse complex}, as given in \cite{medina2022foundations}, using the techniques of \cite[Section 2.3]{GuPo74}.
+This can be done as in the proof of \cref{T:transverse complex}, as given in \cite{medina2022foundations}, using the techniques of \cite[Section 2.3]{GuPo74}.
 As $f$ is homotopic to the identity, we obtain the composite quasi-isomorphism $C_*(K)\into C^{m-*}_\Gamma(M) \xr{f} C^{m-*}_\Gamma(M)$, but now with image of the composite in $C^{m-*}_{\Gamma \pf X}(M)$.
 So by the following diagram,
 \begin{equation*}
@@ -50,14 +50,13 @@ we obtain a quasi-isomorphism from a finitely generated chain complex $C_*(K) \t
 \bigskip
 
 The proof of \cref{T:main theorem} is contained in the following sections.
-As the intersection homomorphism is defined through evaluation on cubes in $X$, the proof
-is ultimately ``local," proceeding over isolated cubes.
+As the intersection homomorphism is defined through evaluation on cubes in $X$, the proof is ultimately ``local," proceeding over isolated cubes.
 We thus make the following definition that will be useful throughout, with $E$ being a cube our main case of interest.
 
 \begin{definition}
 	Let $M$ be a manifold without boundary and $E$ and $W$ transverse elements of $\cman(M)$ with $E$ embedded.
 	We denote the pull-back $W \times_M E$ by $W_E$.
-	By Theorem~\ref{pullback}, $W_E$ is a c-manifold over $E$, and by \cite{medina2022foundations} the map $W_E\to E$ can be endowed with a pull-back co-orientation induced by the co-orientation of $W\to M$ that does not depend on the orientation of $E$.
+	By \cref{pullback}, $W_E$ is a c-manifold over $E$, and by \cite{medina2022foundations} the map $W_E\to E$ can be endowed with a pull-back co-orientation induced by the co-orientation of $W\to M$ that does not depend on the orientation of $E$.
 \end{definition}
 
 \subsection{Transversality}
@@ -66,8 +65,8 @@ We begin with the first claim of \cref{T:main theorem}, of transversality.
 The version of transversality needed for all further claims
 is not just over the entire manifold but also for restrictions over any cube.
 
-\begin{theorem}\label{T: transversality}
-	Let $X$ be a cubulation of a manifold $M$.
+\begin{theorem}\label{T:transversality}
+	Let $|X| \to M$ be a cubulation of a manifold.
 	Suppose $W$ and $V$ are in $\cman_\pf(M)$.
 	Then, for any cube $E$ in $X$, both $\f_t(W)_E$ and $\f_{-t}(W)_E$ are transverse to $V_E$ for $t$ sufficiently large.
 \end{theorem}
@@ -116,7 +115,7 @@ We have the following consequence of this theorem related to \cref{T:main theore
 \end{corollary}
 
 \begin{proof}
-	By Theorem \ref{T: transversality} there is a $t$ large enough so that $\f_{2t}(W)$ and $V$ are transverse for all larger $t$.
+	By \cref{T:transversality} there is a $t$ large enough so that $\f_{2t}(W)$ and $V$ are transverse for all larger $t$.
 	Now apply $\f_{-t}$ to both terms and that transversality is preserved by composition with a diffeomorphism.
 	Similarly, we can apply $\f_t$ to $\f_{-2t}(W)$ and $V$ for large enough $t$.
 	Now choose $t$ large enough to do both.
@@ -149,7 +148,7 @@ We will apply this when $S$ is the interior of a cube in a cubical structure.
 	This codimension is also what is required for the second pull-back to be transverse, yielding the result.
 \end{proof}
 
-\begin{proposition}\label{P: locality}
+\begin{proposition}\label{P:locality}
 	Let $M$ be a cubulated closed manifold.
 	Suppose $W$ and $V$ are in $\cman_\pf(M)$.
 	For $t$ sufficiently large, the pull-back $\f_t(W) \times_M V$ is transverse to the cubulation, and
@@ -161,7 +160,7 @@ We will apply this when $S$ is the interior of a cube in a cubical structure.
 
 \begin{proof}
 	By \cref{L:flow preserves transversality}, the c-manifold $\f_t(W)$ remains transverse to the cubulation for every $t$.
-	By \cref{T: transversality}, over each $E$ in the cubulation, $\f_t(W)_E$ is transverse to $V_E$ for $t$ sufficiently large.
+	By \cref{T:transversality}, over each $E$ in the cubulation, $\f_t(W)_E$ is transverse to $V_E$ for $t$ sufficiently large.
 	Taking the largest
 	such $t$, we can then apply \cref{L:little trans lemma} to obtain transversality of the pull-back of $\f_t(W)$ and $V$ to the entire cubulation.
 
@@ -170,7 +169,7 @@ We will apply this when $S$ is the interior of a cube in a cubical structure.
 	That this is itself a manifold with corners follows from the identification by \cref{L:little trans lemma} of $ {\f_t(W_E)} \times_E V_E$ with $(\f_t(W) \times_M V)\times_M E$, the latter being a manifold with corners by our transversality result.
 \end{proof}
 
-For the following lemma, recall Definition \ref{D:intersection number}.
+For the following lemma, recall \cref{D:intersection number}.
 
 \begin{lemma}\label{L:intersection signs}
 	Let $W$ and $V$ be co-oriented c-manifolds over a closed manifold $M$ that are transverse to a cubulation $|X| \to M$, and let $E$ be a cube whose dimension
@@ -180,7 +179,7 @@ For the following lemma, recall Definition \ref{D:intersection number}.
 \end{lemma}
 
 \begin{proof}
-	We assume that $t$ is as large as needed for Proposition~\ref{P: locality}.
+	We assume that $t$ is as large as needed for \cref{P:locality}.
 	In this case, both $(r_{\f_t(W) \times_M V})^{-1}(E)$ and $\rm{Int}_E(\f_t(W_E), V_E)$ consist of points $(x,y,z) \in W \times V \times E$ with $(\f_t \circ r_W)(x) = r_V (y) = \iota_E(z)$.
 	We check that this is an isomorphism of signed sets.
 
@@ -194,7 +193,7 @@ For the following lemma, recall Definition \ref{D:intersection number}.
 	Then the sign of the intersection is $1$ if $\beta_W \wedge \beta_V$ agrees with the orientation of $E$ and is $-1$ otherwise.
 
 	Now consider the pullback $(r_{\f_t(W) \times_M V})^{-1}(E)$.
-	As $\f_t( W)$ and $V$ are embedded near $x$ and $y$, we co-orient $\f_t(W) \times_M V$ at $z$ again by $\beta_{\f_t(W)} \wedge \beta_V$ according with the properties of co-orientations of fiber products of embeddings; see Theorem \ref{T: pull-back co-or}.
+	As $\f_t( W)$ and $V$ are embedded near $x$ and $y$, we co-orient $\f_t(W) \times_M V$ at $z$ again by $\beta_{\f_t(W)} \wedge \beta_V$ according with the properties of co-orientations of fiber products of embeddings; see \cref{T:pull-back co-or}.
 	But now again the contribution to $\cI(\f_t(W) \times_M V)$ is $+1$ or $-1$ as this pair agrees or not with the orientation of $E$.
 \end{proof}
 
@@ -225,7 +224,7 @@ The Implicit Function Theorem guarantees that the following subspaces occur natu
 	\end{subfigure}
 	\caption{Examples of graph-like neighborhoods with $p$ in the interior of faces $F=(\emptyset, \{2,3\}, \{1\})$ and $F=(\{2\}, \{3\}, \{1\})$, respectively.
 		In the diagram on the right, $F^-\times F^+$ is difficult to depict so we draw the domain $D$ in the bottom face of the cube, which is also complementary to $F$.}
-	\label{F: graph like neighborhood}
+	\label{F:graph like neighborhood}
 \end{figure}
 
 \begin{definition}\label{D:graph-like}
@@ -260,11 +259,11 @@ Recall the definition of reciprocal faces of $\interval^n$, \cref{D:reciprocal}.
 \begin{figure}[!h]
 	\includegraphics[scale=.65]{figures/symmetric}
 	\caption{Proof of \cref{L:flow intersection for graph-like nbhds}.}
-	\label{F: intersection}
+	\label{F:intersection}
 \end{figure}
 
 \begin{proof}
-	We refer the reader to Figure \ref{F: intersection} to accompany the proof.
+	We refer the reader to \cref{F:intersection} to accompany the proof.
 
 	First suppose the pair $(F,F^\prime)$ is reciprocal.
 	This is the case if and only if there is a vertex $v$ with $v^- = F$ and $v^+ = F^\prime$.
@@ -315,11 +314,11 @@ Recall that for $v \in \vertices(\interval^n)$ the shuffle sign $\sh(v)$ is the 
 
 	By \cref{L:flow intersection for graph-like nbhds}, the fiber product $\f_t(C) \times_{\interval^n} \f_{-t}(C^\prime)$ is a single point.
 	Since the logistic flow is an orientation-preserving diffeomorphism, it preserves co-orientation as well.
-	In terms of ordered bases, by Theorem \ref{T: pull-back co-or} the co-orientation of the fiber product is determined by the orientation of the normal bundle of the intersection point determined by the ordered concatenation $\beta_- \cup \beta_+$, where $\beta_\pm$ is an ordered basis representing the orientation of $v^\pm$.
+	In terms of ordered bases, by \cref{T:pull-back co-or} the co-orientation of the fiber product is determined by the orientation of the normal bundle of the intersection point determined by the ordered concatenation $\beta_- \cup \beta_+$, where $\beta_\pm$ is an ordered basis representing the orientation of $v^\pm$.
 	From this the claim follows.
 \end{proof}
 
-\subsection{The proof of Theorem \ref{T:main theorem}}
+\subsection{The proof of \cref{T:main theorem}}
 
 In this section we prove our main theorem; let us first recall its statement.
 Let $M$ be a cubulated closed manifold.
@@ -338,8 +337,8 @@ For $W, V \in \cman_\pf(M)$ and $t$ sufficiently large:
 	where $|W||V|$ is the product of the codimensions of $W$ and $V$ over $M$.
 \end{enumerate}
 
-The transversality statement was proven as \cref{T: transversality}.
-By Proposition~\ref{P: locality} and \cref{C:intersection signs}, it suffices to consider pull-backs over an arbitrary $n$-face, where $n$ is the sum of the codimensions of $V$ and $W$ over $M$.
+The transversality statement was proven as \cref{T:transversality}.
+By \cref{P:locality} and \cref{C:intersection signs}, it suffices to consider pull-backs over an arbitrary $n$-face, where $n$ is the sum of the codimensions of $V$ and $W$ over $M$.
 We identify this face with $\interval^n$ and, by abuse, denote the pull-backs of $V$ and $W$ over this face also by $V$ and $W$.
 
 Let us consider (1) first.
@@ -392,7 +391,7 @@ where we are running over vertices so that the sum of the dimensions of $v^-$ an
 Considering $\left(W \times_{\interval^n} v^-\right)$ and $\left(V \times_{\interval^n} v^+\right)$ as signed sets as just above, we define a sign function on $S$ by sending a pair $(\xi, \eta) \in S$ to the product of the sign of $\xi \in \left(W \times_{\interval^n} v^-\right)$, the sign of $\eta \in \left(V \times_{\interval^n} v^+\right)$, and the shuffle sign of $v$.
 As described in \cref{L:sign for graph-like nbhds intersection}, this sign function makes the bijection between $\f_t(W) \times_{\interval^n} \f_{-t}(V)$ and $S$ sign-preserving.
 
-As we now have a signed bijection of $\f_t(W) \times_{\interval^n} \f_{-t}(V)$ and $S$, comparing with the Serre diagonal in Proposition~\ref{P: diagonal in terms of vertices} gives
+As we now have a signed bijection of $\f_t(W) \times_{\interval^n} \f_{-t}(V)$ and $S$, comparing with the Serre diagonal in \cref{P:diagonal in terms of vertices} gives
 \begin{align*}
 	\cI (\f_t(W) \times_{\interval^n} \f_{-t}(V)) \left([\underline{0}, \underline{1}]^{\otimes n}\right) = &
 	\sum_{v \in \vertices(\interval^n)} \sh(v) \cdot \cI(\f_t(W))(v^-) \cdot \cI(\f_{-t}(V))(v^+) \\ = & \
@@ -405,5 +404,5 @@ To prove (2), we first interchange the roles of $V$ and $W$ in (1) to obtain
 	\cI \big( \f_t(V) \times_M \f_{-t}(W) \big) =
 	\cI \big( \f_t(V) \big) \sms \cI \big( \f_{-t}(W) \big).
 \end{equation*}
-But now $\f_t(V) \times_M \f_{-t}(W)=(-1)^{|V||W|}\f_{-t}(W) \times_M \f_{t}(V)$ by \cref{T: pull-back co-or}.
+But now $\f_t(V) \times_M \f_{-t}(W)=(-1)^{|V||W|}\f_{-t}(W) \times_M \f_{t}(V)$ by \cref{T:pull-back co-or}.
 \hfill\qedsymbol
