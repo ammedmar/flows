@@ -36,7 +36,7 @@ Using the orientation $\beta_M$ of $M$, every simplicial face inclusion $\sigma\
 Thus we have an inclusion homomorphism $C_*(K)\into C^{m-*}_\Gamma(M)$, where $m = \dim(M)$.
 This inclusion is a quasi-isomorphism, as the inclusion of $C_*(K)$ into the smooth singular chain complex $C_*^{ssing}(M)$ of $M$ is a known quasi-isomorphism, the map $C_*^{ssing}(M) \to C_*^\Gamma(M)$ is observed to be a quasi-isomorphism in \cite[Section 10]{Lipy14}, and $C_*^\Gamma(M)=C^{m-*}_\Gamma(M)$ for $M$ closed and oriented (see \cite[Section 12]{Lipy14}).
 We may then modify the triangulation $|K|\to M$ by postcomposing with a map $f \colon M\to M$ that is homotopic to the identity but which shifts each simplex of $K$ into general position with respect to every face inclusion of the cubulation $|X|\to M$.
-This can be done as in the proof of \cref{T:transverse complex}, as given in \cite{medina2022foundations}, using the techniques of \cite[Section 2.3]{GuPo74}.
+This can be done as in the proof of \cref{T:transverse complex}, as given in \cite[Theorem 6.5]{medina2022foundations}, using the techniques of \cite[Section 2.3]{GuPo74}.
 As $f$ is homotopic to the identity, we obtain the composite quasi-isomorphism $C_*(K)\into C^{m-*}_\Gamma(M) \xr{f} C^{m-*}_\Gamma(M)$, but now with image of the composite in $C^{m-*}_{\Gamma \pf X}(M)$.
 So by the following diagram,
 \begin{equation*}
@@ -56,7 +56,7 @@ We thus make the following definition that will be useful throughout, with $E$ b
 \begin{definition}
 	Let $M$ be a manifold without boundary and $E$ and $W$ transverse elements of $\cman(M)$ with $E$ embedded.
 	We denote the pull-back $W \times_M E$ by $W_E$.
-	By \cref{pullback}, $W_E$ is a c-manifold over $E$, and by \cite{medina2022foundations} the map $W_E\to E$ can be endowed with a pull-back co-orientation induced by the co-orientation of $W\to M$ that does not depend on the orientation of $E$.
+	By \cref{pullback}, $W_E$ is a c-manifold over $E$, and by \cite[Sections 3.5.1 and 3.5.2]{medina2022foundations} the map $W_E\to E$ can be endowed with a pull-back co-orientation induced by the co-orientation of $W\to M$ that does not depend on the orientation of $E$.
 \end{definition}
 
 \subsection{Transversality}
@@ -66,7 +66,7 @@ The version of transversality needed for all further claims
 is not just over the entire manifold but also for restrictions over any cube.
 
 \begin{theorem}\label{T:transversality}
-	Let $|X| \to M$ be a cubulation of a manifold.
+	Let $|X| \to M$ be a cubulation of a manifold without boundary.
 	Suppose $W$ and $V$ are in $\cman_\pf(M)$.
 	Then, for any cube $E$ in $X$, both $\f_t(W)_E$ and $\f_{-t}(W)_E$ are transverse to $V_E$ for $t$ sufficiently large.
 \end{theorem}
