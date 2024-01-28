@@ -20,7 +20,7 @@ As \cite{medina2022foundations} is still undergoing revision at the time of fina
 
 \subsection{Manifolds with corners}
 
-We follow a careful development by Joyce \cite{Joy12}.
+We follow a careful development by Joyce \cite{Joy12} of manifolds with corners.
 Let $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$, and let $x_i \colon \R^n_k \to \R$ denote projection onto the $i$th coordinate.
 If $A\subset \R^n$ and $B\subset \R^m$ are any subsets we say that $f \colon A \to B$ is smooth if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
 We carry over the definitions of smooth charts and atlases as in the standard setting, and we choose to work with subspaces of $\R^\infty$ in order to have a set of such objects.
@@ -44,8 +44,8 @@ Joyce extends the notion of smooth map to maps between manifolds with corners by
 This is needed so that, in particular, fiber products of maps to a manifold with corners are well-behaved.
 In Joyce's terminology, the extension of our definition above of smooth maps into manifolds with corners, without these additional boundary conditions, is called {\bf weakly smooth}.
 When the target manifold does not have boundary, the notions of smooth and weakly smooth are identical.
-We will rarely require the more stringent definition of a smooth map between manifolds with corners, as the only time we will consider fiber products over manifolds with (non-empty) corners will be when those products are zero-dimensional, for which we give an ad hoc treatment.
-In those other few cases where a map has a codomain with non-empty boundary or corners, such as the pullback maps from $W \times_M V$ to $V$ or $W$, they will also satisfy Joyce's stronger conditions.
+We will rarely require Joyce's more stringent definition of a smooth map between manifolds with corners, as the only time we will consider fiber products over manifolds with (non-empty) corners will be when those products are zero-dimensional, for which we give an ad hoc treatment.
+In those few other cases where a map has a codomain with non-empty boundary or corners, such as the pullback maps from $W \times_M V$ to $V$ or $W$, they will also satisfy Joyce's stronger conditions.
 Consequently, we simply call our maps ``smooth'' throughout.
 
 We will use boundaries of manifolds with corners, which are defined through their natural stratifications.
@@ -58,7 +58,7 @@ We will use boundaries of manifolds with corners, which are defined through thei
 If $W$ is a manifold with boundary, then $S^0(W)$ is its interior and $S^1(W)$ is its boundary.
 But, if $W$ is a general manifold with corners, deeper corner strata need to be incorporated in the boundary.
 Because of this, the boundary is naturally a c-manifold over $W$ (that is, a map from a c-manifold to $W$), rather than a subspace of $W$.
-Again see \cite[Section 2]{Joy12} for further details.
+See \cite[Section 2]{Joy12} or \cite[Section 2.1]{medina2022foundations} for further details.
 
 \begin{definition}
 	A \textbf{local boundary component} $\beta$ of $W$ at $x \in W$ is a consistent choice of connected component $b_U$ of $S^1(W) \cap U$ for any neighborhood $U$ of $x$, with consistent meaning that $b_{U \cap U'} \subset b_{U} \cap b_{U'}$.
@@ -93,11 +93,11 @@ Recall the standard notion of transversality of two maps, defined locally by hav
 \end{definition}
 
 We will use the term pull-back when we want to emphasize its map to $V$ or $W$, while the fiber product is to be considered over $M$.
-The following analysis of fiber products is standard -- see for example Proposition~7.2.7 of \cite{MaDo92}.
+The following result is Theorem 2.26 of \cite{medina2022foundations}, though it principally relies on work in \cite{Joy12} and \cite{MaDo92}.
 
 \begin{theorem}\label{pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
-	If $f \pf g$ then the fiber product $V \times_M W$ is a manifold with corners with
+	If $f \pf g$ then the fiber product $V \times_M W$ is a manifold with corners of dimension $\dim(V) + \dim(W) - \dim(M)$ with
 	\begin{equation*}
 		S^i(V \times_M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
