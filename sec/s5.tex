@@ -185,8 +185,12 @@ For the following lemma, recall \cref{D:complementary,D:intersection number}.
 	Then, for sufficiently large $t$, $\f_t(W_E)$ and $V_E$ are complementary in $E$ and the value of $\cI(\f_t(W) \times_M V)$ on $E$
 	is equal to $I_E(\f_t(W_E), V_E)$.
 \end{lemma}
-
-\begin{proof}
+\begin{remark}
+	Technically, by definition, computing $I_E(\f_t(W_E), V_E)$ requires taking a fiber product in $E$, which we would not typically allow as $E$ is a manifold with corners.
+	However, once we have prove that $\f_t(W_E)$ and $V_E$ are complementary, their only intersection must be in the interior of $E$.
+	So we could just as well write $I_{\E}\left(\f_t\left(W_{\E}\right), V_{\E}\right)$, but we instead choose the simpler notation here, and in some places below, and hope no confusion will arise.
+\end{remark}
+\begin{proof}[Proof of \cref{L:intersection signs}]
 	We assume that $t$ is as large as needed for \cref{P:locality}.
 
 	Let $v = \dim(V)$, $w = \dim(W)$, $m = \dim(M)$, and $e = \dim(E)$; for a face $F$ of $E$, we let $f = \dim(F)$.
