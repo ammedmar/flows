@@ -87,7 +87,7 @@ Recall the standard notion of transversality of two maps, defined locally by hav
 \begin{definition}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
 	We say $f$ and $g$ are \textbf{transverse}, denoted $f \pf g$, if $f|_{S^k(V)}$ and $g|_{S^\ell(W)}$ are transverse for all $k, \ell$.
-	By \cite[Lemma 2.15]{medina2022foundations}, this is equivalent to requiring that all pairs $fi_{\partial^k}$ and $gi_{\partial^\ell}$ be transverse in the standard sense that if $x \in \bd^k V$ and $y\in \bd^\ell W$ with $fi_{\bd^k}(x) = g i_{\bd^\ell} (y) = z$ then $D(fi_{\bd^k})(T_x V)+D(g i_{\bd^\ell})(T_y W) = T_z M$.
+	By \cite[Lemma 2.15]{medina2022foundations}, this is equivalent to requiring that all pairs $fi_{\partial^k}$ and $gi_{\partial^\ell}$ be \textbf{naively transverse}, meaning that if $x \in \bd^k V$ and $y\in \bd^\ell W$ with $fi_{\bd^k}(x) = g i_{\bd^\ell} (y) = z$ then $D(fi_{\bd^k})(T_x V)+D(g i_{\bd^\ell})(T_y W) = T_z M$.
 
 	Suppressing maps from the notation, define the \textbf{pull-back} or \textbf{fiber product} $V \times_M W$ as the subspace of $(x, y) \in V \times W$ with $f(x) = g(y)$.
 \end{definition}
@@ -323,10 +323,10 @@ For the following definitions we will consider manifolds with corners mapping to
 HEREHERE
 \end{comment}
 
-\begin{definition}
+\begin{definition}\label{D:complementary}
 	We say that c-manifolds over a c-manifold $N$ are \textbf{complementary} if
 	\begin{itemize}
-		\item their codimensions -- or equivalently dimensions -- add to the dimension of $N$,
+		\item their dimensions add to the dimension of $N$,
 		\item over any $S^i(N)$ with $i>0$ their images are disjoint, and
 		\item over $S^0(N)$ they are transverse in the usual sense.
 	\end{itemize}

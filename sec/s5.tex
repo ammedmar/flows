@@ -51,11 +51,11 @@ we obtain a quasi-isomorphism from a finitely generated chain complex $C_*(K) \t
 
 The proof of \cref{T:main theorem} is contained in the following sections.
 As the intersection homomorphism is defined through evaluation on cubes in $X$, the proof is ultimately ``local," proceeding over isolated cubes.
-We thus make the following definition that will be useful throughout, with $E$ being a cube our main case of interest.
+We thus make the following definition that will be useful throughout, with $E$ being a cube or the interior of a cube as our main case of interest.
 
 \begin{definition}
 	Let $M$ be a manifold without boundary and $E$ and $W$ transverse elements of $\cman^*_\Gamma(M)$ with $E$ embedded.
-	We denote the pull-back $W \times_M E$ by $W_E$.
+	We will denote the pull-back $W \times_M E$ by $W_E$, noting that as $E$ is embedded, $W_E$ is simply $r_W^{-1}(E)$, thinking of $E$ as a subspace of $M$.
 	By \cref{pullback}, $W_E$ is a c-manifold over $E$, and by \cite[Sections 3.5.1 and 3.5.2]{medina2022foundations} the map $W_E\to E$ can be endowed with a pull-back co-orientation induced by the co-orientation of $W\to M$ that does not depend on the orientation of $E$.
 \end{definition}
 
@@ -72,36 +72,44 @@ is not just over the entire manifold but also for restrictions over any cube.
 \end{theorem}
 
 \begin{proof}
-	Let $\dim(E) = n$, $\dim(W) = w$, and $\dim(V) = v$.
-	Let us identify $E$ with $\interval^n$ and omit it from notation, so $\f_t(W)_E$ and $V_E$ become $\f_t(W)$ and $V$.
-	It is sufficient to prove the statement for the top stratum of $W$ and $V$, as the argument will apply to any deeper strata.
+	Let $\dim(M) = m$, $\dim(E) = n$, $\dim(W) = w$, and $\dim(V) = v$.
+	As useful, we will identify $E$ with $\interval^n$ or with a submanifold-with-corners of $M$, though we will continue to write $\f_t(W)_E$ and $V_E$.
+	It is sufficient to prove the statement for the top stratum of $W_E$ and $V_E$, as the argument will apply to any deeper strata.
+
+	Recall from \cref{cubicalcomplexes} that we define $\init_k(\interval^n)$ to be the union of initial faces of $\interval^n$ of dimension $k$ and $\term_k(\interval^n)$ to be the union of terminal faces of $\interval^n$ of dimension $k$.
 	We will establish the following statement inducting over $i = 0, \dots, n$.
 	\begin{itemize}
-		\item[($\ast$)] There exists a neighborhood $\mathcal N^i$ of $\term_{i}(\interval^n)$ and a $T^i \in \R$ such that $\f_t(W)$ is transverse to $V$ within $\mathcal N^i$ for all $t > T^i$.
+		\item[($\ast$)] There exists a neighborhood $\mathcal N^i$ of $\term_{i}(\interval^n)$ and a $T^i \in \R$ such that $\f_t(W_E)$ is transverse to $V_E$ within $\mathcal N^i$ for all $t > T^i$.
 	\end{itemize}
 	Since $\interval^n = \term_{n}(\interval^n)$, this will suffice.
 
 	For the base case of the induction we consider $\term_0(\interval^n) = \{\underline{1}\}$.
-	If $\dim(V) < n$ then, by the assumption that $V$ is transverse to $\interval^n$, there is a neighborhood of $\underline{1}$ that does not intersect $V$.
+	If $\dim(V_E) < m$ then, by the assumption that $V$ is transverse to $\interval^n$ and $r_W$ us proper, there is a neighborhood of $\underline{1}$ in $\interval^n$ that does not intersect the image of $V_E$.
 	In this case ($\ast$) is fulfilled vacuously.
-	If $\dim(V) = n$, then again the condition is fulfilled vacuously if $V$ does not contain $\underline{1}$, so we assume $\underline{1} \in V$.
-	Because of transversality, the Inverse Function Theorem implies that $V \to \interval^n$ is a local diffeomorphism onto a neighborhood $\mathcal N^0$ of $\underline{1}$ and, therefore, it is transverse to any map therein, so we can take $T^0 = 0$.
+	If $\dim(V_E) \geq m$, then again the condition is fulfilled vacuously if the image of $V_E$ does not contain $\underline{1}$, so we assume $\underline{1}$ is contained in the image of $V_E$.
+	Because of transversality, our original map of $V$ into $M$ must be a submersion at any point $x in V$ that maps to a vertex of the triangulation.
+	Consequently, by the Local Submersion Theorem \cite[Section 1.4]{GuPo74}, $r_V \colon V \to M$ is a submersion on a neighborhood $x$.
+	Let $y$ be any such point in a neighborhood of $x$ that maps to $E$, which is embedded in $M$.
+	Because of the submersion theorem, $T_yV$ maps onto $T_{r_V(y)}E$.
+	As the tangent space of the pullback $V \times_M E$ at $r_V(y)$ is the pullback of the tangent spaces of $T_yV$ and $T_{r_V(y)}E$  and the derivative of the pullback is the projection (see \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}), it follows that the image of the tangent space $T_{(y,r_V(y))}V_E$ under the derivative of the pullback $V_E \to E$ is is all of $T_{r_V(y)}E$.
+	In particular, $r_{V_E}$ at $y$ is transverse to any map.
+	NEED TO GET A NEIGHBORHOOD!!!
 
 	Let us establish now the induction step going from $i-1$ to $i$.
 	Consider $F \in \term_{i}(\interval^n)$ and notice that the union of $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ and $\beta_{F^-} = \{\e_i\ |\ i \in F^-_{01}\}$ trivialize the tangent bundle of $\interval^n$.
 
-	Choose $\delta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\delta(F)$ of $F$ is such that for any $y \in V \cap \overline N_\delta(F)$ the affine space $T_yV$ is transverse to the span of $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ at $y$.
+	Choose $\delta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\delta(F)$ of $F$ is such that for any $y \in V_E \cap \overline N_\delta(F)$ the affine space $T_yV_E$ is transverse to the span of $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ at $y$.
 
-	Similarly, consider a $\zeta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\zeta(F^-)$ of $F^-$ is such that either $W \cap \overline N_\zeta(F^-) = \emptyset$ or for any $x \in W \cap \overline N_\zeta(F^-)$ the affine space $T_xW$ is transverse to the span of $\beta_{F^-} = \{\e_i\ |\ i \in F^-_{01}\}$ at $x$.
-	In the latter case, for every such $x$, the transversality implies that $T_xW$ projects surjectively onto $F$; in other words, the projection of $W \cap \overline N_\zeta(F^-)$ to $F$ is a submersion onto its image.
-	Therefore, we may choose continuously with $x$ a subset of $T_xW$ of the form $\beta_x = \{\e_j + v_j\ |\ j \in F_{01}\}$ such that $v_j$ is in the span of $\beta_{F^-}$.
-	As $W \cap \overline N_\zeta(F^-)$ is compact, the $v_j$ have bounded norm.
+	Similarly, consider a $\zeta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\zeta(F^-)$ of $F^-$ is such that either $W_E \cap \overline N_\zeta(F^-) = \emptyset$ or for any $x \in W_E \cap \overline N_\zeta(F^-)$ the affine space $T_xW_E$ is transverse to the span of $\beta_{F^-} = \{\e_i\ |\ i \in F^-_{01}\}$ at $x$.
+	In the latter case, for every such $x$, the transversality implies that $T_xW_E$ projects surjectively onto $F$; in other words, the projection of $W_E \cap \overline N_\zeta(F^-)$ to $F$ is a submersion onto its image.
+	Therefore, we may choose continuously with $x$ a subset of $T_xW_E$ of the form $\beta_x = \{\e_j + v_j\ |\ j \in F_{01}\}$ such that $v_j$ is in the span of $\beta_{F^-}$.
+	As $W_E \cap \overline N_\zeta(F^-)$ is compact, the $v_j$ have bounded norm.
 
 	By possibly making $\delta$ smaller we can choose $u \in (0, 1)$ by inductive hypothesis such that $\overline N_\delta(F) \setminus \overline N_\delta L_u(F)$ is contained in $\mathcal N^{i-1}$.
 
-	By \cref{L:flow to initial and terminal faces} we may choose $t > T^{i-1}$ sufficiently large so that all points in $\f_t(W) \cap V \cap \overline N_\delta L_u(F)$ are of the form $y = \f_t(x)$ for some $x \in W \cap \overline N_\zeta(F^-)$.
+	By \cref{L:flow to initial and terminal faces} we may choose $t > T^{i-1}$ sufficiently large so that all points in $\f_t(W_E) \cap V_E \cap \overline N_\delta L_u(F)$ are of the form $y = \f_t(x)$ for some $x \in W_E \cap \overline N_\zeta(F^-)$.
 
-	We use \cref{L:jacobian ratios} to deduce that the push forward of the span of $\beta_x$ along $D\,\f_t$ is as close as desired to the span of $\beta_F$ at $y$ and is therefore transverse to $T_y V$.
+	We use \cref{L:jacobian ratios} to deduce that the push forward of the span of $\beta_x$ along $D\,\f_t$ is as close as desired to the span of $\beta_F$ at $y$ and is therefore transverse to $T_y V_E$.
 	The induction step is completed by taking $\mathcal N^i$ to be the union over all terminal faces of $N_\delta(F)$ and $T^i$ the maximum value of their associated $t$.
 \end{proof}
 
@@ -124,13 +132,13 @@ We have the following consequence of this theorem related to \cref{T:main theore
 \subsection{Locality}\label{S: locality}
 
 On a cubulated manifold the logistic vector field is compatibly defined across cubes by \cref{L:f is natural}.
-In this subsection we show that we can analyze the pull-back product over $M$ of cochains $\f_t(W)$ and $V$ locally -- that is, cube-by-cube.
+In this subsection we show that we can analyze the fiber product over $M$ of cochains $\f_t(W)$ and $V$ locally -- that is, cube-by-cube.
 
 \begin{lemma}\label{L:little trans lemma}
 	Let $V$ and $W$ be c-manifolds over $M$ and $S$ a submanifold without boundary of $M$.
 	Suppose $V$, $W$, and $S$ are pairwise transverse.
-	If $V_S$ and $W_S$ are transverse over $S$ then $W \times_M V$ is transverse to $S$ over $M$.
-	Moreover,	$W_S \times_S V_S \cong (W \times_M V) \times_M S$.
+	If the pullbacks $V_S \to S$ and $W_S \to S$ are transverse over $S$ then the fiber product $W \times_M V$ is transverse to $S$ over $M$.
+	Moreover, $W_S \times_S V_S \cong (W \times_M V) \times_M S$.
 \end{lemma}
 
 We will later apply this when $S$ is the interior of a cube in a cubical structure.
@@ -153,23 +161,23 @@ We will later apply this when $S$ is the interior of a cube in a cubical structu
 	Suppose $W$ and $V$ are in $\cman_{\Gamma \pf}^*(M)$.
 	For $t$ sufficiently large, the pull-back $\f_t(W) \times_M V$ is transverse to the cubulation, and
 	\begin{equation*}
-		\f_t(W) \times_M V = \bigcup_{E \in X} {\f_t(W_E)} \times_E V_E
+		\f_t(W) \times_M V = \bigcup_{E \in X} {\f_t\left(W_{\E}\right)} \times_{\E} V_{\E}
 	\end{equation*}
-	as spaces, with each ${\f_t(W_E)} \times_E V_E$ a manifold with corners.
+	as spaces, with $\E$ the interior of the cube $E$ and with each ${\f_t\left(W_{\E}\right)} \times_{\E} V_{\E}$ a manifold with corners.
 \end{proposition}
 
 \begin{proof}
 	By \cref{L:flow preserves transversality}, the c-manifold $\f_t(W)$ remains transverse to the cubulation for every $t$.
-	By \cref{T:transversality}, over each $E$ in the cubulation, $\f_t(W)_E$ is transverse to $V_E$ for $t$ sufficiently large.
-	Taking the largest
-	such $t$, we can then apply \cref{L:little trans lemma} to obtain transversality of the pull-back of $\f_t(W)$ and $V$ to the entire cubulation.
+	By \cref{T:transversality}, over each $E$ in the cubulation, $\f_t(W)_{\E}$ is transverse to $V_{\E}$ for $t$ sufficiently large.
+	As $M$ is compact, the cubulation if finite, so for sufficiently large $t$ this transversality holds for all $\E$, and we can then apply \cref{L:little trans lemma} to obtain transversality of $\f_t(W) \times_M V$ with the entire cubulation.
 
-	Tautologically, $ \f_t(W) \times_M V = \bigcup_{E \in X} {\f_t(W)}_E \times_E V_E$.
-	But again using that the logistic flow respects the cubulation, ${\f_t(W)}_E = {\f_t(W_E)}$, which gives the decomposition.
-	That this is itself a manifold with corners follows from the identification by \cref{L:little trans lemma} of $ {\f_t(W_E)} \times_E V_E$ with $(\f_t(W) \times_M V)\times_M E$, the latter being a manifold with corners by our transversality result.
+	Tautologically, $ \f_t(W) \times_M V = \bigcup_{E \in X} {\f_t(W)}_{\E} \times_{\E} V_{\E}$.
+	But again using that the logistic flow respects the cubulation, ${\f_t(W)}_{\E} = {\f_t(W_{\E})}$, which gives the decomposition.\qedhere
+	\begin{comment}	That ${\f_t\left(W_{\E}\right)} \times_{\E} V_{\E}$ is itself a manifold with corners follows from the identification by \cref{L:little trans lemma} of $ {\f_t(W_{\E})} \times_{\E} V_{\E}$ with $(\f_t(W) \times_M V)\times_M \E$, the latter being a manifold with corners by our transversality result.
+	\end{comment}
 \end{proof}
 
-For the following lemma, recall \cref{D:intersection number}.
+For the following lemma, recall \cref{D:complementary,D:intersection number}.
 
 \begin{lemma}\label{L:intersection signs}
 	Let $W$ and $V$ be co-oriented c-manifolds over a closed manifold $M$ that are transverse to a cubulation $|X| \to M$, and let $E$ be a cube whose dimension
@@ -180,7 +188,16 @@ For the following lemma, recall \cref{D:intersection number}.
 
 \begin{proof}
 	We assume that $t$ is as large as needed for \cref{P:locality}.
-	In this case, both $(r_{\f_t(W) \times_M V})^{-1}(E)$ and $\rm{Int}_E(\f_t(W_E), V_E)$ consist of points $(x,y,z) \in W \times V \times E$ with $(\f_t \circ r_W)(x) = r_V (y) = \iota_E(z)$.
+
+	Let $v = \dim(V)$, $w = \dim(W)$, $m = \dim(M)$, and $e = \dim(E)$; for a face $F$ of $E$, we let $f = \dim(F)$.
+	By assumption, $e = 2m - v - w$.
+	By counting dimensions, $\dim(V_E) = v + e - m = m - w$, and, similarly, $\dim(\f_t(W_E)) = \dim(W_E) = m - v$.
+	So $\dim(V_E) + \dim(\f_t(W_E)) = \dim(E)$ as desired.
+	Furthermore, on the interior of any proper face $F$ of $E$, we have $\dim(V_F) = v + f - m$, and $\dim(\f_t(W_F)) = w + f -m$.
+	So $\dim(V_F) + \dim(\f_t(W_F)) = v + w +2f - 2m < v + w + e +f - 2m = f$, so by transversality, $V_F$ and $\f_t(W_F)$ do not intersect in the interior of $F$.
+	As $F$ was an arbitrary face of $E$, we see $V_E$ and $\f_t(W_E)$ intersect only in the interior of $E$.
+
+	In this case, both $\rm{Int}_M(\f_t(W) \times_M V, E)$ and $\rm{Int}_E(\f_t(W_E), V_E)$ consist of points $(x,y,z) \in W \times V \times E$ with $(\f_t \circ r_W)(x) = r_V (y) = \iota_E(z)$.
 	We check that this is an isomorphism of signed sets.
 
 	Consider one such intersection point.
@@ -192,7 +209,7 @@ For the following lemma, recall \cref{D:intersection number}.
 	Thus we can use normal co-orientations and identify the normal co-orientation $\beta_{\f_t(W)}$ of $\f_t(W)_E$ in $E$ with the normal co-orientation of $\f_t(W)$ in $M$ and similarly for $V_E$ and $V$.
 	Then the sign of the intersection is $1$ if $\beta_W \wedge \beta_V$ agrees with the orientation of $E$ and is $-1$ otherwise.
 
-	Now consider the pullback $(r_{\f_t(W) \times_M V})^{-1}(E)$.
+	Now consider the pullback $(\f_t(W) \times_M V)\times_M E$.
 	As $\f_t( W)$ and $V$ are embedded near $x$ and $y$, we co-orient $\f_t(W) \times_M V$ at $z$ again by $\beta_{\f_t(W)} \wedge \beta_V$ according with the properties of co-orientations of fiber products of embeddings; see \cref{T:pull-back co-or}.
 	But now again the contribution to $\cI(\f_t(W) \times_M V)$ is $+1$ or $-1$ as this pair agrees or not with the orientation of $E$.
 \end{proof}
