@@ -63,42 +63,136 @@ We thus make the following definition that will be useful throughout, with $E$ b
 
 We begin with the first claim of \cref{T:main theorem}, of transversality.
 The version of transversality needed for all further claims
-is not just over the entire manifold but also for restrictions over any cube.
+is not just over the entire manifold but also for restrictions over any cube, and this is the content of \cref{T:transversality}, which we state and prove following some needed lemmas.
+
+\begin{lemma}\label{L:proper ngbd}
+	Suppose $f \colon X \to Y$ is a proper map and that $K \subset Y$ is compact.
+	Let $A$ be an open neighborhood of $f^{-1}(K)$ in $X$.
+	Then there is a neighborhood $B$ of $K$ in $Y$ such that $f^{-1}(B) \subset U$.
+	In particular, if $f^{-1}(K) = \emptyset$, there is a neighborhood $B$ of $K$ in $Y$ such that $f^{-1}(B) = \emptyset$, i.e.\ $f(X)$ is disjoint from $B$.
+\end{lemma}
+\begin{proof}
+	As proper maps are closed \cite[Proposition I.10.1.1]{Bou98}, $f(X \setminus A)$ is a closed set of $Y$ that is disjoint from $K$.
+	Now take $B = Y \setminus f(X \setminus A)$.
+\end{proof}
+
+\begin{comment}
+\begin{lemma}\label{L:submersion}
+	Suppose $V$ and $M$ are manifolds without boundary, that $N$ is a submanifold without boundary of $M$, and that $f \colon V \to M$ is a submersion at a point $x \in V$ with $r_V(x) \in N$.
+	Then the pullback map $V_N = V \times_M N \to N$ is a submersion at $(x, r_V(x))$, identifying $N$ with its image in $M$.
+\end{lemma}
+\begin{proof}
+	Let use write $r_V(x) = z \in N \subset M$.
+	By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space of $V_N$ at $(x, z)$ is $T_{(x,z)}V_N = T_xV \times_{T_zM} T_zN$, and the derivative map $T_{(x,z)}V_N \to T_zN$ is just the projection.
+	As the restriction of $r_V$ to $V$ is a submersion at $z$, the image of $Dr_V \colon T_xV \to T_zM$ is the whole space, and so for any $\vec b \in T_z N$, there is a vector $\vec a \in T_xV$ such that $(\vec a, \vec b) \in T_{(x,z)}V_N$.
+	The derivative then maps $(\vec a, \vec b)$ to $\vec b \in T_z N$. But $\vec b$ was chosen arbitrarily in $T_zN$, so the pullback is a submersion at $(x,z)$.
+\end{proof}
+
+\end{comment}
+
+The next lemma will establish that if $V \in PC^*_{\Gamma \pf}(M)$, $E$ is a cube in the cubulation, and $F$ is a face of $E$, then there is a neighborhood $B$ of $F$ in $E$ so that, roughly speaking, the pullback map $V \times_M E \to E$ remains transverse to $F$ wherever it maps into $B$.
+
+To explain in more detail, suppose $E$ is an $n$-dimensional cube in a cubulation of the manifold without boundary $M$ and that $V \in PC^*_{\Gamma \pf}(M)$.
+For the moment, we consider $V_E$ to be the restriction $r_V^{-1}(E) \to E$.
+As $E$ is embedded in $M$, this is topologically the pullback $V \times_M E \to E$, although we do not use the pullback stratification but rather the restriction of the stratification of $V$.
+In particular, let us write $V_E^k$ for $S^k(V) \times_M E$.
+By composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to $E$ (which is a diffeomorphism onto its image), we may identify $E$ with $\interval^n$ to obtain a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions $r_{V,W}^k \colon V_E^k \to \interval^n$.
+Abusing notation further, when considering maps whose codomain is $E$, we will freely identify $E$ with $\interval^n$, considered as a subspace of $\R^n$, as we will sometimes use the notations $E$ and $\interval^n$ interchangeably.
+
+\begin{comment}
+While we will need this map to all of $\interval^n$, we will also consider the interior $\E$ of $E$.
+Over $\E$, we can identify $r_V^{-1}(\E)$ with the pullback $V \times_M \E \to \E$, and again compose with the diffeomorphism to the standard cube.
+We also write this further restricted map $r_V^*$.
+\end{comment}
+
+Let $F$ be a face of $\interval^n \subset \R^n$, and let $\vec F$ be the vector space spanned by $\{\e_i \mid i \in F_{01}$.
+
+Suppose $x \in V_{E}^k$.
+We will say that $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if $D_xr_{V,E}^k(T_xV_E^k) + \vec F = \R^n$, identifying the tangent space at each point of $\R^n$ with $\R^n$.
+In other words, $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if at $x$ we have $r^k_{V,E}$ transverse to a parallel translate of $F$.
+Equivalently, $r_{V,E}$ is complementary to $F$ at $x$ if the composition of $D_xr_{V,E}^k$ with the derivative of the projection to the maximal subspace of $\R^n$ orthogonal to $F$ is a surjection from $T_xV_E^k$ onto the image tangent space.
+
+We assume the above notation in the following lemma.
+
+\begin{lemma}\label{L:complement}
+	Suppose $E$ is an $n$-dimensional cube in a cubulation of the manifold without boundary $M$ and that $V \in PC^*_{\Gamma \pf}(M)$.
+	Let $F$ be a face of $E$.
+	Then there is an open neighborhood $B$ of $F$ in $E$ such that $r_{V,E}$ is complementary to $F$ at every $x \in (r_{V,E})^{-1}(B)$.
+\end{lemma}
+\begin{proof}
+	If $\dim(V) < \dim(M) - \dim(F)$ then, by the assumption that $V$ is transverse to the cubulation, we must have that $r_V(V)$ is disjoint from $F$ in $M$.
+	So by \cref{L:proper ngbd} there is a neighborhood of $F$ in $M$, and hence a neighborhood of $F$ in $E$, that is disjoint from the image of $V$.
+	This suffices in this case.
+
+	Next suppose $\dim(V) < \dim(M) - \dim(F)$.
+	As we need to consider behavior near the edge of $E$, which could be delicate due to the corners introduced in forming $V \times_M E$, we make some observations that will simplify the situation by allowing us to avoid pullbacks that introduce new corners.
+	For this, first suppose $x \in V$ with $z = r_V(x) \in F$.
+	Let $i_E$ be the embedding of $E$ into $M$, and $i_E(z')=z$.
+	As the inclusion of $E$ into $M$ is an embedding, it is in particular an immersion at $z'$.
+	By definition of smoothness, we can extend $i_E$ to a neighborhood of $z'$ in $\R^n$, and by the continuity of the derivative there is a possibly smaller neighborhood on which this extension remains an immersion and so a possibly even smaller neighborhood on which it is an embedding.
+	In other words, there is an open disk neighborhood $H$ of $z'$ in $\R^n$ and an embedding $i_H \colon H \to M$ that agrees with $i_E$ on $H \cap E$.
+	So, in particular, the pullback $V_H = V \times_M H \to H$ agrees with $V \times_E E \to E$ over $E \cap H$.
+	The benefit working with $V_H$ is that since $H$ does not have boundary, $V \times_M H$ is stratified by the $S^k(V) \times_M H$, which we denote $V_H^k$.
+	As we did for $E$, we will identify $H$ with its image in $M$, and so also identify $z$ with $z'$.
+	Let us also write $r_{V,H}$ for the pullback map $V_H \to H$ and $r_{V,H}^k$ for the restriction of $r_{V,H}$ to $V_H^k$.
+
+	We next claim that the pullback $V \times_M H \to H$ is transverse to $F \cap H$ at $(x,z) \in V_H$.
+	Let $S^k(V)$ be the stratum of $V$ containing $x$, and let us write $\bar{x} = (x,z)$.
+	By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space $T_{\bar{x}}(V^k_H)$ is $T_xS^k(V) \times_{T_zM} T_zH$, and the derivative $Dr_{V,H}^k \colon T_{\bar{x}}(V^k_H) \to T_zH$ is just the projection to the second factor.
+	Let $\vec s \in T_zH \subset T_z M$.
+	As $V$ is transverse to the cubulation, there are vectors $\vec t \in T_xS^k(V)$ and $\vec u \in T_zF$ such that $\vec s = Dr^k_V \vec t + \vec u$.
+	But then $Dr^k_V\vec t = \vec s - \vec u \in T_zH$ as $T_zF \subset T_zH$.
+	So $(Dr^k_V\vec t, \vec s - \vec u)$ represents an element of $T_{\bar{x}}(V^k_H)$, and its image under $Dr_{V,H}^k$ is $\vec s - \vec u = Dr^k_V\vec t$.
+	This shows that the pullback $r_{V,H} \colon V_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
+
+	Now, let $\dim(V_H) = p$ so that $\dim(V_H^k) = p - k$, and let $(\mathcal U, \phi)$ be a chart for $V_H$ so that $\mathcal U \subset \R^p_k$ and $\phi \colon \mathcal U \to V_H$ takes the origin to $\bar{x} = (x,z)$.
+	Then $\phi$ takes $\mathcal U \cap \R^{p-k}$ to a neighborhood of $x$ in $V_H^k = S^k(V) \times_M H = S^k(V \times_M H)$.
+	As we have seen that $r_{V,H}$ is transverse to the $F$ at $\bar{x}$, the restriction of $r_{V,H} \phi$ to $\mathcal U \cap \R^{n-k}$ is transverse to $F$ as a map from a $p-k$ manifold.
+	By arguments analogous to those in \cite[Section 1.6]{GuPo74}, by considering Jacobians, there is a neighborhood $\mathcal V$ of the origin in $\R^p_k$ (in fact in $\R^p$ by extending the smooth map $r_{V,H} \phi$) such that at any point in $y \in \mathcal V$ the image under under $D_y(r_{V,H} \phi)$ of span of the the last $p-k$ coordinate vectors remains transverse to the vector space $\vec F$ parallel to $F$.
+	In other words, there is a neighborhood of the origin in which $r_{V,H} \phi$ is complementary to $F$.
+	As $\phi$ is a chart of $V_H$, it follows that $r_{V,H}$ is complementary to $F$ in a neighborhood of $\bar{x}$.
+	In particular, there is then a neighborhood $\mathfrak U_{\bar{x}}$ of $\bar{x}$ in $V_E \times_M E$ such that the pullback $V_E \to E$ is complementary to $F$ at each point of $\mathfrak U_{\bar{x}}$.
+
+	Taking the union of the $\mathfrak U_{\bar{x}}$ over all $\bar{x} \in V \times_M F$, or equivalently all $x$ in $r_V^{-1}(F)$, we obtain a neighborhood $A$ of $r_V^{-1}(F)$ in  $r_V^{-1}(E) = V_E$ such that the map to $E$ is complementary to $F$ at each point of $A$.
+	Applying \cref{L:proper ngbd}, there is thus a neighborhood $B$ of $F$ in $E$ such that $r_V^{-1}(B) \subset A$.
+	So for any $\bar{x} \in V_E$ with $r_{V,E} (\bar{x}) \in B$, we know $\bar{x} \in A$ and so $r_{V,E}$ is complementary to $F$.
+\end{proof}
+
+We can now prove our main local transversality theorem.
+
 
 \begin{theorem}\label{T:transversality}
 	Let $|X| \to M$ be a cubulation of a manifold without boundary.
 	Suppose $W$ and $V$ are in $\cman_{\Gamma \pf}^*(M)$.
-	Then, for any cube $E$ in $X$, both $\f_t(W)_E$ and $\f_{-t}(W)_E$ are transverse to $V_E$ for $t$ sufficiently large.
+	Then, for any cube $E$ in $X$ with its interior denoted by $\E$, both $\f_t(W)_{\E}$ and $\f_{-t}(W)_{\E}$ are transverse to $V_{\E}$ as c-manifolds mapping to $E$  for $t$ sufficiently large.
 \end{theorem}
 
 \begin{proof}
 	Let $\dim(M) = m$, $\dim(E) = n$, $\dim(W) = w$, and $\dim(V) = v$.
-	As useful, we will identify $E$ with $\interval^n$ or with a submanifold-with-corners of $M$, though we will continue to write $\f_t(W)_E$ and $V_E$.
-	It is sufficient to prove the statement for the top stratum of $W_E$ and $V_E$, as the argument will apply to any deeper strata.
+	As useful, we will identify $E$ with $\interval^n$ and with a submanifold-with-corners of $M$, though we will continue to write $\f_t(W)_{\E}$ and $V_{\E}$.
 
 	Recall from \cref{cubicalcomplexes} that we define $\init_k(\interval^n)$ to be the union of initial faces of $\interval^n$ of dimension $k$ and $\term_k(\interval^n)$ to be the union of terminal faces of $\interval^n$ of dimension $k$.
 	We will establish the following statement inducting over $i = 0, \dots, n$.
 	\begin{itemize}
-		\item[($\ast$)] There exists a neighborhood $\mathcal N^i$ of $\term_{i}(\interval^n)$ and a $T^i \in \R$ such that $\f_t(W_E)$ is transverse to $V_E$ within $\mathcal N^i$ for all $t > T^i$.
+		\item[($\ast$)] There exists a neighborhood $\mathcal N^i$ of $\term_{i}(\interval^n)$ and a $T^i \in \R$ such that $\f_t(W_{\E})$ is transverse to $V_{\E}$ within $\mathcal N^i$ for all $t > T^i$.
 	\end{itemize}
 	Since $\interval^n = \term_{n}(\interval^n)$, this will suffice.
 
 	For the base case of the induction we consider $\term_0(\interval^n) = \{\underline{1}\}$.
-	If $\dim(V_E) < m$ then, by the assumption that $V$ is transverse to $\interval^n$ and $r_W$ us proper, there is a neighborhood of $\underline{1}$ in $\interval^n$ that does not intersect the image of $V_E$.
-	In this case ($\ast$) is fulfilled vacuously.
-	If $\dim(V_E) \geq m$, then again the condition is fulfilled vacuously if the image of $V_E$ does not contain $\underline{1}$, so we assume $\underline{1}$ is contained in the image of $V_E$.
-	Because of transversality, our original map of $V$ into $M$ must be a submersion at any point $x in V$ that maps to a vertex of the triangulation.
-	Consequently, by the Local Submersion Theorem \cite[Section 1.4]{GuPo74}, $r_V \colon V \to M$ is a submersion on a neighborhood $x$.
-	Let $y$ be any such point in a neighborhood of $x$ that maps to $E$, which is embedded in $M$.
-	Because of the submersion theorem, $T_yV$ maps onto $T_{r_V(y)}E$.
-	As the tangent space of the pullback $V \times_M E$ at $r_V(y)$ is the pullback of the tangent spaces of $T_yV$ and $T_{r_V(y)}E$  and the derivative of the pullback is the projection (see \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}), it follows that the image of the tangent space $T_{(y,r_V(y))}V_E$ under the derivative of the pullback $V_E \to E$ is is all of $T_{r_V(y)}E$.
-	In particular, $r_{V_E}$ at $y$ is transverse to any map.
-	NEED TO GET A NEIGHBORHOOD!!!
+	If $\dim(V) < m$ then, by the assumption that $V$ is transverse to the cubulation, we must have that $r_V(V)$ is disjoint from $\underline{1}$ in $M$.
+	So by \cref{L:proper ngbd} there is a neighborhood of $\underline{1}$ in $M$, and hence in $E$, that is disjoint from the image of $V$.
+	This suffices in this case.
+	Next suppose $\dim(V) \geq m$, and suppose $x \in V$ with $r_V(x) = \underline{1}$.
+	By \cref{L:complement}, there is a neighborhood $\mathcal N^0$ of $1$ in $E$ so that the pullback $V \times_M E \to E$ is complementary to $\underline{1}$ at all points mapping to $\mathcal N^i$.
+	So any other manifold with corners mapping into $\mathcal N^0 \cap \E$ is transverse to $V_{\E}$.
 
 	Let us establish now the induction step going from $i-1$ to $i$.
 	Consider $F \in \term_{i}(\interval^n)$ and notice that the union of $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ and $\beta_{F^-} = \{\e_i\ |\ i \in F^-_{01}\}$ trivialize the tangent bundle of $\interval^n$.
 
 	Choose $\delta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\delta(F)$ of $F$ is such that for any $y \in V_E \cap \overline N_\delta(F)$ the affine space $T_yV_E$ is transverse to the span of $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ at $y$.
+	This is possible by Lemma \ref{L:complement}.
+
+	AROUND HERE IS WHERE THINGS STILL NEED TO BE FIXED UP.
 
 	Similarly, consider a $\zeta > 0$ small enough so that the closed $L^\infty$ neighborhood $\overline N_\zeta(F^-)$ of $F^-$ is such that either $W_E \cap \overline N_\zeta(F^-) = \emptyset$ or for any $x \in W_E \cap \overline N_\zeta(F^-)$ the affine space $T_xW_E$ is transverse to the span of $\beta_{F^-} = \{\e_i\ |\ i \in F^-_{01}\}$ at $x$.
 	In the latter case, for every such $x$, the transversality implies that $T_xW_E$ projects surjectively onto $F$; in other words, the projection of $W_E \cap \overline N_\zeta(F^-)$ to $F$ is a submersion onto its image.
@@ -111,11 +205,49 @@ is not just over the entire manifold but also for restrictions over any cube.
 
 	We use \cref{L:jacobian ratios} to deduce that the push forward of the span of $\beta_x$ along $D\,\f_t$ is as close as desired to the span of $\beta_F$ at $y$ and is therefore transverse to $T_y V_E$.
 	The induction step is completed by taking $\mathcal N^i$ to be the union over all terminal faces of $N_\delta(F)$ and $T^i$ the maximum value of their associated $t$.
+
+	The argument for flowing backwards in time is analogous.
 \end{proof}
 
-If $M$ is closed, then any cubulation of $M$ is by a finite number of cubes.
-Applying this theorem for each top-dimensional cube yields that if $W$ and $V$ are in $\cman_{\Gamma \pf}^*(M)$ then both $\f_t(W)$ and $\f_{-t}(W)$ are transverse to $V$ for $t$ sufficiently large.
-We have the following consequence of this theorem related to \cref{T:main theorem}.
+The preceding theorem shows that within any face $E$ of the cubulation we can make $\f_t(W_{\E})$ transverse to $V_{\E}$ for large enough $t$.
+The following lemma allows us to use that information to draw conclusions about transversality in $M$ itself:
+
+
+\begin{lemma}\label{L:local to global}
+	Let $M$ be a manifold without boundary.
+	Let $V, W \in PC^*_\Gamma(M)$, and let $S \subset M$ be an embedded manifold without boundary.
+	Suppose that $V$ and $W$ are transverse to $S$ and that the pullbacks $V_S = V \times_M S$ and $W_S = W \times_M S$ are transverse as manifolds with corners mapping to $S$.
+	Then $V$ and $W$ are transverse in $M$ at points of $S$.
+\end{lemma}
+\begin{proof}
+	Without loss of generality, we may suppose $V$ and $W$ are without boundary, as otherwise we can make the following argument for each pair of strata of $V$ and $W$.
+	We let $r_V^* \colon V_S \to S$ and $r_W^* \colon W_S \to S$ denote the pullback maps; these are simply the restrictions of the projections $V \times S \to S$ and $W \times S \to S$ to $V_S$ and $W_S$, respectively.
+
+	Suppose $x \in V$ and $y \in W$ with $r_V(x) = r_W(y) = z \in S$.
+	Then $(x,z) \in V \times S$ is a point of $V_S$, and $T_{(x,z)}V_S = T_xV \times_{T_zM} T_zS$ by \cite[Lemma 2.28]{medina2022foundations}.
+	If $(\vec a,\vec b) \in T_{(x,z)}V_S$, the derivative $Dr_V^*$ takes $(\vec a,\vec b)$ to $\vec b \in T_z S \subset T_zM$.
+	By the commutativity of the standard pullback diagram, this equals $Dr_V(\vec a)$.
+	Similar considerations hold for $W$.
+	So the statement that $V_S$ and $W_S$ are transverse in $S$ means that for any $\vec e \in T_z S$, there are $(\vec a,\vec b) \in T_{(x,z)}V_S$ and $(\vec c,\vec d) \in T_{(x,y)}W_S$ such that $Dr_V(\vec a) + Dr_W(\vec b) = \vec e$.
+
+	Now, let $\vec f \in T_z M$.
+	As $V$ is transverse to $S$, there are vectors $\vec g \in T_x V$ and  $\vec e \in T_z S$ such that $\vec f = Dr_V(\vec g) + \vec e$.
+	But now choosing $\vec a,\vec b,\vec c,\vec d$ as above, we have $\vec f = Dr_V(\vec g) + Dr_V(\vec a) + Dr_W(\vec b) = Dr_V(\vec g + \vec a) +Dr_W(\vec b)$.
+	As $\vec f$ was arbitrary in $T_zM$ and we have $\vec g + \vec a \in T_x V$ and $\vec b \in T_z S$, we see that $V$ and $W$ are transverse at $z$ in $M$.
+\end{proof}
+
+\begin{corollary}
+	Suppose $M$ is a closed cubulated manifold.
+	If $W$ and $V$ are in $\cman_{\Gamma \pf}^*(M)$ then there is a $T$ such that $|t|>T$ both $\f_t(W)$ and $\f_{-t}(W)$ are transverse to $V$ over $M$.
+\end{corollary}
+\begin{proof}
+	As $M$ is closed, any cubulation of $M$ is by a finite number of cubes.
+	By \cref{T:transversality}, for any cube $E$ there is a time $T_E$ such that $\f_t(W)_{\E}$ and $\f_{-t}(W)_{\E}$ are transverse to $V_{\E}$ in $E$ for $|t| > T_E$.
+	By \cref{L:local to global}, this implies that $\f_t(W)$ and $\f_{-t}(W)$ are transverse to $V$ over $M$ at all points of $\E$ for $|t| > T_E$.
+	Now let $T$ be the maximum of the $T_E$ over all cubes $E$.
+\end{proof}
+
+We will use the following variation for \cref{T:main theorem}.
 
 \begin{corollary}\label{C:transversality}
 	Let $M$ be a cubulated closed manifold.
