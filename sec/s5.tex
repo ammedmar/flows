@@ -90,11 +90,11 @@ is not just over the entire manifold but also for restrictions over any cube, an
 
 \end{comment}
 
-The next lemma will establish that if $V \in PC^*_{\Gamma \pf}(M)$, $E$ is a cube in the cubulation, and $F$ is a face of $E$, then there is a neighborhood $B$ of $F$ in $E$ so that, roughly speaking, the pullback map $V \times_M E \to E$ remains transverse to $F$ wherever it maps into $B$.
+The next lemma will establish that if $V \in PC^*_{\Gamma \pf}(M)$, $E$ is a cube in the cubulation, and $F$ is a face of $E$, then there is a neighborhood $B$ of $F$ in $E$ so that, roughly speaking, the pull-back map $V \times_M E \to E$ remains transverse to $F$ wherever it maps into $B$.
 
 To explain in more detail, suppose $E$ is an $n$-dimensional cube in a cubulation of the manifold without boundary $M$ and that $V \in PC^*_{\Gamma \pf}(M)$.
 For the moment, we consider $V_E$ to be the restriction $r_V^{-1}(E) \to E$.
-As $E$ is embedded in $M$, this is topologically the pullback $V \times_M E \to E$, although we do not use the pullback stratification but rather the restriction of the stratification of $V$.
+As $E$ is embedded in $M$, this is topologically the pull-back $V \times_M E \to E$, although we do not use the pull-back stratification but rather the restriction of the stratification of $V$.
 In particular, let us write $V_E^k$ for $S^k(V) \times_M E$.
 By composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to $E$ (which is a diffeomorphism onto its image), we may identify $E$ with $\interval^n$ to obtain a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions $r_{V,W}^k \colon V_E^k \to \interval^n$.
 Abusing notation further, when considering maps whose codomain is $E$, we will freely identify $E$ with $\interval^n$, considered as a subspace of $\R^n$, as we will sometimes use the notations $E$ and $\interval^n$ interchangeably.
@@ -125,25 +125,25 @@ We assume the above notation in the following lemma.
 	This suffices in this case.
 
 	Next suppose $\dim(V) < \dim(M) - \dim(F)$.
-	As we need to consider behavior near the edge of $E$, which could be delicate due to the corners introduced in forming $V \times_M E$, we make some observations that will simplify the situation by allowing us to avoid pullbacks that introduce new corners.
+	As we need to consider behavior near the edge of $E$, which could be delicate due to the corners introduced in forming $V \times_M E$, we make some observations that will simplify the situation by allowing us to avoid pull-backs that introduce new corners.
 	For this, first suppose $x \in V$ with $z = r_V(x) \in F$.
 	Let $i_E$ be the embedding of $E$ into $M$, and $i_E(z')=z$.
 	As the inclusion of $E$ into $M$ is an embedding, it is in particular an immersion at $z'$.
 	By definition of smoothness, we can extend $i_E$ to a neighborhood of $z'$ in $\R^n$, and by the continuity of the derivative there is a possibly smaller neighborhood on which this extension remains an immersion and so a possibly even smaller neighborhood on which it is an embedding.
 	In other words, there is an open disk neighborhood $H$ of $z'$ in $\R^n$ and an embedding $i_H \colon H \to M$ that agrees with $i_E$ on $H \cap E$.
-	So, in particular, the pullback $V_H = V \times_M H \to H$ agrees with $V \times_E E \to E$ over $E \cap H$.
+	So, in particular, the pull-back $V_H = V \times_M H \to H$ agrees with $V \times_E E \to E$ over $E \cap H$.
 	The benefit working with $V_H$ is that since $H$ does not have boundary, $V \times_M H$ is stratified by the $S^k(V) \times_M H$, which we denote $V_H^k$.
 	As we did for $E$, we will identify $H$ with its image in $M$, and so also identify $z$ with $z'$.
-	Let us also write $r_{V,H}$ for the pullback map $V_H \to H$ and $r_{V,H}^k$ for the restriction of $r_{V,H}$ to $V_H^k$.
+	Let us also write $r_{V,H}$ for the pull-back map $V_H \to H$ and $r_{V,H}^k$ for the restriction of $r_{V,H}$ to $V_H^k$.
 
-	We next claim that the pullback $V \times_M H \to H$ is transverse to $F \cap H$ at $(x,z) \in V_H$.
+	We next claim that the pull-back $V \times_M H \to H$ is transverse to $F \cap H$ at $(x,z) \in V_H$.
 	Let $S^k(V)$ be the stratum of $V$ containing $x$, and let us write $\bar{x} = (x,z)$.
 	By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space $T_{\bar{x}}(V^k_H)$ is $T_xS^k(V) \times_{T_zM} T_zH$, and the derivative $Dr_{V,H}^k \colon T_{\bar{x}}(V^k_H) \to T_zH$ is just the projection to the second factor.
 	Let $\vec s \in T_zH \subset T_z M$.
 	As $V$ is transverse to the cubulation, there are vectors $\vec t \in T_xS^k(V)$ and $\vec u \in T_zF$ such that $\vec s = Dr^k_V \vec t + \vec u$.
 	But then $Dr^k_V\vec t = \vec s - \vec u \in T_zH$ as $T_zF \subset T_zH$.
 	So $(Dr^k_V\vec t, \vec s - \vec u)$ represents an element of $T_{\bar{x}}(V^k_H)$, and its image under $Dr_{V,H}^k$ is $\vec s - \vec u = Dr^k_V\vec t$.
-	This shows that the pullback $r_{V,H} \colon V_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
+	This shows that the pull-back $r_{V,H} \colon V_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
 
 	Now, let $\dim(V_H) = p$ so that $\dim(V_H^k) = p - k$, and let $(\mathcal U, \phi)$ be a chart for $V_H$ so that $\mathcal U \subset \R^p_k$ and $\phi \colon \mathcal U \to V_H$ takes the origin to $\bar{x} = (x,z)$.
 	Then $\phi$ takes $\mathcal U \cap \R^{p-k}$ to a neighborhood of $x$ in $V_H^k = S^k(V) \times_M H = S^k(V \times_M H)$.
@@ -151,7 +151,7 @@ We assume the above notation in the following lemma.
 	By arguments analogous to those in \cite[Section 1.6]{GuPo74}, by considering Jacobians, there is a neighborhood $\mathcal V$ of the origin in $\R^p_k$ (in fact in $\R^p$ by extending the smooth map $r_{V,H} \phi$) such that at any point in $y \in \mathcal V$ the image under under $D_y(r_{V,H} \phi)$ of span of the the last $p-k$ coordinate vectors remains transverse to the vector space $\vec F$ parallel to $F$.
 	In other words, there is a neighborhood of the origin in which $r_{V,H} \phi$ is complementary to $F$.
 	As $\phi$ is a chart of $V_H$, it follows that $r_{V,H}$ is complementary to $F$ in a neighborhood of $\bar{x}$.
-	In particular, there is then a neighborhood $\mathfrak U_{\bar{x}}$ of $\bar{x}$ in $V_E \times_M E$ such that the pullback $V_E \to E$ is complementary to $F$ at each point of $\mathfrak U_{\bar{x}}$.
+	In particular, there is then a neighborhood $\mathfrak U_{\bar{x}}$ of $\bar{x}$ in $V_E \times_M E$ such that the pull-back $V_E \to E$ is complementary to $F$ at each point of $\mathfrak U_{\bar{x}}$.
 
 	Taking the union of the $\mathfrak U_{\bar{x}}$ over all $\bar{x} \in V \times_M F$, or equivalently all $x$ in $r_V^{-1}(F)$, we obtain a neighborhood $A$ of $r_V^{-1}(F)$ in  $r_V^{-1}(E) = V_E$ such that the map to $E$ is complementary to $F$ at each point of $A$.
 	Applying \cref{L:proper ngbd}, there is thus a neighborhood $B$ of $F$ in $E$ such that $r_V^{-1}(B) \subset A$.
@@ -183,7 +183,7 @@ We can now prove our main local transversality theorem.
 	So by \cref{L:proper ngbd} there is a neighborhood of $\underline{1}$ in $M$, and hence in $E$, that is disjoint from the image of $V$.
 	This suffices in this case.
 	Next suppose $\dim(V) \geq m$, and suppose $x \in V$ with $r_V(x) = \underline{1}$.
-	By \cref{L:complement}, there is a neighborhood $\mathcal N^0$ of $1$ in $E$ so that the pullback $V \times_M E \to E$ is complementary to $\underline{1}$ at all points mapping to $\mathcal N^i$.
+	By \cref{L:complement}, there is a neighborhood $\mathcal N^0$ of $1$ in $E$ so that the pull-back $V \times_M E \to E$ is complementary to $\underline{1}$ at all points mapping to $\mathcal N^i$.
 	So any other manifold with corners mapping into $\mathcal N^0 \cap \E$ is transverse to $V_{\E}$.
 
 	Let us establish now the induction step going from $i-1$ to $i$.
@@ -216,17 +216,17 @@ The following lemma allows us to use that information to draw conclusions about 
 \begin{lemma}\label{L:local to global}
 	Let $M$ be a manifold without boundary.
 	Let $V, W \in PC^*_\Gamma(M)$, and let $S \subset M$ be an embedded manifold without boundary.
-	Suppose that $V$ and $W$ are transverse to $S$ and that the pullbacks $V_S = V \times_M S$ and $W_S = W \times_M S$ are transverse as manifolds with corners mapping to $S$.
+	Suppose that $V$ and $W$ are transverse to $S$ and that the pull-backs $V_S = V \times_M S$ and $W_S = W \times_M S$ are transverse as manifolds with corners mapping to $S$.
 	Then $V$ and $W$ are transverse in $M$ at points of $S$.
 \end{lemma}
 \begin{proof}
 	Without loss of generality, we may suppose $V$ and $W$ are without boundary, as otherwise we can make the following argument for each pair of strata of $V$ and $W$.
-	We let $r_V^* \colon V_S \to S$ and $r_W^* \colon W_S \to S$ denote the pullback maps; these are simply the restrictions of the projections $V \times S \to S$ and $W \times S \to S$ to $V_S$ and $W_S$, respectively.
+	We let $r_V^* \colon V_S \to S$ and $r_W^* \colon W_S \to S$ denote the pull-back maps; these are simply the restrictions of the projections $V \times S \to S$ and $W \times S \to S$ to $V_S$ and $W_S$, respectively.
 
 	Suppose $x \in V$ and $y \in W$ with $r_V(x) = r_W(y) = z \in S$.
 	Then $(x,z) \in V \times S$ is a point of $V_S$, and $T_{(x,z)}V_S = T_xV \times_{T_zM} T_zS$ by \cite[Lemma 2.28]{medina2022foundations}.
 	If $(\vec a,\vec b) \in T_{(x,z)}V_S$, the derivative $Dr_V^*$ takes $(\vec a,\vec b)$ to $\vec b \in T_z S \subset T_zM$.
-	By the commutativity of the standard pullback diagram, this equals $Dr_V(\vec a)$.
+	By the commutativity of the standard pull-back diagram, this equals $Dr_V(\vec a)$.
 	Similar considerations hold for $W$.
 	So the statement that $V_S$ and $W_S$ are transverse in $S$ means that for any $\vec e \in T_z S$, there are $(\vec a,\vec b) \in T_{(x,z)}V_S$ and $(\vec c,\vec d) \in T_{(x,y)}W_S$ such that $Dr_V(\vec a) + Dr_W(\vec b) = \vec e$.
 
@@ -269,7 +269,7 @@ In this subsection we show that we can analyze the fiber product over $M$ of coc
 \begin{lemma}\label{L:little trans lemma}
 	Let $V$ and $W$ be c-manifolds over $M$ and $S$ a submanifold without boundary of $M$.
 	Suppose $V$, $W$, and $S$ are pairwise transverse.
-	If the pullbacks $V_S \to S$ and $W_S \to S$ are transverse over $S$ then the fiber product $W \times_M V$ is transverse to $S$ over $M$.
+	If the pull-backs $V_S \to S$ and $W_S \to S$ are transverse over $S$ then the fiber product $W \times_M V$ is transverse to $S$ over $M$.
 	Moreover, $W_S \times_S V_S \cong (W \times_M V) \times_M S$.
 \end{lemma}
 
@@ -345,7 +345,7 @@ For the following lemma, recall \cref{D:complementary,D:intersection number}.
 	Thus we can use normal co-orientations and identify the normal co-orientation $\beta_{\f_t(W)}$ of $\f_t(W)_E$ in $E$ with the normal co-orientation of $\f_t(W)$ in $M$ and similarly for $V_E$ and $V$.
 	Then the sign of the intersection is $1$ if $\beta_W \wedge \beta_V$ agrees with the orientation of $E$ and is $-1$ otherwise.
 
-	Now consider the pullback $(\f_t(W) \times_M V)\times_M E$.
+	Now consider the pull-back $(\f_t(W) \times_M V)\times_M E$.
 	As $\f_t( W)$ and $V$ are embedded near $x$ and $y$, we co-orient $\f_t(W) \times_M V$ at $z$ again by $\beta_{\f_t(W)} \wedge \beta_V$ according with the properties of co-orientations of fiber products of embeddings; see \cref{T:pull-back co-or}.
 	But now again the contribution to $\cI(\f_t(W) \times_M V)$ is $+1$ or $-1$ as this pair agrees or not with the orientation of $E$.
 \end{proof}
