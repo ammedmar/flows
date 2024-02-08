@@ -54,21 +54,22 @@ As the intersection homomorphism is defined through evaluation on cubes in $X$, 
 We thus make the following definition that will be useful throughout, with $E$ being a cube or the interior of a cube as our main case of interest.
 
 \begin{definition}
-	Let $M$ be a manifold without boundary and $E$ and $W$ transverse elements of $\cman^*_\Gamma(M)$ with $E$ embedded.
-	We will denote the pull-back $W \times_M E$ by $W_E$, noting that as $E$ is embedded, $W_E$ is simply $r_W^{-1}(E)$, thinking of $E$ as a subspace of $M$.
-	By \cref{pullback}, $W_E$ is a c-manifold over $E$, and by \cite[Sections 3.5.1 and 3.5.2]{medina2022foundations} the map $W_E\to E$ can be endowed with a pull-back co-orientation induced by the co-orientation of $W\to M$ that does not depend on the orientation of $E$.
+	Let $M$ be a manifold without boundary and $N$ and $V$ transverse elements of $\cman^*_\Gamma(M)$ with $N$ embedded.
+	We will denote the pull-back $V \times_M N$ by $V_N$, noting that as $N$ is embedded, $V_N$ can be identified with $r_V^{-1}(N)$, thinking of $N$ as a subspace of $M$.
+	More specifically, a point $x \in r_V^{-1}(N)$ corresponds to the point $(x, r_V(x)) \in V_N$.
+	By \cref{pullback}, $V_N$ is a c-manifold over $N$, and by \cite[Sections 3.5.1 and 3.5.2]{medina2022foundations} the map $V_N\to N$ can be endowed with a pull-back co-orientation induced by the co-orientation of $V\to M$ that does not depend on either an orientation of $N$ or a co-orientation of the embedding of $N$.
 \end{definition}
 
 \subsection{Transversality}
 
-We begin with the first claim of \cref{T:main theorem}, of transversality.
-The version of transversality needed for all further claims
-is not just over the entire manifold but also for restrictions over any cube, and this is the content of \cref{T:transversality}, which we state and prove following some needed lemmas.
+We begin with the first claim of \cref{T:main theorem}, of transversality after a sufficiently long flow time.
+To obtain our global result and for some of our further work below, we need to first consider transversality cube by cube.
+This is the content of \cref{T:transversality}, which we state and prove following some needed lemmas, the first of which is from general topology.
 
 \begin{lemma}\label{L:proper ngbd}
 	Suppose $f \colon X \to Y$ is a proper map and that $K \subset Y$ is compact.
 	Let $A$ be an open neighborhood of $f^{-1}(K)$ in $X$.
-	Then there is a neighborhood $B$ of $K$ in $Y$ such that $f^{-1}(B) \subset U$.
+	Then there is a neighborhood $B$ of $K$ in $Y$ such that $f^{-1}(B) \subset A$.
 	In particular, if $f^{-1}(K) = \emptyset$, there is a neighborhood $B$ of $K$ in $Y$ such that $f^{-1}(B) = \emptyset$, i.e.\ $f(X)$ is disjoint from $B$.
 \end{lemma}
 \begin{proof}
@@ -90,13 +91,14 @@ is not just over the entire manifold but also for restrictions over any cube, an
 
 \end{comment}
 
-The next lemma will establish that if $V \in PC^*_{\Gamma \pf}(M)$, $E$ is a cube in the cubulation, and $F$ is a face of $E$, then there is a neighborhood $B$ of $F$ in $E$ so that, roughly speaking, the pull-back map $V \times_M E \to E$ remains transverse to $F$ wherever it maps into $B$.
+Now suppose $M$ is a cubulated manifold without boundary.
+The next lemma will establish that if $V \in PC^*_{\Gamma \pf}(M)$, $E$ is a cube in the cubulation, and $F$ is a face of $E$, then there is a neighborhood $B$ of $F$ in $E$ so that, roughly speaking, the pull-back map $V_E = V \times_M E \to E$ remains transverse to $F$ wherever it maps into $B$.
 
 To explain in more detail, suppose $E$ is an $n$-dimensional cube in a cubulation of the manifold without boundary $M$ and that $V \in PC^*_{\Gamma \pf}(M)$.
 For the moment, we consider $V_E$ to be the restriction $r_V^{-1}(E) \to E$.
 As $E$ is embedded in $M$, this is topologically the pull-back $V \times_M E \to E$, although we do not use the pull-back stratification but rather the restriction of the stratification of $V$.
 In particular, let us write $V_E^k$ for $S^k(V) \times_M E$.
-By composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to $E$ (which is a diffeomorphism onto its image), we may identify $E$ with $\interval^n$ to obtain a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions $r_{V,W}^k \colon V_E^k \to \interval^n$.
+By composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to $E$ (which is a diffeomorphism onto its image), we may identify $E$ with $\interval^n$ to obtain a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions $r_{V,E}^k \colon V_E^k \to \interval^n$.
 Abusing notation further, when considering maps whose codomain is $E$, we will freely identify $E$ with $\interval^n$, considered as a subspace of $\R^n$, as we will sometimes use the notations $E$ and $\interval^n$ interchangeably.
 
 \begin{comment}
@@ -105,12 +107,10 @@ Over $\E$, we can identify $r_V^{-1}(\E)$ with the pullback $V \times_M \E \to \
 We also write this further restricted map $r_V^*$.
 \end{comment}
 
-Let $F$ be a face of $\interval^n \subset \R^n$, and let $\vec F$ be the vector space spanned by $\{\e_i \mid i \in F_{01}$.
-
+Now, let $F$ be a face of $\interval^n \subset \R^n$, and let $\vec F$ be the vector space spanned by $\{\e_i \mid i \in F_{01}\}$; in other words, $\vec F$ is the sub-vector space of $\R^n$ parallel to $F$.
 Suppose $x \in V_{E}^k$.
 We will say that $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if $D_xr_{V,E}^k(T_xV_E^k) + \vec F = \R^n$, identifying the tangent space at each point of $\R^n$ with $\R^n$.
 In other words, $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if at $x$ we have $r^k_{V,E}$ transverse to a parallel translate of $F$.
-Equivalently, $r_{V,E}$ is complementary to $F$ at $x$ if the composition of $D_xr_{V,E}^k$ with the derivative of the projection to the maximal subspace of $\R^n$ orthogonal to $F$ is a surjection from $T_xV_E^k$ onto the image tangent space.
 
 We assume the above notation in the following lemma.
 
@@ -124,15 +124,15 @@ We assume the above notation in the following lemma.
 	So by \cref{L:proper ngbd} there is a neighborhood of $F$ in $M$, and hence a neighborhood of $F$ in $E$, that is disjoint from the image of $V$.
 	This suffices in this case.
 
-	Next suppose $\dim(V) < \dim(M) - \dim(F)$.
+	Next suppose $\dim(V) \geq \dim(M) - \dim(F)$.
 	As we need to consider behavior near the edge of $E$, which could be delicate due to the corners introduced in forming $V \times_M E$, we make some observations that will simplify the situation by allowing us to avoid pull-backs that introduce new corners.
 	For this, first suppose $x \in V$ with $z = r_V(x) \in F$.
-	Let $i_E$ be the embedding of $E$ into $M$, and $i_E(z')=z$.
+	Let $i_E$ be the embedding of $E$ into $M$, thinking of $E$ also as a subspace of $\R^n$, and suppose $i_E(z')=z$.
 	As the inclusion of $E$ into $M$ is an embedding, it is in particular an immersion at $z'$.
-	By definition of smoothness, we can extend $i_E$ to a neighborhood of $z'$ in $\R^n$, and by the continuity of the derivative there is a possibly smaller neighborhood on which this extension remains an immersion and so a possibly even smaller neighborhood on which it is an embedding.
-	In other words, there is an open disk neighborhood $H$ of $z'$ in $\R^n$ and an embedding $i_H \colon H \to M$ that agrees with $i_E$ on $H \cap E$.
+	By definition of smoothness, we can extend $i_E$ to a neighborhood of $z'$ in $\R^n$, and by the continuity of the derivative there is a neighborhood on which this extension remains an immersion and so a possibly even smaller neighborhood on which it is an embedding.
+	In other words, there is an open neighborhood $H$ of $z'$ in $\R^n$ and an embedding $i_H \colon H \to M$ that agrees with $i_E$ on $H \cap E$.
 	So, in particular, the pull-back $V_H = V \times_M H \to H$ agrees with $V \times_E E \to E$ over $E \cap H$.
-	The benefit working with $V_H$ is that since $H$ does not have boundary, $V \times_M H$ is stratified by the $S^k(V) \times_M H$, which we denote $V_H^k$.
+	The benefit of working with $V_H$ is that since $H$ does not have boundary, $V_H$ is stratified by the $S^k(V) \times_M H$, which we denote $V_H^k$.
 	As we did for $E$, we will identify $H$ with its image in $M$, and so also identify $z$ with $z'$.
 	Let us also write $r_{V,H}$ for the pull-back map $V_H \to H$ and $r_{V,H}^k$ for the restriction of $r_{V,H}$ to $V_H^k$.
 
@@ -142,16 +142,16 @@ We assume the above notation in the following lemma.
 	Let $\vec s \in T_zH \subset T_z M$.
 	As $V$ is transverse to the cubulation, there are vectors $\vec t \in T_xS^k(V)$ and $\vec u \in T_zF$ such that $\vec s = Dr^k_V \vec t + \vec u$.
 	But then $Dr^k_V\vec t = \vec s - \vec u \in T_zH$ as $T_zF \subset T_zH$.
-	So $(Dr^k_V\vec t, \vec s - \vec u)$ represents an element of $T_{\bar{x}}(V^k_H)$, and its image under $Dr_{V,H}^k$ is $\vec s - \vec u = Dr^k_V\vec t$.
-	This shows that the pull-back $r_{V,H} \colon V_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
+	So $(\vec t, \vec s - \vec u)$ represents an element of $T_{\bar{x}}(V^k_H)$, and its image under $Dr_{V,H}^k$ is $\vec s - \vec u = Dr^k_V\vec t$.
+	This shows that the pull-back $r^k_{V,H} \colon V^k_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
 
 	Now, let $\dim(V_H) = p$ so that $\dim(V_H^k) = p - k$, and let $(\mathcal U, \phi)$ be a chart for $V_H$ so that $\mathcal U \subset \R^p_k$ and $\phi \colon \mathcal U \to V_H$ takes the origin to $\bar{x} = (x,z)$.
 	Then $\phi$ takes $\mathcal U \cap \R^{p-k}$ to a neighborhood of $x$ in $V_H^k = S^k(V) \times_M H = S^k(V \times_M H)$.
-	As we have seen that $r_{V,H}$ is transverse to the $F$ at $\bar{x}$, the restriction of $r_{V,H} \phi$ to $\mathcal U \cap \R^{n-k}$ is transverse to $F$ as a map from a $p-k$ manifold.
-	By arguments analogous to those in \cite[Section 1.6]{GuPo74}, by considering Jacobians, there is a neighborhood $\mathcal V$ of the origin in $\R^p_k$ (in fact in $\R^p$ by extending the smooth map $r_{V,H} \phi$) such that at any point in $y \in \mathcal V$ the image under under $D_y(r_{V,H} \phi)$ of span of the the last $p-k$ coordinate vectors remains transverse to the vector space $\vec F$ parallel to $F$.
+	As we have seen that $r^k_{V,H}$ is transverse to $F$ at $\bar{x}$, the restriction of $r_{V,H} \phi$ to $\mathcal U \cap \R^{n-k}$ is transverse to $F$ as a map from a $p-k$ manifold.
+	By arguments analogous to those in \cite[Section 1.6]{GuPo74}, by considering Jacobians, there is a neighborhood $\mathcal V$ of the origin in $\R^p_k$ (in fact in $\R^p$ by extending the smooth map $r_{V,H} \phi$) such that at any point in $y \in \mathcal V$ the image under under $D_y(r_{V,H} \phi)$ of the span of the the last $p-k$ coordinate vectors remains transverse to the vector space $\vec F$ parallel to $F$.
 	In other words, there is a neighborhood of the origin in which $r_{V,H} \phi$ is complementary to $F$.
 	As $\phi$ is a chart of $V_H$, it follows that $r_{V,H}$ is complementary to $F$ in a neighborhood of $\bar{x}$.
-	In particular, there is then a neighborhood $\mathfrak U_{\bar{x}}$ of $\bar{x}$ in $V_E \times_M E$ such that the pull-back $V_E \to E$ is complementary to $F$ at each point of $\mathfrak U_{\bar{x}}$.
+	In particular, there is then a neighborhood $\mathfrak U_{\bar{x}}$ of $\bar{x}$ in $V_E$ such that the pull-back $V_E \to E$ is complementary to $F$ at each point of $\mathfrak U_{\bar{x}}$.
 
 	Taking the union of the $\mathfrak U_{\bar{x}}$ over all $\bar{x} \in V \times_M F$, or equivalently all $x$ in $r_V^{-1}(F)$, we obtain a neighborhood $A$ of $r_V^{-1}(F)$ in  $r_V^{-1}(E) = V_E$ such that the map to $E$ is complementary to $F$ at each point of $A$.
 	Applying \cref{L:proper ngbd}, there is thus a neighborhood $B$ of $F$ in $E$ such that $r_V^{-1}(B) \subset A$.
@@ -183,7 +183,7 @@ We can now prove our main local transversality theorem.
 	So by \cref{L:proper ngbd} there is a neighborhood of $\underline{1}$ in $M$, and hence in $E$, that is disjoint from the image of $V$.
 	This suffices in this case.
 	Next suppose $\dim(V) \geq m$, and suppose $x \in V$ with $r_V(x) = \underline{1}$.
-	By \cref{L:complement}, there is a neighborhood $\mathcal N^0$ of $1$ in $E$ so that the pull-back $V \times_M E \to E$ is complementary to $\underline{1}$ at all points mapping to $\mathcal N^i$.
+	By \cref{L:complement}, there is a neighborhood $\mathcal N^0$ of $1$ in $E$ so that the pull-back $V \times_M E \to E$ is complementary to $\underline{1}$ at all points mapping to $\mathcal N^0$.
 	So any other manifold with corners mapping into $\mathcal N^0 \cap \E$ is transverse to $V_{\E}$.
 
 	Let us establish now the induction step going from $i-1$ to $i$.
@@ -209,7 +209,7 @@ We can now prove our main local transversality theorem.
 	The argument for flowing backwards in time is analogous.
 \end{proof}
 
-The preceding theorem shows that within any face $E$ of the cubulation we can make $\f_t(W_{\E})$ transverse to $V_{\E}$ for large enough $t$.
+The preceding theorem shows that within any face $E$ of the cubulation we can make $\f_t(W)_{\E}$ transverse to $V_{\E}$ for large enough $t$.
 The following lemma allows us to use that information to draw conclusions about transversality in $M$ itself:
 
 
@@ -228,17 +228,17 @@ The following lemma allows us to use that information to draw conclusions about 
 	If $(\vec a,\vec b) \in T_{(x,z)}V_S$, the derivative $Dr_V^*$ takes $(\vec a,\vec b)$ to $\vec b \in T_z S \subset T_zM$.
 	By the commutativity of the standard pull-back diagram, this equals $Dr_V(\vec a)$.
 	Similar considerations hold for $W$.
-	So the statement that $V_S$ and $W_S$ are transverse in $S$ means that for any $\vec e \in T_z S$, there are $(\vec a,\vec b) \in T_{(x,z)}V_S$ and $(\vec c,\vec d) \in T_{(x,y)}W_S$ such that $Dr_V(\vec a) + Dr_W(\vec b) = \vec e$.
+	So the statement that $V_S$ and $W_S$ are transverse in $S$ means that for any $\vec e \in T_z S$, there are $(\vec a,\vec b) \in T_{(x,z)}V_S$ and $(\vec c,\vec d) \in T_{(y,z)}W_S$ such that $Dr_V(\vec a) + Dr_W(\vec c) = \vec e$.
 
 	Now, let $\vec f \in T_z M$.
 	As $V$ is transverse to $S$, there are vectors $\vec g \in T_x V$ and  $\vec e \in T_z S$ such that $\vec f = Dr_V(\vec g) + \vec e$.
-	But now choosing $\vec a,\vec b,\vec c,\vec d$ as above, we have $\vec f = Dr_V(\vec g) + Dr_V(\vec a) + Dr_W(\vec b) = Dr_V(\vec g + \vec a) +Dr_W(\vec b)$.
-	As $\vec f$ was arbitrary in $T_zM$ and we have $\vec g + \vec a \in T_x V$ and $\vec b \in T_z S$, we see that $V$ and $W$ are transverse at $z$ in $M$.
+	But now choosing $\vec a,\vec b,\vec c,\vec d$ as above, we have $\vec f = Dr_V(\vec g) + Dr_V(\vec a) + Dr_W(\vec c) = Dr_V(\vec g + \vec a) +Dr_W(\vec c)$.
+	As $\vec f$ was arbitrary in $T_zM$ and we have $\vec g + \vec a \in T_x V$ and $\vec c \in T_y W$, we see that $V$ and $W$ are transverse at $z$ in $M$.
 \end{proof}
 
 \begin{corollary}
 	Suppose $M$ is a closed cubulated manifold.
-	If $W$ and $V$ are in $\cman_{\Gamma \pf}^*(M)$ then there is a $T$ such that $|t|>T$ both $\f_t(W)$ and $\f_{-t}(W)$ are transverse to $V$ over $M$.
+	If $W$ and $V$ are in $\cman_{\Gamma \pf}^*(M)$ then there is a $T$ such that for $|t|>T$ both $\f_t(W)$ and $\f_{-t}(W)$ are transverse to $V$ over $M$.
 \end{corollary}
 \begin{proof}
 	As $M$ is closed, any cubulation of $M$ is by a finite number of cubes.
@@ -319,7 +319,7 @@ For the following lemma, recall \cref{D:complementary,D:intersection number}.
 \end{lemma}
 \begin{remark}
 	Technically, by definition, computing $I_E(\f_t(W_E), V_E)$ requires taking a fiber product in $E$, which we would not typically allow as $E$ is a manifold with corners.
-	However, once we have prove that $\f_t(W_E)$ and $V_E$ are complementary, their only intersection must be in the interior of $E$.
+	However, once we have proven that $\f_t(W_E)$ and $V_E$ are complementary, their only intersection must be in the interior of $E$.
 	So we could just as well write $I_{\E}\left(\f_t\left(W_{\E}\right), V_{\E}\right)$ for this signed intersection number, but we instead choose the simpler notation here, and in some places below, and hope no confusion will arise.
 \end{remark}
 \begin{proof}[Proof of \cref{L:intersection signs}]
@@ -398,9 +398,12 @@ For any graph-like neighborhood $C$ of a point in the interior of a face $F$, th
 
 Since the logistic flow can be expressed independently in each coordinate, it preserves the property of being a graph-like neighborhood.
 
-Let $W$ be a c-manifold over $\interval^n$.
-Assume that for any $(n-\dim W)$-face $F$ of $\interval^n$, the set $W \cap F$ consists of a finite number of points near which $W$ is locally embedded.
-By the Implicit Function Theorem, the discrete set $W \times_{\interval^n} F$ can be used to parameterize a collection of graph-like neighborhoods of the points in $W \cap F$.
+Suppose $W \in PC^*_{\Gamma \pf}(M)$ and $E = \interval^n$ is a cube of the cubulation of $M$.
+Let $W_E$ be the pullback $W_E = W \times_M E \to E$.
+Then for any $(n-\dim W)$-face $F$ of $\interval^n$, the set im$(W) \cap F$ will consists of a finite number of points near which $W_E \to E$ is locally an embedding.
+By the Implicit Function Theorem, the discrete set $W \times_{M} F = W_E \times_{\interval^n} F$ can be used to parameterize a collection of graph-like neighborhoods of the points in im$(W) \cap F$.
+
+
 Recall the definition of reciprocal faces of $\interval^n$, \cref{D:reciprocal}.
 
 \begin{lemma}\label{L:flow intersection for graph-like nbhds}
