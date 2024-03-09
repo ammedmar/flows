@@ -1,4 +1,4 @@
-% !TEX root = flows.tex
+% !TEX root = ../flows.tex
 
 \section{Logistic vector field}\label{S:logistic}
 
@@ -189,7 +189,8 @@ In particular, if we flow long enough and stay close to appropriate upper or low
 	Similarly, $\delta > 0$ and $T\in \R$ can be chosen such that \eqref{E:jacobian ratios} holds for any $y \in N_\delta U_u(F^-)$ and $t>T$ with $y = f_{-t}(x)$, $i \not\in F^-_{01} = F_1$, and $j \in F^-_{01} = F_1$.
 \end{lemma}
 
-In other words, given an $\epsilon$, there is a neighborhood $N_\delta L_u(F^+)$ and a time $T$ so that for all greater times every point that has flowed into $N_\delta L_u(F^+)$ has its tangent space sufficiently ``squashed'' by the flow that the ratios in the normal directions to $F^+$ versus the tangential directions are all smaller than $\epsilon$.
+In other words, given an $\varepsilon$ and a $u< 1$, there is a neighborhood $N_\delta L_u(F^+)$ and a time $T$ so that for all greater times every point that has flowed into $N_\delta L_u(F^+)$ has its tangent space sufficiently
+``squashed'' by the flow that the ratios in the normal directions to $F^+$ versus the tangential directions are scaled by a factor smaller than $\varepsilon$.
 
 \begin{proof}
 	We only prove the forward flow case since the backward flow case is analogous.
@@ -225,7 +226,7 @@ We will also need the following simple lemma.
 	The argument for the second set of hypotheses is analogous.
 \end{proof}
 
-\subsection{Geometric cochains and intersections}
+\subsection{Geometric cochains and flows}
 
 In this subsection we show that the logistic flow on a manifold without boundary cubulated by $|X| \to M$ is compatible with key geometric cochain structures.
 
@@ -256,4 +257,96 @@ In this subsection we show that the logistic flow on a manifold without boundary
 \begin{proof}
 	If ${W}$ and ${W}'$ represent the same element of $C^*_{\Gamma \pf}(M)$, then $ W- W' = A \in Q^*(M)$.
 	By applying $\f_t$ we see that $\f_t( W)-\f_t( W') = \f_t( W - W') = \f_t(A)$, but the flow $\f_t$ is a diffeomorphism and so preserves membership in $Q^*(M)$.
+\end{proof}
+
+Finally, we prove a key proposition needed for the transversality statement of our Main Theorem,  that under the
+logistic flow geometric cochains which are transverse to one face become almost parallel to the next face.
+
+\begin{definition}
+Let $F \subset \interval^n$ be a  face of dimension $d$. Let $\R^F$ denote the span of
+$\beta_F = \{\e_i\ |\ i \in F_{01}\}$,  $\R^{F^\perp}$ denote the span of
+ $\beta_{F^\perp} = \{\e_i\ |\ i \in F_0 \cup F_1\}$.  We call $v =  v_F +   v_{F^\perp}$ with
+ $v_F \in \R^F$ and $v_{F^\perp} \in \R^{F^\perp}$
+  the {\bf $F$-decomposition} of $v$, and we call $\frac{|| v_{F^\perp}||}{||v_{F}||}  \in [0,\infty]$ the {\bf $F$-slope} of $v$.
+
+ Define  $F$-slope of a $d$-dimensional linear subspace of $\R^n$ to be
+ the maximum $F$-slope over its non-zero vectors.   Define the {\bf minimum  $F$-slope}
+ of any linear subspace of $\R^n$ of dimension greater than $d$
+ to be the minimum  $F$-slope of its $d$-dimensional subspaces.
+ \begin{comment}
+ A vector $v$ is (within) {\bf $\varepsilon$-parallel} to $F$ if its slope with respect to $F$ is less than
+ $\varepsilon$, and a
+ subspace of $\R^n$ is $\varepsilon$-parallel to $F$ if all of its non-zero vectors are.
+A c-manifold $W$ over $\interval^n$ is $\varepsilon$-parallel to $F$ if the image of the Jacobian of $r_W$ is
+$\varepsilon$-parallel to $F$.
+\end{comment}
+\end{definition}
+
+We note that slope values are invariant up to non-zero scalar multiplication, so to calculate slopes it suffices to consider unit spheres.
+A linear subspace has finite  minimum $F$-slope if and only if its projection to $\R^F$ is surjective, or equivalently if and only if it is transverse to $\R^{F^\perp}$.
+
+
+\begin{proposition}\label{Wapproxparallel}
+Let $F$ be a terminal face of $\interval^n$, and let $W$ be a c-manifold over $\interval^n$ which is transverse to
+$F^-$.  Then for any $\varepsilon > 0$ and $0 < u < 1$
+there is a lower neighborhood $N_\delta L_u(F)$ and a time $T$ such that over
+$N_\delta L_u(F)$,  the image of the Jacobian of $\f_t(W)$ attains a minimum $F$-slope
+ which is less than $\varepsilon$ for all $t > T$.
+\end{proposition}
+
+Thus the logistic flow stretches a manifold which transversely intersects one face to contain
+ an almost parallel cover of the lower portion of the next face in the cubical poset.  One can see
+this almost parallel property informally by looking the logistic flow as in Figure~\ref{F:logistic}.
+
+We argue in the proof of this proposition and elsewhere below that behavior over faces of a cubulation
+extends to neighborhoods of those faces.
+To exclude far away points in our  domain manifolds from such considerations, we use the following elementary fact from general topology.
+
+\begin{lemma}\label{L:proper nbhd}
+	Suppose $f \colon X \to Y$ is a proper map and that $K \subset Y$ is compact.
+	Let $A$ be an open neighborhood of $f^{-1}(K)$ in $X$.
+	Then there is a neighborhood $B$ of $K$ in $Y$ such that $f^{-1}(B) \subset A$.
+	\end{lemma}
+
+	In particular, if $K$ is disjoint from the image of $f$ then there is a neighborhood of $K$ which is disjoint as well.
+
+\begin{proof}[Proof of Lemma~\ref{L:proper nbhd}]
+	As proper maps are closed \cite[Proposition I.10.1.1]{Bou98}, $f(X \setminus A)$ is a closed set of $Y$ that is disjoint from $K$.
+	Take $B = Y \setminus f(X \setminus A)$.
+\end{proof}
+
+
+\begin{proof}[Proof of Proposition~\ref{Wapproxparallel}]
+ % and $\R^n \cong \R^F \oplus \R^{F^-}$  sendingdenote the  projection.
+Transversality of $W$ with $F^-$ implies that at any $y \in W$ with $r_W(y) \in F^-$ the minimum $F$-slope
+of $Dr_W(T_y W)$ is finite.  Because minimum $F$-slope is continuous,
+ about any such $y$ there is a neighborhood $U_y$ in $W$ for which
+the minimum $F$ slope is bounded by say twice the minimum $F$-slope at $y$.  By covering the preimage
+ $r_W^{-1}(F^-)$ by such neighborhoods and taking a finite subcover,
+ we get a neighborhood ${\mathcal U}$ of this preimage
+with a universal bound $b$ on the $F$-slopes of the images of
+all tangent spaces.  We apply Lemma~\ref{L:proper nbhd} with $A = {\mathcal U}$ to
+obtain a neighborhood $\mathcal{V}$ of $F^-$ in $\interval^n$ whose preimage under $r_W$ is in ${\mathcal U}$ and thus respects this bound.
+
+\begin{comment}
+for any $v \in T_y W$ for some $y$ with $r_W(y) \in F$, the
+$F$-decomposition of $D r_W (v)$ will have $(D r_W(v))_F \neq 0$.
+Because $D r_W$ and projection onto $\R^F$ are continuous,
+there is a $\zeta' > 0$ small enough so that for any $y$ such that
+$ r_W(y)$ is in $N_{\zeta'}(F^-)$ and thus in $\overline{N}_{\zeta}(F^-)$ for $\zeta < \zeta'$,
+the non-vanishing of $(D r_W(v))_F $  will remain true.
+
+Since $r_W$ is proper, the preimage of  $ \overline N_\zeta(F^-)$ is compact, as is the unit sphere bundle for its tangent bundle for any metric.
+So the maximum over unit vectors $v$ in $T_y W$ for $y$ in this preimage
+of the set slopes with respect to $F$
+ exists; call it $\mu$.
+\end{comment}
+\begin{comment}
+%	By \cref{L:flow to initial and terminal faces} we may first choose $T'$ sufficiently large so that all points in $\f_t(W) \cap V_E \cap \overline N_\delta L_u(F)$ are of the form $y = \f_t(x)$ for some $x \in W_E \cap \overline N_\zeta(F^-)$.
+\end{comment}
+
+By  \cref{L:jacobian ratios}, for every $0 < u < 1$ there is a $\delta$ and a time $T$ so that the slopes with respect to $F$ are scaled by arbitrarily small numbers after flow of time greater than $T$ into $N_\delta L_u(F)$.
+In particular, there are $\delta$ and  $T$ so that they are scaled by $\varepsilon/ b$.
+By choosing a larger $T$ if necessary, we may apply \cref{L:flow to initial and terminal faces} to ensure that $\f_t(W) \cap N_\delta L_u(F)$ contains only points from the flowed image of ${\mathcal{V}}$.
+We thus obtain the stated result.
 \end{proof}

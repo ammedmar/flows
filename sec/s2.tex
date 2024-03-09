@@ -1,4 +1,4 @@
-% !TEX root = flows.tex
+% !TEX root = ../flows.tex
 
 \section{Cubical topology}\label{S:cubical topology}
 
@@ -156,6 +156,20 @@ For any face $F$ of $\interval^n$, the ordered subset $\beta_F = \{\e_i\ |\ i \i
 We define the \textbf{shuffle sign} of $F$, denoted by $\sh(F) \in \{\pm 1\}$, to be $+1$ if the $F$-decomposition isomorphism is orientation preserving and $-1$ if not.
 More explicitly, $\sh(F) = +1$ if the concatenation of the ordered sets $\beta_{F^-}$, $\beta_{F}$, and $\beta_{F^+}$ represents the same orientation as $\{\e_1, \dots, \e_n\}$, and $\sh(F) = -1$ otherwise.
 This sign plays a key role in our applications, since we work over the ring of integers and this sign occurs in comparing products.
+
+
+In the smooth setting, it will be convenient to extend characteristic maps in a cubulation.
+
+\begin{lemma}\label{L:charextension}
+Let $i : \interval^m \to M$ be the characteristic map of a smooth cubical structure, and let $z \in \partial \interval^m$.  Then
+there is a neighborhood $U$ of $z$ in $\R^m$ and a smooth map $i_U: U \to M$ whose restriction to $U \cap \interval^m$
+is $i$.
+\end{lemma}
+
+\begin{proof}
+	By definition of smoothness, we can extend $i$ to a neighborhood of $z$ in $\R^n$, and by the continuity of the derivative there is a neighborhood on which this extension remains an immersion and so a possibly even smaller neighborhood on which it is an embedding.
+\end{proof}
+
 
 \subsection{Cubical cochains}
 
