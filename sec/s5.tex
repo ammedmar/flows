@@ -66,10 +66,10 @@ We thus introduce the following notation, with $E$ being a cube or the interior 
 
 \subsection{Transversality}
 
-We begin with the first claim of \cref{T:main theorem}, of transversality after a sufficiently long flow time.
-
-The main effort of this section will be to prove the following theorem, \cref{T:transversality}, which shows that flows can be used to obtain transversality cube by cube.
-Once we have proven \cref{T:transversality}, we will then show how it can be used to obtain the global transversality result of \cref{T:main theorem}.
+We focus here on the first claim of \cref{T:main theorem}, of transversality after a sufficiently long flow time.
+The main effort  will be to prove the following theorem,  which  establishes transversality over
+a single cube, before working towards the needed global transversality result.
+%Once we have proven \cref{T:transversality}, we will then show how it can be used to obtain the global transversality result of \cref{T:main theorem}.
 
 
 
@@ -80,66 +80,37 @@ Once we have proven \cref{T:transversality}, we will then show how it can be use
 \end{theorem}
 
 
-The rough main idea of the proof starts with using our computations from \cref{S:neighborhoods} to show that after large times $\f_t(W_{\E})$ will be sufficiently parallel to any terminal face $F$.
+The  main idea of  proof is to use  \cref{S:neighborhoods} to show that after large times $\f_t(W_{\E})$ will be
+``sufficiently parallel'' to any terminal face $F$.
 Because transversality is an open condition, as argued for example in \cite[Section 1.6]{GuPo74}, the transversality of $V$ with $F$ will imply the transversality of $V_{\E}$ with $\f_t(W_{\E})$.
 We will then do an induction over the dimensions of terminal faces until we have eventually covered all of $E$.
 
 \medskip
 
-\subsubsection{$F$-slope}
-To provide a specific measure of ``parallelness,'' we define {\bf $F$-slope}:
 
-\begin{definition}
-	Let $F \subset \interval^n$ be a  face of dimension $d$. Let $\R^F$ denote the span of
-	$\beta_F = \{\e_i\ |\ i \in F_{01}\}$ and $\R^{F^\perp}$ denote the span of $\beta_{F^\perp} = \{\e_i\ |\i \in F_0 \cup F_1\}$.
-	For $v \in \R^n$, $v \neq 0$, we call $v =  v_F +   v_{F^\perp}$ with $v_F \in \R^F$ and $v_{F^\perp} \in \R^{F^\perp}$ the {\bf $F$-decomposition} of $v$, and we call $\frac{|| v_{F^\perp}||}{||v_{F}||} \in [0,\infty]$ the {\bf $F$-slope} of $v$.
-
-	Define  $F$-slope of a $d$-dimensional linear subspace of $\R^n$ to be the maximum $F$-slope over its non-zero vectors.
-	Define the {\bf $F$-slope} of any linear subspace of $\R^n$ of dimension greater than $d$ to be the minimum  $F$-slope of its $d$-dimensional subspaces.
-\end{definition}
-
-We note that $F$-slope values are invariant up to non-zero scalar multiplication, so to calculate slopes it suffices to consider unit spheres.
-A linear subspace has finite $F$-slope if and only if its projection to $\R^F$ is surjective, or equivalently if and only if it is transverse to $\R^{F^\perp}$.
-
-We now show that we can utilize simultaneously an $F$-slope with an $F^\perp$ slope to obtain a transversality result.
-
-\begin{lemma}\label{L:complementaryslopes}
-	Let $F$ be a $d$-dimensional face of $\interval^n$, $d>0$, and let $F^\perp$ denote any face of complementary dimension orthogonal to $F$.\footnote{Note that this use of $F^\perp$ is consistent with that in the definition of $F$-slope.}
-	Suppose $V$ is a subspace of $\R^n$ with finite $F^\perp$-slope.
-	Then there is an $\varepsilon \in [0,\infty)$ such that if $W$ is a subspace with $F$-slope less than $\varepsilon$ then $V$ and $W$ are transverse.
-\end{lemma}
-\begin{proof}
-	We first observe that by definition of $F$-slope and $F^\perp$-slope, $\dim(V) \geq n-d$ and $\dim(W) \geq d$.
-	Using that $(F^\perp)^\perp = F$, we have by assumption a $b \in [0,\infty)$ and an $n-d$ dimensional subspace of $V' \subset V$ such that $\frac{||v_{F}||}{||v_{F^\perp}||} <b$ for all nonzero $v \in V'$.
-	Now choose $\varepsilon < 1/b$ and suppose $W$ has $F$-slope less than $\varepsilon$.
-	Then there is a $d$-dimensional subspace $W' \subset W$ such that $\frac{|| w_{F^\perp}||}{||w_{F}||} < \varepsilon < 1/b$ for all nonzero $w \in W'$.
-	But then $\frac{|| w_{F}||}{||w_{F^\perp}||} > b$ for all nonzero $w \in W'$, so no nontrivial element of $W'$ can be in $V'$.
-	Thus $V' \cap W' = 0$, and it follows from the dimension of $V'$ and $W'$ that $V' \oplus W' = \R^n$.
-	Hence $V + W = \R^n$.
-\end{proof}
 
 \subsubsection{c-manifolds over cubes}\label{reductiontocubes}
-Our next arguments will require working with manifolds with corners mapping into cubes.
-In general, such maps, and the corresponding definitions of transversality, can be quite complex as our target itself has corners.
-However, we work in a specific limited context thanks to our goal of proving \cref{T:transversality}, and consequently we will not need the full sophistication of \cite{Joy12}.
-In this subsection we establish the conventions and notations we will need to proceed.
+We will require working with manifolds with corners mapping into cubes.
+In general, such maps and their corresponding definitions of transversality can be technically challenging, as our target itself has corners.
+However, we will show that we can work in a specific limited context and consequently we will not need the full sophistication of \cite{Joy12}.
+%In this subsection we establish the conventions and notations we will need to proceed.
 
-First, let $E$ be an $n$-dimensional cube in the cubulation $X$ of a manifold without corners $M$, and let $V \in PC_{\Gamma \pf X}^*(M)$.
-In this section we wish to consider the pullback $V_E = V \times_M E$.
+First, let $E$ be an $n$-dimensional cube in the cubulation $X$ of a manifold without boundary $M$, and let $V \in PC_{\Gamma \pf X}^*(M)$.
+Consider the pullback $V_E = V \times_M E$.
 As $E$ is embedded in $M$, we can identify $V_E$ with the restriction $r_V^{-1}(E) \to E$, which we will write as $r_{V,E} \colon V_E \to E$.
-However, we do not want to use the pull-back stratification; rather let us write $V_E^k$ for $S^k(V) \times_M E$ and consider $V_E$ to be stratified by the $V_E^k$.
+However, we do not use the pull-back stratification.  Rather, we  write $V_E^k$ for $S^k(V) \times_M E$ and consider $V_E$ to be stratified by the $V_E^k$.
 We write $r_{V,E}^k \colon V_E^k \to E$.
 
-To see that this choice of stratification is a reasonable thing to do, let $z$ be a point in $\bd E$ and recall from \cref{L:charextension} that if we identify $E$ with $\interval^n \subset \R^n$, then we can extend the embedding $i$ of $E$ into $M$ to a local embedding into $M$ of a Euclidean neighborhood $H$ of $z$ in $\R^n$.
+To see that this choice of stratification is reasonable, let $z$ be a point in $\bd E$ and recall from \cref{L:charextension} that if we identify $E$ with $\interval^n \subset \R^n$, then we can extend the embedding $i$ of $E$ into $M$ to a local embedding into $M$ of a Euclidean neighborhood $H$ of $z$ in $\R^n$.
 As $H$ is a Euclidean, the stratification of $V \times_M H$ would be precisely by the $S^k(V) \times_M H$, and so we (locally) simply restrict this stratification over $E$.
 The point is to avoid having to treat corners of $V_E$ that arise solely because of the interaction of $V$ with the boundary of $E$.
-Note that in the statement of \cref{T:transversality} we avoid this issue entirely, as the conclusions are stated over the interior $\E$, but we will need to consider behavior at the boundary of $E$ in some of the proofs below.
+Though in the statement of \cref{T:transversality} we avoid this issue entirely, as the conclusions are stated over the interior $\E$,  we will need to consider behavior at the boundary of $E$ in some of the proofs below.
 
-Next, by composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to the cubical face $E$, we will generally identify $E$ with $\interval^n$ and think of $r_{V,E}$ as a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions $r_{V,E}^k \colon V_E^k \to \interval^n$.
-We will use the notations $E$ and $\interval^n$ interchangeably and also consider $\interval^n$ to be a subspace of $\R^n$.
+By composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to the cubical face $E$, we will generally identify $E$ with $\interval^n$ and think of $r_{V,E}$ as a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions $r_{V,E}^k \colon V_E^k \to \interval^n$.
+We will use the notations $E$ and $\interval^n$ interchangeably and  consider $\interval^n$ to be a subspace of $\R^n$.
 
 In the remainder of this section, when we refer to a ``c-manifold over $\interval^n$ which is transverse to the face $F$,'' we will always mean a map $r_{V,E} \colon V \to \interval^n$ that has been obtained from this procedure beginning with $V \in PC_{\Gamma \pf X}(M)$ and $E$ a face of the cubulation.
-This allows us to avoid defining transversality directly for maps to manifolds with corners.
+This allows us to avoid defining finer notions of transversality for maps to manifolds with corners.
 
 
 \begin{comment}
@@ -219,14 +190,16 @@ The following lemma justifies referring to such an object as transverse to the f
 	As we did for $E$ and $\interval^n$, we will identify $H$ with its image in $M$.
 	Let us also write $r_{V,H}$ for the pull-back map $V_H \to H$ and $r_{V,H}^k$ for the restriction of $r_{V,H}$ to $V_H^k$.
 
-	We next claim that the pull-back $V \times_M H \to H$ is transverse to $F \cap H$ at $(x,z) \in V_H$, from which the lemma will follow.
+	We  claim that the pull-back $V \times_M H \to H$ is transverse to $F \cap H$ at $(x,z) \in V_H$, from which the lemma will follow.
 	Let $S^k(V)$ be the stratum of $V$ containing $x$, and let us write $\bar{x} = (x,z)$.
 	By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space $T_{\bar{x}}(V^k_H)$ is $T_xS^k(V) \times_{T_zM} T_zH$, and the derivative $Dr_{V,H}^k \colon T_{\bar{x}}(V^k_H) \to T_zH$ is just the projection to the second factor.
 	Let $\vec s \in T_zH \subset T_z M$.
 	As $V$ is transverse to the cubulation, there are vectors $\vec t \in T_xS^k(V)$ and $\vec u \in T_zF$ such that $\vec s = Dr^k_V \vec t + \vec u$.
 	But then $Dr^k_V\vec t = \vec s - \vec u \in T_zH$ as $T_zF \subset T_zH$.
 	So $(\vec t, \vec s - \vec u)$ represents an element of $T_{\bar{x}}(V^k_H)$, and its image under $Dr_{V,H}^k$ is $\vec s - \vec u = Dr^k_V\vec t$.
-	So $\vec s = Dr^k_V\vec t + \vec u \in Dr_{V,H}^k(T_{\bar{x}}(V^k_H)) + T_zF$.
+
+
+	Thus $\vec s = Dr^k_V\vec t + \vec u \in Dr_{V,H}^k(T_{\bar{x}}(V^k_H)) + T_zF$.
 	As $\vec s$ was an arbitrary vector in $T_zH$, this shows that the pull-back $r^k_{V,H} \colon V^k_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
 \end{proof}
 
@@ -236,8 +209,59 @@ The following lemma justifies referring to such an object as transverse to the f
 
 
 
+\subsubsection{$F$-slope}
+We use the following to measure ``parallelness.''
+
+\begin{definition}
+	Let $F \subset \interval^n$ be a  face of dimension $d$. Let $\R^F$ denote the span of
+	$\beta_F = \{\e_i\ |\ i \in F_{01}\}$ and $\R^{F^\perp}$ denote the span of $\beta_{F^\perp} = \{\e_i\ |\i \in F_0 \cup F_1\}$.
+	For $v \in \R^n$, $v \neq 0$, we call $v =  v_F +   v_{F^\perp}$ with $v_F \in \R^F$ and $v_{F^\perp} \in \R^{F^\perp}$ the {\bf $F$-decomposition} of $v$, and we call $\frac{|| v_{F^\perp}||}{||v_{F}||} \in [0,\infty]$ the {\bf $F$-slope} of $v$.
+
+	Define  $F$-slope of a $d$-dimensional linear subspace of $\R^n$ to be the maximum $F$-slope over its non-zero vectors.
+	Define the {\bf $F$-slope} of any linear subspace of $\R^n$ of dimension greater than $d$ to be the minimum  $F$-slope of its $d$-dimensional subspaces.
+\end{definition}
+
+Because $F$-slope is unchanged by non-zero scalar multiplication,  to calculate slopes it suffices to consider unit spheres,
+which are compact.
+
+A linear subspace has finite $F$-slope if and only if its projection to $\R^F$ is surjective, or equivalently if and only if it is transverse to $\R^{F^\perp}$.
+
+We  can utilize  an $F$-slope and an $F^\perp$-slope together to obtain transversality.
+
+\begin{lemma}\label{L:complementaryslopes}
+	Let $F$ be a $d$-dimensional face of $\interval^n$, $d>0$, and let $F^\perp$ denote any face of complementary dimension orthogonal to $F$.\footnote{Note that this use of $F^\perp$ is consistent with that in the definition of $F$-slope.}
+	Suppose $V$ is a subspace of $\R^n$ with finite $F^\perp$-slope.
+	Then there is an $\varepsilon \in [0,\infty)$ such that if $W$ is a subspace with $F$-slope less than $\varepsilon$ then $V$ and $W$ are transverse.
+\end{lemma}
+\begin{proof}
+	Using that $(F^\perp)^\perp = F$, we have by the finiteness assumption on the $F^\perp$-slope of $V$
+	the existence of a $b \in [0,\infty)$ and an $n-d$ dimensional subspace of $V' \subset V$ such that $\frac{||v_{F}||}{||v_{F^\perp}||} <b$ for all nonzero $v \in V'$.
+	Choose $\varepsilon < 1/b$ and suppose $W$ has $F$-slope less than $\varepsilon$.
+	Then there is a $d$-dimensional subspace $W' \subset W$ such that $\frac{|| w_{F^\perp}||}{||w_{F}||} < \varepsilon < 1/b$ for all nonzero $w \in W'$.
+	But then $\frac{|| w_{F}||}{||w_{F^\perp}||} > b$ for all nonzero $w \in W'$, so no nontrivial element of $W'$ can be in $V'$.
+	Thus $V' \cap W' = 0$, and since  by definition of $F$-slope and $F^\perp$-slope,
+	$\dim(V) \geq n-d$ and $\dim(W) \geq d$, we have  $V + W = \R^n$.
+\end{proof}
+
+Finally, while $F$-slope is not continuous, it does exhibit an upper-semicontinuity.
+Let $W$ be a manifold with corners over a cube, $x \in W$, and  let $s(x)$ denote the depth of the stratum containing $x$.
+In other words, $s(x)$ is the number such that $x \in S^{s(x)}W$.
+
+\begin{proposition}\label{uppersemi}
+The function that takes $x$ to the $F$-slope of $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is upper semi-continuous.
+\end{proposition}
+
+\begin{proof}
+	If we consider $y$ to be a point in the boundary of the closure of a higher-dimensional stratum $S^j(W)$ then $T_yS^k(W) \subset T_yS^j(W)$.  Thus  the $F$-slope of $D_yr^j_W(T_yS^j(W))$ must be less than or equal to that of $D_yr^k_W(T_yS^k(W))$ as there are more $\dim(F)$-dimensional subspaces of the former over which to find the minimum $F$-slope.
+	On the other hand, within a fixed stratum and referring to fixed charts for the domain and image, the images of any fixed collection of $\dim(F)$ input vectors vary continuously.
+	So, as linear independence is an open condition, $y$ will have a neighborhood in which the rank of the Jacobian cannot decrease and the $F$-slope of any subspace spanned by the image of any fixed set of $\dim(F)$ vectors in the chart will vary continuously.
+	If the rank of the derivative increases as we move around the stratum within this neighborhood, then as argued above in the case comparing two strata, the $F$-slope can only decrease compared to the continuously varying value for the fixed inputs as a result.
+\end{proof}
+
+
+
 \subsubsection{Slope bounds via flowing}
-Now that we have established the machinery for working within individual cubes, the goal of our next proposition, whose proof will require some preliminary work, is to show that flowing within a cube achieves ``parallelness'' to terminal faces.
+The goal of our next proposition, whose proof will require some preliminary work, is to show that flowing within a cube achieves ``parallelness'' to terminal faces.
 
 In the following statement, for $x \in W$, we let $s(x)$ denote the depth of the stratum containing $x$.
 In other words, $s(x)$ is the number such that $x \in S^{s(x)}W$.
@@ -279,13 +303,7 @@ The next lemma will be a principal fact for the proof of \cref{Wapproxparallel},
 
 \begin{proof}
 	Transversality of $W$ with $F^\perp$ implies that at any $y \in S^W$ with $r_W(y) \in F^\perp$ the $F$-slope of $D_yr^k_W(T_yS^k(W))$ is finite, where $y \in S^k(W)$.
-	If we consider $y$ to be a point in the boundary of the closure of a higher-dimensional stratum $S^j(W)$ then $T_yS^k(W) \subset T_yS^j(W)$, so the $F$-slope of $D_yr^j_W(T_yS^j(W))$ must be less than or equal to that of $D_yr^k_W(T_yS^k(W))$ as there are more $\dim(F)$-dimensional subspaces of the former over which to find the minimum $F$-slope.
-	On the other hand, within a fixed stratum and referring to fixed charts for the domain and image, the images of any fixed collection of $\dim(F)$ input vectors vary continuously.
-	So, as linear independence is an open condition, $y$ will have a neighborhood in which the rank of the Jacobian cannot decrease and the $F$-slope of any subspace spanned by the image of any fixed set of $\dim(F)$ vectors in the chart will vary continuously.
-	If the rank of the derivative increases as we move around the stratum within this neighborhood, then as argued above in the case comparing two strata, the $F$-slope can only decrease compared to the continuously varying value for the fixed inputs as a result.
-	So, altogether, the upshot is that if we let $s(x)$ be the number such that $x \in S^{s(x)}W$, then the function that takes $x$ to the $F$-slope of $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is upper semi-continuous.
-
-	So about any such $y \in W$ with $r_W(y) \in F^\perp$, there is a neighborhood $U_y$ in $W$ for which the function taking $x$ to the $F$-slope of $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is bounded by, say, twice the $F$-slope at $y$.
+	By the upper continuity of $F^\perp$-slope, given in Proposition~\ref{uppersemi},  for any  $y \in W$ with $r_W(y) \in F^\perp$, there is a neighborhood $U_y$ in $W$ for which the function taking $x$ to the $F$-slope of $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is bounded by, say, twice the $F$-slope at $y$.
 	By covering the preimage $r_W^{-1}(F^\perp)$ by such neighborhoods and taking a finite subcover, we get a neighborhood ${\mathcal U}$ of this preimage on which $F$-slope of $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is always defined and universal bounded by some $b \in [0,\infty)$.
 	We apply \cref{L:proper nbhd} with $A = {\mathcal U}$ to obtain a neighborhood $\mathcal{V}$ of $F^\perp$ in $\interval^n$ whose preimage under $r_W$ is in ${\mathcal U}$ and thus respects this bound.
 \end{proof}
