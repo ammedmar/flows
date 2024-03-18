@@ -48,8 +48,7 @@ Let $\init_k(\interval^n)$ be the union of initial faces of dimension $k$ and $\
 		\centering
 		\includegraphics[scale=.7]{figures/l_infty_nbhd.pdf}
 	\end{subfigure}
-	\caption{On the left we have a representation of the standard $3$-cube $\interval^3$.
-		In the center we depict $\init_1(\interval^3)$, the initial 1-dimensional faces, in blue and $\term_1(\interval^3)$, the terminal 1-dimensional faces, in red. On the right we depict an $\epsilon$-neighborhood of $F = (\{2\}, \{3\}, \{1\})$ in the $L^\infty$ metric.}
+	\caption{On the left we have a representation of the standard $3$-cube $\interval^3$. In the center we depict $\init_1(\interval^3)$, the initial 1-dimensional faces, in blue and $\term_1(\interval^3)$, the terminal 1-dimensional faces, in red. On the right we depict an $\epsilon$-neighborhood of $F = (\{2\}, \{3\}, \{1\})$ in the $L^\infty$ metric.}
 \end{figure}
 
 The maps $\delta_i^\varepsilon \colon \interval^{n-1} \to \interval^{n}$ are defined for $\varepsilon \in \{0, 1\}$ and $i \in \overline{n}$ by
@@ -58,18 +57,18 @@ The maps $\delta_i^\varepsilon \colon \interval^{n-1} \to \interval^{n}$ are def
 \end{align*}
 and any composition of these is referred to as a \textbf{face inclusion map}.
 
-For $v \in \vertices(\interval^n)$ all coordinates are bound -- that is, $v_{01} = \emptyset$. Thus
-$v$ is determined by the partition of $\overline n$ into $v_0$ and $v_1$, so
-we have a bijection from the set of vertices of $\interval^n$ to the power set $\mathcal P(\overline n)$ of $\overline n$, sending $v$ to $v_1$.
+For $v \in \vertices(\interval^n)$ all coordinates are bound -- that is, $v_{01} = \emptyset$.
+Thus $v$ is determined by the partition of $\overline n$ into $v_0$ and $v_1$, so we have a bijection from the set of vertices of $\interval^n$ to the power set $\mathcal P(\overline n)$ of $\overline n$, sending $v$ to $v_1$.
 The inclusion relation in the power set induces a poset structure on $\vertices(\interval^n)$ given explicitly by
 \begin{equation*}
 	v = (\epsilon_1, \dots, \epsilon_n) \leq w = (\eta_1, \dots, \eta_n) \iff \forall i,\ \epsilon_i \leq \eta_i.
 \end{equation*}
 We will freely use the identification of these posets.
-The smallest and largest elements in $\mathcal P(\overline{n})$, which we denote $\underline{0}$ and $\underline{1}$, are the
-initial and terminal vertices. Face embedding maps induce order-preserving maps at the level of vertices.
+The smallest and largest elements in $\mathcal P(\overline{n})$, which we denote $\underline{0}$ and $\underline{1}$, are the initial and terminal vertices.
+Face embedding maps induce order-preserving maps at the level of vertices.
 
-An \textbf{interval subposet} of $\mathcal P(\overline n)$ is one of the form $[v, w] = \{u \in \mathcal P(\overline n)\ |\ v \leq u \leq w\}$ for a pair of vertices $v \leq w$. There is a canonical bijection between faces of $\interval^n$ and such subposets, associating to $[v, w]$ the face $F$ defined by $F_\varepsilon = \{i \in \overline{n}\ |\ v_i = w_i = \varepsilon\}$ for $\varepsilon \in \{0, 1\}$.
+An \textbf{interval subposet} of $\mathcal P(\overline n)$ is one of the form $[v, w] = \{u \in \mathcal P(\overline n)\ |\ v \leq u \leq w\}$ for a pair of vertices $v \leq w$.
+There is a canonical bijection between faces of $\interval^n$ and such subposets, associating to $[v, w]$ the face $F$ defined by $F_\varepsilon = \{i \in \overline{n}\ |\ v_i = w_i = \varepsilon\}$ for $\varepsilon \in \{0, 1\}$.
 
 The posets $\{\mathcal P(\overline n)\}_{n \geq 1}$ play the role for cubical complexes that finite totally ordered sets play for simplicial complexes.
 Recall for comparison that one definition of an abstract ordered simplicial complex is as a pair $(V, X)$, where $V$ is a poset and $X$ is a collection of subsets of $V$, each with an induced total order, such that all singletons are in $X$ and subsets of sets in $X$ are also in $X$.
@@ -90,7 +89,8 @@ We have the following cubical analogue.
 		\end{equation*}
 	\end{enumerate}
 	We refer to an element $\sigma \in X$ as a \textbf{cube} of $X$, refer to $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ as its \textbf{characteristic map},
-	and refer to $n$ as its \textbf{dimension}. If $\rho \subseteq \sigma \in X$, we say that $\rho$ is a \textbf{face} of $\sigma$ in $X$.
+	and refer to $n$ as its \textbf{dimension}.
+	If $\rho \subseteq \sigma \in X$, we say that $\rho$ is a \textbf{face} of $\sigma$ in $X$.
 	We identify elements in $\vertices(X)$ with the singleton subsets in $X$, referring to them as vertices.
 \end{definition}
 
@@ -125,12 +125,14 @@ The vector field flow we define on cubulated manifolds in \cref{S:logistic} can 
 We refine our description of this poset structure through identifying ``previous'' and ``next'' faces in a cube.
 
 \begin{definition}\label{D:F decomposition}
-	Let $F = (F_0, F_{01}, F_1)$ be a face of $\interval^n$. The $F$-\textbf{decomposition} of $\interval^n$ is the isomorphism $\interval^n \cong F^- \times F \times F^+$ where $F^- = (F_0 \cup F_{01}, F_1, \emptyset)$ and $F^+ = (\emptyset, F_0, F_1 \cup F_{01})$.
+	Let $F = (F_0, F_{01}, F_1)$ be a face of $\interval^n$.
+	The $F$-\textbf{decomposition} of $\interval^n$ is the isomorphism $\interval^n \cong F^- \times F \times F^+$ where $F^- = (F_0 \cup F_{01}, F_1, \emptyset)$ and $F^+ = (\emptyset, F_0, F_1 \cup F_{01})$.
 \end{definition}
 
 An alternate definition of $F^+$ is as the face whose initial vertex is the terminal vertex of $F$ and whose terminal vertex is $\underline{1}$,
 the terminal vertex of $\interval^n$.
-Similarly, $F^-$ is the face whose terminal vertex is the initial vertex of $F$ and whose initial vertex is $\underline{0}$, the initial vertex of $\interval^n$. See \cref{F:decomposition}.
+Similarly, $F^-$ is the face whose terminal vertex is the initial vertex of $F$ and whose initial vertex is $\underline{0}$, the initial vertex of $\interval^n$.
+See \cref{F:decomposition}.
 
 \begin{figure}[h!]
 	\begin{subfigure}[b]{0.35\textwidth}
@@ -148,7 +150,8 @@ Similarly, $F^-$ is the face whose terminal vertex is the initial vertex of $F$ 
 The special case of $F$-decompositions in which $F = v$, a vertex, merits its own consideration.
 
 \begin{definition}\label{D:reciprocal}
-	An ordered pair of faces $(F,F^\prime)$ of $\interval^n$ is said to be \textbf{reciprocal} if there exists a vertex $v$ such that $F = v^-$ and $F^\prime = v^+$. Equivalently, $(F, F')$ is reciprocal if and only if $F$ is initial and $F^\prime = F^+$, or if and only if $F'$ is terminal and $F = (F^{\prime})^-$.
+	An ordered pair of faces $(F,F^\prime)$ of $\interval^n$ is said to be \textbf{reciprocal} if there exists a vertex $v$ such that $F = v^-$ and $F^\prime = v^+$.
+	Equivalently, $(F, F')$ is reciprocal if and only if $F$ is initial and $F^\prime = F^+$, or if and only if $F'$ is terminal and $F = (F^{\prime})^-$.
 \end{definition}
 
 Consider the ordered set $\{\e_1, \dots, \e_n\}$ where $\e_i = \frac{\partial\ }{\partial x_i}$.
@@ -157,18 +160,16 @@ We define the \textbf{shuffle sign} of $F$, denoted by $\sh(F) \in \{\pm 1\}$, t
 More explicitly, $\sh(F) = +1$ if the concatenation of the ordered sets $\beta_{F^-}$, $\beta_{F}$, and $\beta_{F^+}$ represents the same orientation as $\{\e_1, \dots, \e_n\}$, and $\sh(F) = -1$ otherwise.
 This sign plays a key role in our applications, since we work over the ring of integers and this sign occurs in comparing products.
 
-
 In the smooth setting, it will be convenient to extend characteristic maps in a cubulation.
 
 \begin{lemma}\label{L:charextension}
-	Let $i : \interval^m \to M$ be the characteristic map of a smooth cubical structure, and let $z \in \partial \interval^m$. Then
-	there is a neighborhood $U$ of $z$ in $\R^m$ and a smooth embedding $i_U: U \to M$ whose restriction to $U \cap \interval^m$ is $i$.
+	Let $i \colon \interval^m \to M$ be the characteristic map of a smooth cubical structure, and let $z \in \partial \interval^m$.
+	Then there is a neighborhood $U$ of $z$ in $\R^m$ and a smooth embedding $i_U: U \to M$ whose restriction to $U \cap \interval^m$ is $i$.
 \end{lemma}
 
 \begin{proof}
 	By definition of smoothness, we can extend $i$ to a neighborhood of $z$ in $\R^n$, and by the continuity of the derivative there is a neighborhood on which this extension remains an immersion and so a possibly even smaller neighborhood on which it is an embedding.
 \end{proof}
-
 
 \subsection{Cubical cochains}
 
@@ -207,8 +208,8 @@ be the composite
 		\chains(\interval)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\interval)^{\otimes 2} \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\interval)^{\otimes n} \right)^{\otimes 2},
 	\end{tikzcd}
 \end{equation*}
-where $sh$ is the shuffle map that reorders tensor factors so that those in odd positions occur first. More explicitly, using Sweedler's notation,
-if $x_i^{(1)}$ and $x_i^{(2)}$ are defined through the identity
+where $sh$ is the shuffle map that reorders tensor factors so that those in odd positions occur first.
+More explicitly, using Sweedler's notation, if $x_i^{(1)}$ and $x_i^{(2)}$ are defined through the identity
 \begin{equation*}
 	\Delta(x_i) = \sum x_i^{(1)} \otimes x_i^{(2)},
 \end{equation*}
@@ -221,7 +222,8 @@ then
 where the sign is determined by the Koszul convention.
 
 The \textbf{cup product} of cochains $\alpha, \beta \in \cochains(X)$ is defined using the Serre diagonal as follows\footnote{
-	We follow the convention for evaluation of tensor products of cochains on tensor products of chains given by $(\alpha\otimes \beta)(x\otimes y)=\alpha(x)\beta(y)$. This convention is used for defining the cup product, for example, by Munkres \cite[Section 60]{Munk84}, Hatcher \cite[Section 3.2]{Hat02}, and Spanier \cite[Section 5.6]{Spa81}. But it disagrees with the conventions in Dold \cite[Section VII.7]{Dol72}, where there is a sign coming from the Koszul convention.}:
+	We follow the convention for evaluation of tensor products of cochains on tensor products of chains given by $(\alpha\otimes \beta)(x\otimes y)=\alpha(x)\beta(y)$. This convention is used for defining the cup product, for example, by Munkres \cite[Section 60]{Munk84}, Hatcher \cite[Section 3.2]{Hat02}, and Spanier \cite[Section 5.6]{Spa81}. But it disagrees with the conventions in Dold \cite[Section VII.7]{Dol72}, where there is a sign coming from the Koszul convention.
+}:
 \begin{equation*}
 	(\alpha \sms \beta)(c) = (\alpha \otimes \beta)\Delta(c).
 \end{equation*}

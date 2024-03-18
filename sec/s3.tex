@@ -11,7 +11,8 @@ But there are technical obstacles to overcome in order to obtain cochain models.
 First, submanifolds alone do not capture homology and cohomology, as Thom famously realized and as can be seen in applications such as using Schubert varieties to represent cohomology of Grassmannians.
 So we generalize from submanifolds to any manifold equipped with a map to our manifold in question.
 These evaluate on chains through pull-back, generalizing intersection.
-Secondly, we need manifolds with corners to define a product using fiber product, as boundaries are needed to define cohomology and corners arise immediately when taking fiber products of manifolds with boundary. Even though, for example, the collection of smooth maps from simplices constitute a cochain complex additively, taking fiber product quickly leads to more general representing objects.
+Secondly, we need manifolds with corners to define a product using fiber product, as boundaries are needed to define cohomology and corners arise immediately when taking fiber products of manifolds with boundary.
+Even though, for example, the collection of smooth maps from simplices constitute a cochain complex additively, taking fiber product quickly leads to more general representing objects.
 
 While there are a number of treatments of homology and cohomology that employ manifolds and their generalizations \cite{Whit47, BRS76, FeSj83, Krec10, Kahn01, Zing08, Joyc15}, we find {geometric cohomology}, first developed by Lipyanskiy in the preprint \cite{Lipy14}, to be the most suitable for connecting differential and combinatorial topology.
 In \cite{medina2022foundations}, we have filled in details of this theory as well as equipping it with a (partially defined) multiplicative structure on cochains.
@@ -69,7 +70,8 @@ Considering the origin in $\R^n_k$, for any $k \geq 0$, points having depth $k$ 
 For example, $S^1(\interval^3)$ consists of the interiors of two-dimensional faces, and any sufficiently small neighborhood of a corner intersects exactly three of these.
 
 \begin{definition}
-	Let $W$ be a manifold with corners. Define its {\bf boundary} $\partial W$ to be the space of pairs $(x, \beta)$ with $x \in W$ and $\beta$ a local boundary component of $W$ at $x$.
+	Let $W$ be a manifold with corners.
+	Define its {\bf boundary} $\partial W$ to be the space of pairs $(x, \beta)$ with $x \in W$ and $\beta$ a local boundary component of $W$ at $x$.
 	Define $i_{\partial W} \colon \partial W \to W$ by sending $(x,\beta)$ to $x$.
 \end{definition}
 
@@ -107,7 +109,7 @@ The following result is Theorem 2.26 of \cite{medina2022foundations}, though it 
 		S^i(V \times_M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
 	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are smooth.\footnote{While $V$ and $W$ may be manifolds with corners, the projection maps from $V \times_M W$ to $V$ and $W$ satisfy Joyce's stronger definition of smoothness.
-	This follows from \cite[Theorem 6.4]{Joy12}; see also \cite[Theorem 2.26]{medina2022foundations}.}
+		This follows from \cite[Theorem 6.4]{Joy12}; see also \cite[Theorem 2.26]{medina2022foundations}.}
 \end{theorem}
 
 To generalize this theorem when $M$ is also a manifold with corners requires substantial additional hypotheses in the definition of transverse smooth maps.
@@ -180,8 +182,8 @@ A key case of co-orientation is the following from \cite[Section 3.3]{medina2022
 
 
 
-We take a free abelian group and then quotient by the first relation instead of defining sum as disjoint union as in \cite{Lipy14} since we define our manifolds with corners as subspaces of a fixed universe, which complicates self addition through union.
-By these relations any element of $\cman_\Gamma^*(M)$ is represented by a single map from a likely disconnected manifold with corners, as in particular one can find as many ``copies'' as one needs of any manifold with corners embedded in $\R^\infty$.
+	We take a free abelian group and then quotient by the first relation instead of defining sum as disjoint union as in \cite{Lipy14} since we define our manifolds with corners as subspaces of a fixed universe, which complicates self addition through union.
+	By these relations any element of $\cman_\Gamma^*(M)$ is represented by a single map from a likely disconnected manifold with corners, as in particular one can find as many ``copies'' as one needs of any manifold with corners embedded in $\R^\infty$.
 \end{comment}
 
 
@@ -221,7 +223,8 @@ In the following, we write $\sqcup$ to denote disjoint unions.
 The geometric cochain complex is developed in detail in \cite[Section 4.2]{medina2022foundations}.
 
 \begin{definition}\label{D:geometric cohomology}
-	Let $M$ be a c-manifold. Let $Q^*(M)$ denote the subset of $\cman_\Gamma^*(M)$ consisting of those elements of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate; either $V$ or $W$ may be empty.
+	Let $M$ be a c-manifold.
+	Let $Q^*(M)$ denote the subset of $\cman_\Gamma^*(M)$ consisting of those elements of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate; either $V$ or $W$ may be empty.
 	The \textbf{geometric cochains} of $M$, denoted $C_\Gamma^*(M)$, are the equivalence classes in $PC^*(M)$ with $V \sim W$ if the disjoint union $V \sqcup -W$ is an element of $Q^*(M)$.
 	We denote the equivalence class of $W$ by $\uW$.
 \end{definition}
@@ -287,7 +290,8 @@ For geometric cochains the intersection homomorphism plays a similar role.
 A smooth cubulation is one for which characteristic maps are smooth maps of manifolds with corners.
 Smooth cubulations exist for any smooth manifold, as in the following construction of \cite{ShSh92}.
 Start with a smooth triangulation (see for example \cite[Theorem 10.6]{Munk66} for the existence of such).
-Consider the cell complex that is dual to its barycentric subdivision. Intersecting those dual cells with each simplex in the triangulation provides a subdivision of the simplex into cells that are linearly isomorphic to cubes.
+Consider the cell complex that is dual to its barycentric subdivision.
+Intersecting those dual cells with each simplex in the triangulation provides a subdivision of the simplex into cells that are linearly isomorphic to cubes.
 Moreover, starting with an ordered triangulation -- obtained for example by taking a barycentric subdivision -- such a cubical decomposition embeds cellularly into the cubical lattice of $\R^\infty$, and thus it is the geometric realization of a cubical complex.
 
 Since cubes are oriented manifolds with corners, the cubical chain complex maps injectively to Lipyanskiy's geometric chain complex.
@@ -324,8 +328,8 @@ We will require reference to various components of the intersection homomorphism
 The signed sets we count are discrete intersections -- or more generally pull-backs -- of manifolds with corners.
 
 \begin{comment}
-For the following definitions we will consider manifolds with corners mapping to manifolds with corners.
-HEREHERE
+	For the following definitions we will consider manifolds with corners mapping to manifolds with corners.
+	HEREHERE
 \end{comment}
 
 The following definition will be most useful below when $N$ is a cube in a cubulation of a manifold without boundary $M$.
@@ -352,8 +356,8 @@ Thus this orientation of the normal bundle can be compared with the standard ord
 See \cite[Section 6.5]{medina2022foundations} for more details concerning the following definitions.
 
 \begin{definition}\label{D:intersection number}
-	Let $W, E \in \cman_\Gamma^*({N})$ be complementary, and let $W$ be co-oriented while $E$ is oriented. Define $\mathrm{Int}_N(W, E)$ to be the signed set given
-	by the pull-back, with sign function given by comparing the normal co-orientation of $W$ with the orientation of $E$.
+	Let $W, E \in \cman_\Gamma^*({N})$ be complementary, and let $W$ be co-oriented while $E$ is oriented.
+	Define $\mathrm{Int}_N(W, E)$ to be the signed set given by the pull-back, with sign function given by comparing the normal co-orientation of $W$ with the orientation of $E$.
 	Define the intersection number $I_N(W,E)$ to be $\alpha(\rm{Int}_N(W, E))$.
 \end{definition}
 
@@ -366,7 +370,7 @@ See \cite[Section 6.5]{medina2022foundations} for more details concerning the fo
 	is the grading preserving linear map defined by sending $W$ to the cochain whose value on $E \in X$ is $\cI(W)(E) = I_M(W, E)$.
 \end{definition}
 
-The intersection of a cube with an element of $\cman_\Gamma^*(M)$ that is trivial, as in \cref{D:cman types}, will give a canceling count, and there can be no intersections with small rank reference maps.
+The intersection of a cube with an element of $\cman_\Gamma^*(M)$ that is trivial, as in \cref{D:cman types}, will give a cancelling count, and there can be no intersections with small rank reference maps.
 Therefore, the intersection homomorphism vanishes on $Q^*(M)$, and there is induced a map on geometric cochains.
 We show in \cite[Proposition 6.14]{medina2022foundations} that this is a chain map.
 The proof is akin to the proof that degree of a smooth map is homotopy invariant, through the classification of compact one-manifolds.
@@ -427,7 +431,9 @@ We next address the passage to cochains, giving a partially defined differential
 
 	More generally, if $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$, and each pair $(\underline{V_i},\underline{W_j})$ is simply transverse, then
 	we say that $\uV$ and $\uW$ are \textbf{transverse} and define $\uV\uplus\uW$ as
-	$$\uV\uplus\uW = \sum_{i,j} \underline{V_i}\uplus \underline{W_j},$$
+	\[
+	\uV\uplus\uW = \sum_{i,j} \underline{V_i}\uplus \underline{W_j},
+	\]
 	where the summands on the right are represented for each pair $i$ and $j$ by $V_i \bullet W_j$ for transverse $V_i, W_j \in PC^*_\Gamma(M)$ representing $\uV_i$ and $\uW_j$.
 \end{definition}
 

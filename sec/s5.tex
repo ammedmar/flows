@@ -30,16 +30,20 @@ A key example of a finitely-generated subcomplex of geometric cochains that is q
 is the dual complex to any cubulation whose cells are smooth manifolds with corners.
 Unfortunately, it is not clear that such dual complexes always exist.
 
-Another example of such an $F^*$ comes from an oriented manifold $M$ with a smooth triangulation $|K|\to M$ by a finite simplicial complex $K$, in addition to its cubulation. A triangulation naturally gives rise to a subcomplex
-of geometric cochains as follows. % with a vertex ordering.
+Another example of such an $F^*$ comes from an oriented manifold $M$ with a smooth triangulation $|K|\to M$ by a finite simplicial complex $K$, in addition to its cubulation.
+A triangulation naturally gives rise to a subcomplex
+of geometric cochains as follows.
+% with a vertex ordering.
 Using the orientation $\beta_M$ of $M$, every simplicial face inclusion $\sigma\to M$ with $\sigma$ a simplex of $K$ is co-oriented by $(\beta_\sigma,\beta_M)$, where $\beta_\sigma$ is the standard orientation that arises from the ordering of the vertices of $\sigma$.
 Thus we have an inclusion homomorphism $C_*(K)\into C^{m-*}_\Gamma(M)$, where $m = \dim(M)$.
 This inclusion is a quasi-isomorphism, as the inclusion of $C_*(K)$ into the smooth singular chain complex %$C_*^{ssing}(M)$
- of $M$ is a known quasi-isomorphism, the map from smooth singular chains to geometric chains
- is observed to be a quasi-isomorphism in \cite[Section 10]{Lipy14},
- and $C_*^\Gamma(M)=C^{m-*}_\Gamma(M)$ for $M$ closed and oriented. (See \cite[Section 12]{Lipy14} or \cite[Theorem 4.21]{medina2022foundations}.)
+of $M$ is a known quasi-isomorphism, the map from smooth singular chains to geometric chains
+is observed to be a quasi-isomorphism in \cite[Section 10]{Lipy14},
+and $C_*^\Gamma(M)=C^{m-*}_\Gamma(M)$ for $M$ closed and oriented.
+(See \cite[Section 12]{Lipy14} or \cite[Theorem 4.21]{medina2022foundations}.)
 
-We either construct or modify the triangulation so that each simplex of $K$ is transverse to every face inclusion of the cubulation $|X|\to M$. Given an arbitrary $|K|\to M$, this can be done by postcomposing with a map $f \colon M\to M$ that is homotopic to the identity, as in the proof of \cref{T:transverse complex} given in \cite[Theorem 6.5]{medina2022foundations}, using the techniques of \cite[Section 2.3]{GuPo74}.
+We either construct or modify the triangulation so that each simplex of $K$ is transverse to every face inclusion of the cubulation $|X|\to M$.
+Given an arbitrary $|K|\to M$, this can be done by postcomposing with a map $f \colon M\to M$ that is homotopic to the identity, as in the proof of \cref{T:transverse complex} given in \cite[Theorem 6.5]{medina2022foundations}, using the techniques of \cite[Section 2.3]{GuPo74}.
 There is thus a composite quasi-isomorphism $C_*(K)\into C^{m-*}_\Gamma(M) \xr{f} C^{m-*}_\Gamma(M)$, with image of the composite in $C^{m-*}_{\Gamma \pf X}(M)$.
 So by the following diagram,
 \begin{equation*}
@@ -61,7 +65,9 @@ We thus introduce the following notation, with $E$ being a cube or the interior 
 	We denote the pull-back $V \times_M N$ by $V_N$, noting that, as $N$ is embedded, $V_N$ can be identified with $r_V^{-1}(N)$ by identifying $(x, r_V(x)) \in V_N$ with $x \in V$.
 	In this case the reference map $r_{V_N}$ is just the restriction of $r_V$ to $r_V^{-1}(N)$.
 
-	By \cref{pullback}, $V_N$ is a c-manifold over $N$. We endow it with the pull-back co-orientation induced by the co-orientation of $V\to M$, as given in \cite[Sections 3.5.1 and 3.5.2]{medina2022foundations}. % the reference map $V_N\to N$ can be endowed with a that does not depend on either an orientation of $N$ or a co-orientation of the embedding of $N$.
+	By \cref{pullback}, $V_N$ is a c-manifold over $N$.
+	We endow it with the pull-back co-orientation induced by the co-orientation of $V\to M$, as given in \cite[Sections 3.5.1 and 3.5.2]{medina2022foundations}.
+	% the reference map $V_N\to N$ can be endowed with a that does not depend on either an orientation of $N$ or a co-orientation of the embedding of $N$.
 \end{definition}
 
 \subsection{Transversality}
@@ -87,9 +93,8 @@ We will then do an induction over the dimensions of terminal faces until we have
 
 \medskip
 
-
-
 \subsubsection{c-manifolds over cubes}\label{reductiontocubes}
+
 We will require working with manifolds with corners mapping into cubes.
 In general, such maps and their corresponding definitions of transversality can be technically challenging, as our target itself has corners.
 However, we will show that we can work in a specific limited context and consequently we will not need the full sophistication of \cite{Joy12}.
@@ -98,7 +103,8 @@ However, we will show that we can work in a specific limited context and consequ
 First, let $E$ be an $n$-dimensional cube in the cubulation $X$ of a manifold without boundary $M$, and let $V \in PC_{\Gamma \pf X}^*(M)$.
 Consider the pullback $V_E = V \times_M E$.
 As $E$ is embedded in $M$, we can identify $V_E$ with the restriction $r_V^{-1}(E) \to E$, which we will write as $r_{V,E} \colon V_E \to E$.
-However, we do not use the pull-back stratification. Rather, we write $V_E^k$ for $S^k(V) \times_M E$ and consider $V_E$ to be stratified by the $V_E^k$.
+However, we do not use the pull-back stratification.
+Rather, we write $V_E^k$ for $S^k(V) \times_M E$ and consider $V_E$ to be stratified by the $V_E^k$.
 We write $r_{V,E}^k \colon V_E^k \to E$.
 
 To see that this choice of stratification is reasonable, let $z$ be a point in $\bd E$ and recall from \cref{L:charextension} that if we identify $E$ with $\interval^n \subset \R^n$, then we can extend the embedding $i$ of $E$ into $M$ to a local embedding into $M$ of a Euclidean neighborhood $H$ of $z$ in $\R^n$.
@@ -114,60 +120,63 @@ This allows us to avoid defining finer notions of transversality for maps to man
 
 
 \begin{comment}
-Included in the following definition and lemma is a justification for referring to such an object as transverse to the faces of $\interval^n$.
+	Included in the following definition and lemma is a justification for referring to such an object as transverse to the faces of $\interval^n$.
 
 
 
-\begin{definition}
-	Let $F$ be a face of $\interval^n \subset \R^n$ and $U$ a c-manifold over $\interval^n$.
-	We say $r_U$ is
-	{\bf complementary} to $F$ at some $x$ in its image if it is transverse to the parallel translate of $F$ to $x$.
-\end{definition}
+	\begin{definition}
+		Let $F$ be a face of $\interval^n \subset \R^n$ and $U$ a c-manifold over $\interval^n$.
+		We say $r_U$ is
+		{\bf complementary} to $F$ at some $x$ in its image if it is transverse to the parallel translate of $F$ to $x$.
+	\end{definition}
 
 
 
-\begin{lemma}\label{L:complement}
-	Suppose $E$ is an $n$-dimensional cube in a cubulation of the manifold without boundary $M$ and that $V \in PC^*_{\Gamma \pf}(M)$.
-	Let $F$ be a face of $E$.
-	Then there is an open neighborhood $B$ of $F$ in $E$ such that $r_{V,E}$ is complementary to $F$ at every $x \in (r_{V,E})^{-1}(B)$.
-\end{lemma}
+	\begin{lemma}\label{L:complement}
+		Suppose $E$ is an $n$-dimensional cube in a cubulation of the manifold without boundary $M$ and that $V \in PC^*_{\Gamma \pf}(M)$.
+		Let $F$ be a face of $E$.
+		Then there is an open neighborhood $B$ of $F$ in $E$ such that $r_{V,E}$ is complementary to $F$ at every $x \in (r_{V,E})^{-1}(B)$.
+	\end{lemma}
 
 
-\begin{proof}[Proof of Lemma~\ref{L:complement}]
-	If $\dim(V) + \dim(F) < \dim(M)$ then, by transversality, $r_V$ is disjoint from $F$. So by \cref{L:proper nbhd} there is a neighborhood of $F$ in $M$, and hence a neighborhood of $F$ in $E$, that is disjoint from the image of $V$.
+	\begin{proof}[Proof of Lemma~\ref{L:complement}]
+		If $\dim(V) + \dim(F) < \dim(M)$ then, by transversality, $r_V$ is disjoint from $F$.
+		So by \cref{L:proper nbhd} there is a neighborhood of $F$ in $M$, and hence a neighborhood of $F$ in $E$, that is disjoint from the image of $V$.
 
-	Next suppose $\dim(V) + \dim(F) \geq \dim(M)$.
-	Behavior of $V_E$ near the boundary of $E$, where we need to argue, could be delicate due to the corners introduced.
-	But given $x \in V$ with $z = r_V(x) \in F$, we apply Lemma~\ref{L:charextension} to obtain a neighborhood $H$ of $z$ in
-	$\R^n$ and an embedding $i_H \colon H \to M$ that agrees with $i_E$ on $H \cap E$. Thus the pull-back $V_H = V \times_M H \to H$ is a codimension zero open submanifold of $V$ which agrees with $V \times_E E \to E$ over $E \cap H$.
+		Next suppose $\dim(V) + \dim(F) \geq \dim(M)$.
+		Behavior of $V_E$ near the boundary of $E$, where we need to argue, could be delicate due to the corners introduced.
+		But given $x \in V$ with $z = r_V(x) \in F$, we apply Lemma~\ref{L:charextension} to obtain a neighborhood $H$ of $z$ in
+		$\R^n$ and an embedding $i_H \colon H \to M$ that agrees with $i_E$ on $H \cap E$.
+		Thus the pull-back $V_H = V \times_M H \to H$ is a codimension zero open submanifold of $V$ which agrees with $V \times_E E \to E$ over $E \cap H$.
 
-	The benefit of working with $V_H$ is that since $H$ does not have boundary, $V_H$ is stratified by the $S^k(V) \times_M H$, which we denote $V_H^k$.
-	As we did for $E$, we will identify $H$ with its image in $M$, and so also identify $z$ with $z'$.
-	Let us also write $r_{V,H}$ for the pull-back map $V_H \to H$ and $r_{V,H}^k$ for the restriction of $r_{V,H}$ to $V_H^k$.
+		The benefit of working with $V_H$ is that since $H$ does not have boundary, $V_H$ is stratified by the $S^k(V) \times_M H$, which we denote $V_H^k$.
+		As we did for $E$, we will identify $H$ with its image in $M$, and so also identify $z$ with $z'$.
+		Let us also write $r_{V,H}$ for the pull-back map $V_H \to H$ and $r_{V,H}^k$ for the restriction of $r_{V,H}$ to $V_H^k$.
 
-	We next claim that the pull-back $V \times_M H \to H$ is transverse to $F \cap H$ at $(x,z) \in V_H$.
-	Let $S^k(V)$ be the stratum of $V$ containing $x$, and let us write $\bar{x} = (x,z)$.
-	By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space $T_{\bar{x}}(V^k_H)$ is $T_xS^k(V) \times_{T_zM} T_zH$, and the derivative $Dr_{V,H}^k \colon T_{\bar{x}}(V^k_H) \to T_zH$ is just the projection to the second factor.
-	Let $\vec s \in T_zH \subset T_z M$.
-	As $V$ is transverse to the cubulation, there are vectors $\vec t \in T_xS^k(V)$ and $\vec u \in T_zF$ such that $\vec s = Dr^k_V \vec t + \vec u$.
-	But then $Dr^k_V\vec t = \vec s - \vec u \in T_zH$ as $T_zF \subset T_zH$.
-	So $(\vec t, \vec s - \vec u)$ represents an element of $T_{\bar{x}}(V^k_H)$, and its image under $Dr_{V,H}^k$ is $\vec s - \vec u = Dr^k_V\vec t$.
-	This shows that the pull-back $r^k_{V,H} \colon V^k_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
+		We next claim that the pull-back $V \times_M H \to H$ is transverse to $F \cap H$ at $(x,z) \in V_H$.
+		Let $S^k(V)$ be the stratum of $V$ containing $x$, and let us write $\bar{x} = (x,z)$.
+		By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space $T_{\bar{x}}(V^k_H)$ is $T_xS^k(V) \times_{T_zM} T_zH$, and the derivative $Dr_{V,H}^k \colon T_{\bar{x}}(V^k_H) \to T_zH$ is just the projection to the second factor.
+		Let $\vec s \in T_zH \subset T_z M$.
+		As $V$ is transverse to the cubulation, there are vectors $\vec t \in T_xS^k(V)$ and $\vec u \in T_zF$ such that $\vec s = Dr^k_V \vec t + \vec u$.
+		But then $Dr^k_V\vec t = \vec s - \vec u \in T_zH$ as $T_zF \subset T_zH$.
+		So $(\vec t, \vec s - \vec u)$ represents an element of $T_{\bar{x}}(V^k_H)$, and its image under $Dr_{V,H}^k$ is $\vec s - \vec u = Dr^k_V\vec t$.
+		This shows that the pull-back $r^k_{V,H} \colon V^k_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
 
 
-	Now %, let $\dim(V_H) = p$ so that $\dim(V_H^k) = p - k$, and
-	 let $(\mathcal U, \phi)$ be a chart for $V_H$ so that $\mathcal U \subset \R^p_k$ and $\phi \colon \mathcal U \to V_H$ takes the origin to $\bar{x} = (x,z)$.
-	Then $\phi$ takes $\mathcal U \cap \R^{p-k}$ to a neighborhood of $x$ in $V_H^k$. %= S^k(V) \times_M H = S^k(V \times_M H)$.
-	Because $r^k_{V,H}$ is transverse to $F$ at $\bar{x}$, the restriction of $r_{V,H} \circ \phi$ to $\mathcal U \cap \R^{n-k}$ is transverse to $F$ as a map from a $p-k$ manifold.
-	Because transversality is an open condition there is a neighborhood $\mathcal V$ of the origin in $\R^p_k$ (in fact in $\R^p$ by extending the smooth map $r_{V,H} \phi$) such that at any point in $y \in \mathcal V$ the image under under $D_y(r_{V,H} \phi)$ of the span of the the last $p-k$ coordinate vectors remains transverse to the vector space $\vec F$ parallel to $F$.
-	In other words, there is a neighborhood of the origin in which $r_{V,H} \phi$ is complementary to $F$.
-	As $\phi$ is a chart of $V_H$, it follows that $r_{V,H}$ is complementary to $F$ in a neighborhood of $\bar{x}$.
-	In particular, there is then a neighborhood $\mathfrak U_{\bar{x}}$ of $\bar{x}$ in $V_E$ such that the pull-back $V_E \to E$ is complementary to $F$ at each point of $\mathfrak U_{\bar{x}}$.
+		Now %, let $\dim(V_H) = p$ so that $\dim(V_H^k) = p - k$, and
+		let $(\mathcal U, \phi)$ be a chart for $V_H$ so that $\mathcal U \subset \R^p_k$ and $\phi \colon \mathcal U \to V_H$ takes the origin to $\bar{x} = (x,z)$.
+		Then $\phi$ takes $\mathcal U \cap \R^{p-k}$ to a neighborhood of $x$ in $V_H^k$.
+		%= S^k(V) \times_M H = S^k(V \times_M H)$.
+		Because $r^k_{V,H}$ is transverse to $F$ at $\bar{x}$, the restriction of $r_{V,H} \circ \phi$ to $\mathcal U \cap \R^{n-k}$ is transverse to $F$ as a map from a $p-k$ manifold.
+		Because transversality is an open condition there is a neighborhood $\mathcal V$ of the origin in $\R^p_k$ (in fact in $\R^p$ by extending the smooth map $r_{V,H} \phi$) such that at any point in $y \in \mathcal V$ the image under under $D_y(r_{V,H} \phi)$ of the span of the the last $p-k$ coordinate vectors remains transverse to the vector space $\vec F$ parallel to $F$.
+		In other words, there is a neighborhood of the origin in which $r_{V,H} \phi$ is complementary to $F$.
+		As $\phi$ is a chart of $V_H$, it follows that $r_{V,H}$ is complementary to $F$ in a neighborhood of $\bar{x}$.
+		In particular, there is then a neighborhood $\mathfrak U_{\bar{x}}$ of $\bar{x}$ in $V_E$ such that the pull-back $V_E \to E$ is complementary to $F$ at each point of $\mathfrak U_{\bar{x}}$.
 
-	Taking the union of the $\mathfrak U_{\bar{x}}$ over all $\bar{x} \in V \times_M F$, or equivalently all $x$ in $r_V^{-1}(F)$, we obtain a neighborhood $A$ of $r_V^{-1}(F)$ in $r_V^{-1}(E) = V_E$ such that the map to $E$ is complementary to $F$ at each point of $A$.
-	Applying \cref{L:proper nbhd}, there is thus a neighborhood $B$ of $F$ in $E$ such that $r_V^{-1}(B) \subset A$.
-	So for any $\bar{x} \in V_E$ with $r_{V,E} (\bar{x}) \in B$, we know $\bar{x} \in A$ and so $r_{V,E}$ is complementary to $F$.
-\end{proof}
+		Taking the union of the $\mathfrak U_{\bar{x}}$ over all $\bar{x} \in V \times_M F$, or equivalently all $x$ in $r_V^{-1}(F)$, we obtain a neighborhood $A$ of $r_V^{-1}(F)$ in $r_V^{-1}(E) = V_E$ such that the map to $E$ is complementary to $F$ at each point of $A$.
+		Applying \cref{L:proper nbhd}, there is thus a neighborhood $B$ of $F$ in $E$ such that $r_V^{-1}(B) \subset A$.
+		So for any $\bar{x} \in V_E$ with $r_{V,E} (\bar{x}) \in B$, we know $\bar{x} \in A$ and so $r_{V,E}$ is complementary to $F$.
+	\end{proof}
 \end{comment}
 
 
@@ -203,17 +212,13 @@ The following lemma justifies referring to such an object as transverse to the f
 	As $\vec s$ was an arbitrary vector in $T_zH$, this shows that the pull-back $r^k_{V,H} \colon V^k_H \to H$ is transverse to $F$ at $\bar{x}$, as claimed.
 \end{proof}
 
-
-
-
-
-
-
 \subsubsection{$F$-slope}
+
 We use the following to measure ``parallelness.''
 
 \begin{definition}
-	Let $F \subset \interval^n$ be a face of dimension $d$. Let $\R^F$ denote the span of
+	Let $F \subset \interval^n$ be a face of dimension $d$.
+	Let $\R^F$ denote the span of
 	$\beta_F = \{\e_i\ |\ i \in F_{01}\}$ and $\R^{F^\perp}$ denote the span of $\beta_{F^\perp} = \{\e_i\ |\i \in F_0 \cup F_1\}$.
 	For $v \in \R^n$, $v \neq 0$, we call $v = v_F + v_{F^\perp}$ with $v_F \in \R^F$ and $v_{F^\perp} \in \R^{F^\perp}$ the {\bf $F$-decomposition} of $v$, and we call $\frac{|| v_{F^\perp}||}{||v_{F}||} \in [0,\infty]$ the {\bf $F$-slope} of $v$.
 
@@ -233,6 +238,7 @@ We can utilize an $F$-slope and an $F^\perp$-slope together to obtain transversa
 	Suppose $V$ is a subspace of $\R^n$ with finite $F^\perp$-slope.
 	Then there is an $\varepsilon \in [0,\infty)$ such that if $W$ is a subspace with $F$-slope less than $\varepsilon$ then $V$ and $W$ are transverse.
 \end{lemma}
+
 \begin{proof}
 	Using that $(F^\perp)^\perp = F$, we have by the finiteness assumption on the $F^\perp$-slope of $V$
 	the existence of a $b \in [0,\infty)$ and an $n-d$ dimensional subspace of $V' \subset V$ such that $\frac{||v_{F}||}{||v_{F^\perp}||} <b$ for all nonzero $v \in V'$.
@@ -248,11 +254,12 @@ Let $W$ be a manifold with corners over a cube, $x \in W$, and let $s(x)$ denote
 In other words, $s(x)$ is the number such that $x \in S^{s(x)}W$.
 
 \begin{proposition}\label{uppersemi}
-The function that takes $x$ to the $F$-slope of $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is upper semi-continuous.
+	The function that takes $x$ to the $F$-slope of $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is upper semi-continuous.
 \end{proposition}
 
 \begin{proof}
-	If we consider $y$ to be a point in the boundary of the closure of a higher-dimensional stratum $S^j(W)$ then $T_yS^k(W) \subset T_yS^j(W)$. Thus the $F$-slope of $D_yr^j_W(T_yS^j(W))$ must be less than or equal to that of $D_yr^k_W(T_yS^k(W))$ as there are more $\dim(F)$-dimensional subspaces of the former over which to find the minimum $F$-slope.
+	If we consider $y$ to be a point in the boundary of the closure of a higher-dimensional stratum $S^j(W)$ then $T_yS^k(W) \subset T_yS^j(W)$.
+	Thus the $F$-slope of $D_yr^j_W(T_yS^j(W))$ must be less than or equal to that of $D_yr^k_W(T_yS^k(W))$ as there are more $\dim(F)$-dimensional subspaces of the former over which to find the minimum $F$-slope.
 	On the other hand, within a fixed stratum and referring to fixed charts for the domain and image, the images of any fixed collection of $\dim(F)$ input vectors vary continuously.
 	So, as linear independence is an open condition, $y$ will have a neighborhood in which the rank of the Jacobian cannot decrease and the $F$-slope of any subspace spanned by the image of any fixed set of $\dim(F)$ vectors in the chart will vary continuously.
 	If the rank of the derivative increases as we move around the stratum within this neighborhood, then as argued above in the case comparing two strata, the $F$-slope can only decrease compared to the continuously varying value for the fixed inputs as a result.
@@ -267,7 +274,8 @@ In the following statement, for $x \in W$, we let $s(x)$ denote the depth of the
 In other words, $s(x)$ is the number such that $x \in S^{s(x)}W$.
 
 \begin{proposition}\label{Wapproxparallel}
-	Let $F$ be a terminal face of $\interval^n$, and let $W$ be a c-manifold over $\interval^n$ that is transverse to $F^-$ (in the sense of \cref{reductiontocubes}). Then for any $\varepsilon > 0$ and $0 < u < 1$ there is a lower neighborhood $N_\delta L_u(F)$ and a time $T$ such that for all $t > T$ and any $x \in W$ with $\f_t r_W(x) \in N_\delta L_u(F)$ the $F$-slope of $D_x(\f_tr^{s(x)}_W)(T_xS^{s(x)}(W))$ is less than $\varepsilon$.
+	Let $F$ be a terminal face of $\interval^n$, and let $W$ be a c-manifold over $\interval^n$ that is transverse to $F^-$ (in the sense of \cref{reductiontocubes}).
+	Then for any $\varepsilon > 0$ and $0 < u < 1$ there is a lower neighborhood $N_\delta L_u(F)$ and a time $T$ such that for all $t > T$ and any $x \in W$ with $\f_t r_W(x) \in N_\delta L_u(F)$ the $F$-slope of $D_x(\f_tr^{s(x)}_W)(T_xS^{s(x)}(W))$ is less than $\varepsilon$.
 \end{proposition}
 
 Thus the logistic flow stretches a manifold which transversely intersects one face to contain
@@ -284,7 +292,7 @@ To exclude far away points in our domain manifolds from such considerations, we 
 	Then there is a neighborhood $B$ of $K$ in $Y$ such that $f^{-1}(B) \subset A$.
 \end{lemma}
 
-	In particular, if $K$ is disjoint from the image of $f$ then there is a neighborhood of $K$ which is disjoint as well.
+In particular, if $K$ is disjoint from the image of $f$ then there is a neighborhood of $K$ which is disjoint as well.
 
 \begin{proof}[Proof of \cref{L:proper nbhd}]
 	As proper maps are closed \cite[Proposition I.10.1.1]{Bou98}, $f(X \setminus A)$ is a closed set of $Y$ that is disjoint from $K$.
@@ -310,154 +318,142 @@ The next lemma will be a principal fact for the proof of \cref{Wapproxparallel},
 
 
 \begin{proof}[Proof of \cref{Wapproxparallel}]
-By \cref{L:Fslopebounded}, there is a neighborhood $\mathcal{V}$ of $F^-$ in $\interval^n$ and an upper bound $b < \infty$ such that the $F$-slope of the $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is defined and less than $b$ for all $x$ in $r_W^{-1}(\mathcal{V})$.
-By \cref{L:jacobian ratios}, for every $0 < u < 1$ there is a $\delta$ and a time $T$ so that the slopes with respect to $F$ are scaled by arbitrarily small numbers after flow of time greater than $T$ into $N_\delta L_u(F)$.
-In particular, there are $\delta$ and $T$ so that they are scaled by $\varepsilon/ b$.
-By choosing a larger $T$ if necessary, we may apply \cref{L:flow to initial and terminal faces} to ensure that $\f_t(W) \cap N_\delta L_u(F)$ contains only points from the flowed image of ${\mathcal{V}}$.
-We thus obtain the stated result.
+	By \cref{L:Fslopebounded}, there is a neighborhood $\mathcal{V}$ of $F^-$ in $\interval^n$ and an upper bound $b < \infty$ such that the $F$-slope of the $D_xr^{s(x)}_W(T_xS^{s(x)}(W))$ is defined and less than $b$ for all $x$ in $r_W^{-1}(\mathcal{V})$.
+	By \cref{L:jacobian ratios}, for every $0 < u < 1$ there is a $\delta$ and a time $T$ so that the slopes with respect to $F$ are scaled by arbitrarily small numbers after flow of time greater than $T$ into $N_\delta L_u(F)$.
+	In particular, there are $\delta$ and $T$ so that they are scaled by $\varepsilon/ b$.
+	By choosing a larger $T$ if necessary, we may apply \cref{L:flow to initial and terminal faces} to ensure that $\f_t(W) \cap N_\delta L_u(F)$ contains only points from the flowed image of ${\mathcal{V}}$.
+	We thus obtain the stated result.
 \end{proof}
 
 
 \begin{comment}
-for any $v \in T_y W$ for some $y$ with $r_W(y) \in F$, the
-$F$-decomposition of $D r_W (v)$ will have $(D r_W(v))_F \neq 0$.
-Because $D r_W$ and projection onto $\R^F$ are continuous,
-there is a $\zeta' > 0$ small enough so that for any $y$ such that
-$ r_W(y)$ is in $N_{\zeta'}(F^-)$ and thus in $\overline{N}_{\zeta}(F^-)$ for $\zeta < \zeta'$,
-the non-vanishing of $(D r_W(v))_F $ will remain true.
+	for any $v \in T_y W$ for some $y$ with $r_W(y) \in F$, the
+	$F$-decomposition of $D r_W (v)$ will have $(D r_W(v))_F \neq 0$.
+	Because $D r_W$ and projection onto $\R^F$ are continuous,
+	there is a $\zeta' > 0$ small enough so that for any $y$ such that
+	$ r_W(y)$ is in $N_{\zeta'}(F^-)$ and thus in $\overline{N}_{\zeta}(F^-)$ for $\zeta < \zeta'$,
+	the non-vanishing of $(D r_W(v))_F $ will remain true.
 
-Since $r_W$ is proper, the preimage of $ \overline N_\zeta(F^-)$ is compact, as is the unit sphere bundle for its tangent bundle for any metric.
-So the maximum over unit vectors $v$ in $T_y W$ for $y$ in this preimage
-of the set slopes with respect to $F$
- exists; call it $\mu$.
-\end{comment}
-\begin{comment}
-%	By \cref{L:flow to initial and terminal faces} we may first choose $T'$ sufficiently large so that all points in $\f_t(W) \cap V_E \cap \overline N_\delta L_u(F)$ are of the form $y = \f_t(x)$ for some $x \in W_E \cap \overline N_\zeta(F^-)$.
-\end{comment}
+	Since $r_W$ is proper, the preimage of $ \overline N_\zeta(F^-)$ is compact, as is the unit sphere bundle for its tangent bundle for any metric.
+	So the maximum over unit vectors $v$ in $T_y W$ for $y$ in this preimage
+	of the set slopes with respect to $F$
+	exists; call it $\mu$.
 
+	%	By \cref{L:flow to initial and terminal faces} we may first choose $T'$ sufficiently large so that all points in $\f_t(W) \cap V_E \cap \overline N_\delta L_u(F)$ are of the form $y = \f_t(x)$ for some $x \in W_E \cap \overline N_\zeta(F^-)$.
 
+	\color{blue}
+	\bigskip
+	A new approach to making this precise!
 
+	\begin{definition}
+		Let $h$ and $k$ be linear maps from normed vector spaces $L_1$ and $L_2$ respectively to $\R^n$.
+		Denote unit spheres by $U(L_i)$.
+		Define the {\bf transversality measure},
+		denoted $\llangle h, k \rrangle$, as the maximum of $|\rm{Det} (v_1, \dots, v_n) |$, where
+		each $v_i$ is in the union of $h(U(L_1))$ and $k(U(L_2))$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{comment}
-
-\color{blue}
-\bigskip
-A new approach to making this precise!
+		Let $f, g: V, W \to \R^n$ be smooth maps from c-manifolds with Riemannian metrics to $\R^n$ whose
+		pull-back is compact and path-connected.
+		Define the transversality measure $\llangle f, g \rrangle$ to
+		be the minimum over $z = f(x) = g(y)$ of $\llangle D_x f, D_y g \rrangle$.
+	\end{definition}
 
 
-\begin{definition}
-Let $h$ and $k$ be linear maps from normed vector spaces $L_1$ and $L_2$ respectively to $\R^n$. Denote unit spheres by $U(L_i)$. Define the {\bf transversality measure},
-denoted $\llangle h, k \rrangle$, as the maximum of $|\rm{Det} (v_1, \dots, v_n) |$, where
-each $v_i$ is in the union of $h(U(L_1))$ and $k(U(L_2))$.
+	While the transversality measure is only defined for maps to $\R^n$ and is for example highly sensitive to metric,
+	it is useful topologically in that
+	it is continuous and it is non-zero only if $f$ and $g$ are transverse.
+	By continuity we mean the following.
 
-Let $f, g: V, W \to \R^n$ be smooth maps from c-manifolds with Riemannian metrics to $\R^n$ whose
-pull-back is compact and path-connected.
-Define the transversality measure $\llangle f, g \rrangle$ to
-be the minimum over $z = f(x) = g(y)$ of $\llangle D_x f, D_y g \rrangle$.
-\end{definition}
+	\begin{proposition}
+		Let $V, W$ be c-manifolds and
+		consider the subspace $CP$ of pairs of smooth maps from $V$ and $W$ to $\R^n$ with compact and path-connected
+		pull-back, with the $C^\infty$ topology.
+		Then $f, g \mapsto \llangle f, g \rrangle$ is a continuous map from $CP$ to $\R$.
+	\end{proposition}
 
+	SHOULD PROVE THIS!
 
-While the transversality measure is only defined for maps to $\R^n$ and is for example highly sensitive to metric,
- it is useful topologically in that
-it is continuous and it is non-zero only if $f$ and $g$ are transverse. By continuity we mean the following.
+	Plan of attack: Still work over $E \cong \interval^n$, so maps are to Euclidean space.
+	Start with $V_E$ transversal
+	to $F$ so $\llangle r_V, \iota_F\rrangle = m$ for some $m>0$.
+	Let $\tau_x \iota_F$ denote translation of $\iota_F$
+	by $x$.
+	Then continuity of transversality measure implies that there is some $\varepsilon$ so that $\llangle r_{V_E}, \iota_F\rrangle > m/2$ for any $\tau_x \iota_F$ whose image is in the $L^\infty$ neighborhood
+	$N_\varepsilon F$.
+	Thus also getting some lower bound $b$ for$ \llangle r_{V_E}, r_{\tau_x \iota_F \circ \phi} \rrangle$ for
+	any linear map.
+	Then use aspect ratio being arbitrarily large/small and simple facts about determinants to get
+	$| \llangle r_{V_E}, r_{\f_t(W_E)} \rrangle - \llangle r_{V_E}, r_{\tau_x \iota_F \circ \phi} \rrangle | < b/2$
+	where $\phi$ is a projection map needed to compare $r_{\f_t(W_E)}$ and $r_{\tau_x \iota_F}$.
+	\color{black}
 
-\begin{proposition}
-Let $V, W$ be c-manifolds and
-consider the subspace $CP$ of pairs of smooth maps from $V$ and $W$ to $\R^n$ with compact and path-connected
-pull-back, with the $C^\infty$ topology. Then $f, g \mapsto \llangle f, g \rrangle$ is a continuous map from $CP$ to $\R$.
-\end{proposition}
-
-SHOULD PROVE THIS!
-
-
-
-Plan of attack: Still work over $E \cong \interval^n$, so maps are to Euclidean space. Start with $V_E$ transversal
-to $F$ so $\llangle r_V, \iota_F\rrangle = m$ for some $m>0$. Let $\tau_x \iota_F$ denote translation of $\iota_F$
-by $x$. Then continuity of transversality measure implies that there is some $\varepsilon$ so that $\llangle r_{V_E}, \iota_F\rrangle > m/2$ for any $\tau_x \iota_F$ whose image is in the $L^\infty$ neighborhood
-$N_\varepsilon F$. Thus also getting some lower bound $b$ for$ \llangle r_{V_E}, r_{\tau_x \iota_F \circ \phi} \rrangle$ for
-any linear map. Then use aspect ratio being arbitrarily large/small and simple facts about determinants to get
-$| \llangle r_{V_E}, r_{\f_t(W_E)} \rrangle - \llangle r_{V_E}, r_{\tau_x \iota_F \circ \phi} \rrangle | < b/2$
-where $\phi$ is a projection map needed to compare $r_{\f_t(W_E)}$ and $r_{\tau_x \iota_F}$.
-\color{black}
-
-\bigskip
+	\bigskip
 
 \end{comment}
 
 \begin{comment}3-11-24
-We will first show the intersection
-can be arranged to occur in a neighborhood on which $V_{\E}$ intersects any parallel translate
-of the relevant terminal face transversally.
-For the moment, consider $V_E$ to be the restriction $r_V^{-1}(E) \to E$, which
-as $E$ is embedded in $M$ is topologically the pull-back.
-But we do not use the pull-back stratification but rather the restriction of the stratification of $V$.
-In particular, let us write $V_E^k$ for $S^k(V) \times_M E$.
-By composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to $E$,
-we may identify $E$ with $\interval^n$ to obtain a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions
-$r_{V,E}^k \colon V_E^k \to \interval^n$.
-Abusing notation further, when considering maps whose codomain is $E$, we will freely identify $E$ with $\interval^n$, considered as a subspace of $\R^n$, as we will sometimes use the notations $E$ and $\interval^n$ interchangeably.
+	We will first show the intersection
+	can be arranged to occur in a neighborhood on which $V_{\E}$ intersects any parallel translate
+	of the relevant terminal face transversally.
+	For the moment, consider $V_E$ to be the restriction $r_V^{-1}(E) \to E$, which
+	as $E$ is embedded in $M$ is topologically the pull-back.
+	But we do not use the pull-back stratification but rather the restriction of the stratification of $V$.
+	In particular, let us write $V_E^k$ for $S^k(V) \times_M E$.
+	By composing with the inverse of the embedding of $\interval^n$ into $M$ corresponding to $E$,
+	we may identify $E$ with $\interval^n$ to obtain a map $r_{V,E} \colon V_E \to \interval^n$ with restrictions
+	$r_{V,E}^k \colon V_E^k \to \interval^n$.
+	Abusing notation further, when considering maps whose codomain is $E$, we will freely identify $E$ with $\interval^n$, considered as a subspace of $\R^n$, as we will sometimes use the notations $E$ and $\interval^n$ interchangeably.
 
 
 
-\begin{definition}
-Let $F$ be a face of $\interval^n \subset \R^n$ and $U$ a c-manifold over $\interval^n$. We say $r_U$ is
-{\bf complementary} to $F$ at some $x \in U$ if $r_U$ at $x$ is transverse to the parallel translate of $F$ to $r_U(x)$, i.e.\ if $D_xr_U(T_xU) + T_{r_U(x)}(\tau_{r_U(x)} F) = T_{r_U(x)}\R^n$, where $\tau_{r_U(x)} F$ is the parallel translate of $F$ to $r_U(x)$.
-\end{definition}
+	\begin{definition}
+		Let $F$ be a face of $\interval^n \subset \R^n$ and $U$ a c-manifold over $\interval^n$.
+		We say $r_U$ is
+		{\bf complementary} to $F$ at some $x \in U$ if $r_U$ at $x$ is transverse to the parallel translate of $F$ to $r_U(x)$, i.e.\ if $D_xr_U(T_xU) + T_{r_U(x)}(\tau_{r_U(x)} F) = T_{r_U(x)}\R^n$, where $\tau_{r_U(x)} F$ is the parallel translate of $F$ to $r_U(x)$.
+	\end{definition}
 \end{comment}
 
 \begin{comment}
-\begin{lemma}\label{L:submersion}
-	Suppose $V$ and $M$ are manifolds without boundary, that $N$ is a submanifold without boundary of $M$, and that $f \colon V \to M$ is a submersion at a point $x \in V$ with $r_V(x) \in N$.
-	Then the pullback map $V_N = V \times_M N \to N$ is a submersion at $(x, r_V(x))$, identifying $N$ with its image in $M$.
-\end{lemma}
-\begin{proof}
-	Let use write $r_V(x) = z \in N \subset M$.
-	By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space of $V_N$ at $(x, z)$ is $T_{(x,z)}V_N = T_xV \times_{T_zM} T_zN$, and the derivative map $T_{(x,z)}V_N \to T_zN$ is just the projection.
-	As the restriction of $r_V$ to $V$ is a submersion at $z$, the image of $Dr_V \colon T_xV \to T_zM$ is the whole space, and so for any $\vec b \in T_z N$, there is a vector $\vec a \in T_xV$ such that $(\vec a, \vec b) \in T_{(x,z)}V_N$.
-	The derivative then maps $(\vec a, \vec b)$ to $\vec b \in T_z N$. But $\vec b$ was chosen arbitrarily in $T_zN$, so the pullback is a submersion at $(x,z)$.
-\end{proof}
+	\begin{lemma}\label{L:submersion}
+		Suppose $V$ and $M$ are manifolds without boundary, that $N$ is a submanifold without boundary of $M$, and that $f \colon V \to M$ is a submersion at a point $x \in V$ with $r_V(x) \in N$.
+		Then the pullback map $V_N = V \times_M N \to N$ is a submersion at $(x, r_V(x))$, identifying $N$ with its image in $M$.
+	\end{lemma}
+	\begin{proof}
+		Let use write $r_V(x) = z \in N \subset M$.
+		By \cite[Lemma 2.28 and Corollary 2.29]{medina2022foundations}, the tangent space of $V_N$ at $(x, z)$ is $T_{(x,z)}V_N = T_xV \times_{T_zM} T_zN$, and the derivative map $T_{(x,z)}V_N \to T_zN$ is just the projection.
+		As the restriction of $r_V$ to $V$ is a submersion at $z$, the image of $Dr_V \colon T_xV \to T_zM$ is the whole space, and so for any $\vec b \in T_z N$, there is a vector $\vec a \in T_xV$ such that $(\vec a, \vec b) \in T_{(x,z)}V_N$.
+		The derivative then maps $(\vec a, \vec b)$ to $\vec b \in T_z N$.
+		But $\vec b$ was chosen arbitrarily in $T_zN$, so the pullback is a submersion at $(x,z)$.
+	\end{proof}
 
 
-Now suppose $M$ is a cubulated manifold without boundary.
-The next lemma will establish that if $V \in PC^*_{\Gamma \pf}(M)$, $E$ is a cube in the cubulation, and $F$ is a face of $E$, then there is a neighborhood $B$ of $F$ in $E$ so that, roughly speaking, the pull-back $V_E$ remains transverse to $F$ wherever it maps into $B$. We use standard parallel translation by vector addition in Euclidean space to make this
-precise locally.
+	Now suppose $M$ is a cubulated manifold without boundary.
+	The next lemma will establish that if $V \in PC^*_{\Gamma \pf}(M)$, $E$ is a cube in the cubulation, and $F$ is a face of $E$, then there is a neighborhood $B$ of $F$ in $E$ so that, roughly speaking, the pull-back $V_E$ remains transverse to $F$ wherever it maps into $B$.
+	We use standard parallel translation by vector addition in Euclidean space to make this
+	precise locally.
 
 \end{comment}
 
 
 \begin{comment}
-and let $\vec F$ be the vector space spanned by $\{\e_i \mid i \in F_{01}\}$; in other words, $\vec F$ is the sub-vector space of $\R^n$ parallel to $F$.
-Suppose $x \in V_{E}^k$.
-We will say that $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if $D_xr_{V,E}^k(T_xV_E^k) + \vec F = \R^n$, identifying the tangent space at each point of $\R^n$ with $\R^n$.
-In other words, $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if at $x$ we have $r^k_{V,E}$ transverse to a parallel translate of $F$.
+	and let $\vec F$ be the vector space spanned by $\{\e_i \mid i \in F_{01}\}$; in other words, $\vec F$ is the sub-vector space of $\R^n$ parallel to $F$.
+	Suppose $x \in V_{E}^k$.
+	We will say that $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if $D_xr_{V,E}^k(T_xV_E^k) + \vec F = \R^n$, identifying the tangent space at each point of $\R^n$ with $\R^n$.
+	In other words, $r_{V,E}$ is \textbf{complementary} to $F$ at $x$ if at $x$ we have $r^k_{V,E}$ transverse to a parallel translate of $F$.
 \end{comment}
 
 \begin{comment}
-While we will need this map to all of $\interval^n$, we will also consider the interior $\E$ of $E$.
-Over $\E$, we can identify $r_V^{-1}(\E)$ with the pullback $V \times_M \E \to \E$, and again compose with the diffeomorphism to the standard cube.
-We also write this further restricted map $r_V^*$.
+	While we will need this map to all of $\interval^n$, we will also consider the interior $\E$ of $E$.
+	Over $\E$, we can identify $r_V^{-1}(\E)$ with the pullback $V \times_M \E \to \E$, and again compose with the diffeomorphism to the standard cube.
+	We also write this further restricted map $r_V^*$.
 \end{comment}
 
 %We assume the above notation in the following lemma.
 
 
 \subsubsection{Achieving cube-wise transversality}
+
 We can now prove our main local transversality theorem, \cref{T:transversality}, which we will then apply to obtain our global transversality result.
-
-
 
 \begin{proof}[Proof of \cref{T:transversality}]
 	Let $\dim(M) = m$, $\dim(E) = n$, $\dim(W) = w$, and $\dim(V) = v$.
@@ -498,21 +494,28 @@ We can now prove our main local transversality theorem, \cref{T:transversality},
 
 
 \begin{comment}
-We claim that if $r_{V,E}$ is complementary to $F$ and $\f_t(W)_{\E}$ is sufficiently parallel to $F$ then $r_{V,E}$
-will be transverse to $\f_t(W)_{\E}$. Let $y \in \overline N_{\delta_V}(F)$ be in the image of both
-$r_{V,E}$ and $\f_t(W)_{\E}$. First, let $r_{V,E} (x) = y$ and let $\alpha_x$ be the maximum of absolute values of
-all determinants of $u_1, \ldots, u_k$ which are unit vectors in the image of $D_x r_{V,E}$ followed by $b_1, \ldots, b_{n-k}$
-which are unit vectors in $\R^F$, as $k$ can vary. Because
-$r_{V,E}$ is complementary to $F$, this must be non-zero (and finite as we restrict to unit vectors).
- Because the preimage of $y$ in $V$ is compact,
-there is a non-zero minimum $\alpha_x$ over the preimage, which we call $\alpha_y$. Similarly, because the intersection
-of the images of $r_{V,E}$ and $\f_t(W)_{\E}$ is compact, there is a non-zero minimum of all $\alpha_y$ which we call $\alpha$.
-We choose $\varepsilon$ to be sufficiently small compared to $\alpha$ to apply Proposition~\ref{Wapproxparallel} to
-guarantee that the determinants
-of unit vectors from $D r_{V,E}$ and $D \f_t (r_W)_{\E}$ are sufficiently close to those from $D r_{V,E}$ and $\R^F$,
-which are bounded below by $\alpha$, to be non-zero. This establishes transversality in a neighborhood of $F$ for sufficiently large $t$,
-letting $\delta$ be the smaller of $\delta_V$ and $\delta_W$. 	The induction step is completed by taking $\mathcal N^i$ to be the union over all terminal faces of $N_\delta(F)$ and $T^i$ the maximum value of their associated $t$.
+	We claim that if $r_{V,E}$ is complementary to $F$ and $\f_t(W)_{\E}$ is sufficiently parallel to $F$ then $r_{V,E}$
+	will be transverse to $\f_t(W)_{\E}$.
+	Let $y \in \overline N_{\delta_V}(F)$ be in the image of both
+	$r_{V,E}$ and $\f_t(W)_{\E}$.
+	First, let $r_{V,E} (x) = y$ and let $\alpha_x$ be the maximum of absolute values of
+	all determinants of $u_1, \ldots, u_k$ which are unit vectors in the image of $D_x r_{V,E}$ followed by $b_1, \ldots, b_{n-k}$
+	which are unit vectors in $\R^F$, as $k$ can vary.
+	Because
+	$r_{V,E}$ is complementary to $F$, this must be non-zero (and finite as we restrict to unit vectors).
+	Because the preimage of $y$ in $V$ is compact,
+	there is a non-zero minimum $\alpha_x$ over the preimage, which we call $\alpha_y$.
+	Similarly, because the intersection
+	of the images of $r_{V,E}$ and $\f_t(W)_{\E}$ is compact, there is a non-zero minimum of all $\alpha_y$ which we call $\alpha$.
+	We choose $\varepsilon$ to be sufficiently small compared to $\alpha$ to apply Proposition~\ref{Wapproxparallel} to
+	guarantee that the determinants
+	of unit vectors from $D r_{V,E}$ and $D \f_t (r_W)_{\E}$ are sufficiently close to those from $D r_{V,E}$ and $\R^F$,
+	which are bounded below by $\alpha$, to be non-zero.
+	This establishes transversality in a neighborhood of $F$ for sufficiently large $t$,
+	letting $\delta$ be the smaller of $\delta_V$ and $\delta_W$.
+	The induction step is completed by taking $\mathcal N^i$ to be the union over all terminal faces of $N_\delta(F)$ and $T^i$ the maximum value of their associated $t$.
 \end{comment}
+
 \begin{comment}
 
 	AROUND HERE IS WHERE THINGS STILL NEED TO BE FIXED UP.
@@ -529,13 +532,12 @@ letting $\delta$ be the smaller of $\delta_V$ and $\delta_W$. 	The induction ste
 	We use \cref{L:jacobian ratios} to deduce that the push forward of the span of $\beta_x$ along $D\,\f_t$ is as close as desired to the span of $\beta_F$ at $y$ and is therefore transverse to $T_y V_E$.
 	The induction step is completed by taking $\mathcal N^i$ to be the union over all terminal faces of $N_\delta(F)$ and $T^i$ the maximum value of their associated $t$.
 
-	\end{comment}
-
+\end{comment}
 
 \subsubsection{Global transversality}
+
 The preceding theorem shows that within any face $E$ of the cubulation we can make $\f_t(W)_{\E}$ transverse to $V_{\E}$ for large enough $t$.
 The following lemma allows us to use that information to draw conclusions about transversality in $M$ itself.
-
 
 \begin{lemma}\label{L:local to global}
 	Let $M$ be a manifold without boundary.
@@ -543,6 +545,7 @@ The following lemma allows us to use that information to draw conclusions about 
 	Suppose that $V$ and $W$ are transverse to $S$ and that the pull-backs $V_S = V \times_M S$ and $W_S = W \times_M S$ are transverse as manifolds with corners mapping to $S$.
 	Then $V$ and $W$ are transverse in $M$ at points of $S$.
 \end{lemma}
+
 \begin{proof}
 	Without loss of generality, we may suppose $V$ and $W$ are without boundary, as otherwise we can make the following argument for each pair of strata of $V$ and $W$.
 	We let $r_V^* \colon V_S \to S$ and $r_W^* \colon W_S \to S$ denote the pull-back maps; these are simply the restrictions of the projections $V \times S \to S$ and $W \times S \to S$ to $V_S$ and $W_S$, respectively.
@@ -564,6 +567,7 @@ The following lemma allows us to use that information to draw conclusions about 
 	Suppose $M$ is a closed cubulated manifold.
 	If $W$ and $V$ are in $\cman_{\Gamma \pf}^*(M)$ then there is a $T$ such that for $|t|>T$ both $\f_t(W)$ and $\f_{-t}(W)$ are transverse to $V$ over $M$.
 \end{corollary}
+
 \begin{proof}
 	As $M$ is closed, any cubulation of $M$ is by a finite number of cubes.
 	By \cref{T:transversality}, for any cube $E$ there is a time $T_E$ such that $\f_t(W)_{\E}$ and $\f_{-t}(W)_{\E}$ are transverse to $V_{\E}$ in $E$ for $t > T_E$.
@@ -584,9 +588,6 @@ We will use the following variation for \cref{T:main theorem}.
 	Similarly, we can apply $\f_t$ to $\f_{-2t}(W)$ and $V$ for large enough $t$.
 	Now choose $t$ large enough to do both.
 \end{proof}
-
-
-
 
 \subsection{Locality}\label{S: locality}
 
