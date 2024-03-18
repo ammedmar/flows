@@ -1,4 +1,4 @@
-% !TEX root = flows.tex
+% !TEX root = ../flows.tex
 
 \section{Logistic vector field}\label{S:logistic}
 
@@ -189,7 +189,8 @@ In particular, if we flow long enough and stay close to appropriate upper or low
 	Similarly, $\delta > 0$ and $T\in \R$ can be chosen such that \eqref{E:jacobian ratios} holds for any $y \in N_\delta U_u(F^-)$ and $t>T$ with $y = f_{-t}(x)$, $i \not\in F^-_{01} = F_1$, and $j \in F^-_{01} = F_1$.
 \end{lemma}
 
-In other words, given an $\epsilon$, there is a neighborhood $N_\delta L_u(F^+)$ and a time $T$ so that for all greater times every point that has flowed into $N_\delta L_u(F^+)$ has its tangent space sufficiently ``squashed'' by the flow that the ratios in the normal directions to $F^+$ versus the tangential directions are all smaller than $\epsilon$.
+In other words, given an $\varepsilon$ and a $u< 1$, there is a neighborhood $N_\delta L_u(F^+)$ and a time $T$ so that for all greater times every point that has flowed into $N_\delta L_u(F^+)$ has its tangent space sufficiently
+``squashed'' by the flow that the ratios in the normal directions to $F^+$ versus the tangential directions are scaled by a factor smaller than $\varepsilon$.
 
 \begin{proof}
 	We only prove the forward flow case since the backward flow case is analogous.
@@ -225,9 +226,9 @@ We will also need the following simple lemma.
 	The argument for the second set of hypotheses is analogous.
 \end{proof}
 
-\subsection{Geometric cochains and intersections}
+\subsection{Geometric cochains and flows}
 
-In this subsection we show that the logistic flow on a manifold cubulated by $|X| \to M$ is compatible with key geometric cochain structures.
+In this subsection we show that the logistic flow on a manifold without boundary cubulated by $|X| \to M$ is compatible with key geometric cochain structures.
 
 \begin{lemma}\label{L:flow preserves transversality}
 	If $W \in \cman_{\pf}^*(M)$, then $\f_t(W)\in \cman_{\pf}^*(M)$ for all $t \in \R$.
