@@ -1,10 +1,10 @@
-% !TEX root = flows.tex
+% !TEX root = ../flows.tex
 
 \section{Introduction}\label{S:intro}
 
 de Rham cohomology has long been lauded as a perfect cohomology theory by champions such as Sullivan \cite{sullivan1977infinitesimal} and Bott \cite{BoTu82}.
 A combination of geometric underpinning and commutativity at the cochain level make it a remarkably effective tool for many applications of rational homotopy theory.
-Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains \cite{Lipy14} with a partially defined commutative product \cite{Joyc15, medina2022foundations}.
+Over the integers, submanifolds and intersection (and their generalizations) in various settings provide geometrically meaningful cochains \cite{Lipy14} with a partially defined commutative product \cite{Joyc15, medina2022foundations}.
 But the obstructions to commutativity witnessed by Steenrod operations show that intersection alone cannot capture the cochain quasi-isomorphism type multiplicatively without additional machinery, such as a combination of McClure’s partial intersection algebras \cite{McCl06} and Wilson’s algebraic rectification \cite{Wils10}. One of our goals is to provide a more direct geometric reconciliation of these structures.
 
 In this paper we start to marry two imperfect theories, relating multiplicative structures of, on one hand, geometric cochains defined using manifolds with corners, and, on the other, standard cubical cochains.
@@ -36,7 +36,7 @@ The logistic vector field is pictured in part (A) of the figure with its time $t
 Part (B) of the figure illustrates the main idea of how the flow reconciles multiplications.
 Here $W$ and $V$ are manifolds with corners mapping to a closed manifold $M$ which we assume cubulated, focusing the picture on a single square.
 As explained in \cref{S:geometric cochains}, such maps represent geometric cochains of $M$, and integer coefficients can be considered if additional (co)orientation data is included.
-Geometric cochains that are transverse to the cubulation, as we are assuming $W$ and $V$ are, define cubical cochains $\cI(W)$ and $\cI(V)$ by a count of signed intersection numbers with the cubical faces.
+A geometric cochain that is transverse to the cubulation, as we are assuming $W$ and $V$ are, defines a cubical cochain, say $\cI(W)$, by a count of signed intersection numbers where $W$ intersects a cubical face of complementary dimension.
 The picture shows that with mod-two coefficients $\cI(W)$ evaluates to 1 on the bottom and left edges, while $\cI(V)$ evaluates to 1 on the left and right edges.
 As explained in \cref{S:cubical topology}, because the bottom edge and right edge form an ``initial-terminal'' pair of faces of the square, the Serre diagonal construction gives that $\cI(W) \sms \cI(V)$ evaluates to 1 on the square.
 As $W$ and $V$ do not intersect each other, their intersection product evaluates to 0 on the square, and thus disagrees with the cup product at the cochain level.
@@ -79,7 +79,7 @@ Working with cubulations simplifies our treatment since the logistic flow on sta
 But the simplicial version of \cref{T:main theorem} can be proven for simplicial cochains with the Alexander--Whitney product, using the results of this paper and the model of standard simplices as subsets of cubes with non-increasing coordinates.
 We leave the details to the interested reader.
 Secondly, we conjecture that there is a version of \cref{T:main theorem} in which some finite subcomplex of geometric cochains maps to a version of transverse smooth singular cochains.
-Precise formulation of such a comparison map is one of the topics we plan to address in \cite{medina2022foundations}, so for now we leave this idea undeveloped.
+Precise formulation of such a comparison map is one of the topics we hope to address in the future, but for now we leave this idea undeveloped.
 
 We begin the paper by reviewing in \cref{S:cubical topology} basic material on cubical structures.
 We then describe geometric cochains defined using manifolds with corners, a notion that arises naturally when considering fiber products of manifolds with boundary.
@@ -91,4 +91,4 @@ We put everything together in \cref{S:flow comparison theorem} to prove our main
 
 \section*{Acknowledgments}
 
-The authors thank Mike Miller, for pointing us to \cite{Lipy14}, Dominic Joyce, for answering questions about his work, and the reviewer for a careful and insightful analysis of our paper.
+The authors thank Mike Miller, for pointing us to \cite{Lipy14}; Dominic Joyce, for answering questions about his work; and the reviewer for a careful and insightful analysis of our paper.
