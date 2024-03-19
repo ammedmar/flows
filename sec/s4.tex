@@ -28,9 +28,9 @@ We will exclusively consider the restriction of $\f^n$ to the unit cube $\interv
 \begin{lemma}\label{L:f is natural}
 	The vector fields $\f^n$ are natural with respect to face inclusions.
 	That is, for integers $k$ and $n$ with $1 \leq k \leq n$,
-	\begin{equation*}
-		\f^n|_{\delta_{k}^\varepsilon(\interval^{n-1})}=(\delta_{k}^\varepsilon)_*(\f^{n-1}).
-	\end{equation*}
+	\[
+	\f^n|_{\delta_{k}^\varepsilon(\interval^{n-1})}=(\delta_{k}^\varepsilon)_*(\f^{n-1}).
+	\]
 \end{lemma}
 
 \begin{proof}
@@ -74,9 +74,9 @@ We next explicitly describe the logistic flow diffeomorphism.
 \begin{lemma}\label{L:bernoulli equation}
 	The {\bf logistic flow} $\f_t(x) = (x_1(t), \dots, x_n(t))$ exists for any $t \in \R$ and any $x \in \interval^n$,
 	and is explicitly given by the logistic function
-	\begin{equation*}
-		x_i(t) = \frac{x_i(0) \; e^t}{x_i(0)(e^t-1)+1.}
-	\end{equation*}
+	\[
+	x_i(t) = \frac{x_i(0) \; e^t}{x_i(0)(e^t-1)+1.}
+	\]
 	In particular, $x_i(t) = \varepsilon$ if $x_i(0) = \varepsilon$ for $\varepsilon \in \{0, 1\}$.
 \end{lemma}
 
@@ -89,33 +89,33 @@ In a single variable, if $y = \f_t(x)$ then solving the flow as expressed in \cr
 \end{equation}
 
 Since
-\begin{equation*}
-	\lim_{t \to + \infty} \frac{e^t}{e^t + c} = 1
-	\quad \text{ and } \quad
-	\lim_{t \to - \infty} \frac{e^t}{e^t + c} = 0,
-\end{equation*}
+\[
+\lim_{t \to + \infty} \frac{e^t}{e^t + c} = 1
+\quad \text{ and } \quad
+\lim_{t \to - \infty} \frac{e^t}{e^t + c} = 0,
+\]
 for $c\neq 0$, we have the following.
 
 \begin{corollary}\label{C:limit of points along the flow}
 	For every $x \in \interval^n$, the limits $x^\pm = \lim_{t \to \pm \infty} \f_t(x)$ 	exist, and we have
-	\begin{equation*}
-		x^+_i = \begin{cases}
-			0, & \text{ if } x_i(0) = 0, \\ 1, & \text{ otherwise,}
-		\end{cases}
-		\quad \text{ and } \quad
-		x^-_i = \begin{cases}
-			1, & \text{ if } x_i(0) = 1, \\ 0, & \text{ otherwise.}
-		\end{cases}
-	\end{equation*}
+	\[
+	x^+_i = \begin{cases}
+		0, & \text{ if } x_i(0) = 0, \\ 1, & \text{ otherwise,}
+	\end{cases}
+	\quad \text{ and } \quad
+	x^-_i = \begin{cases}
+		1, & \text{ if } x_i(0) = 1, \\ 0, & \text{ otherwise.}
+	\end{cases}
+	\]
 \end{corollary}
 
 By taking derivatives of the formulas in \cref{L:bernoulli equation} with respect to the $x_i(0)$, treated as coordinates, we immediately identify the flow diffeomorphism on tangent spaces.
 
 \begin{corollary}\label{C:pushforward of vectors along the flow}
 	The Jacobian matrix representing the differential of the diffeomorphism $\f_t:\interval^n \to \interval^n$ for a fixed time $t$	is diagonal with entries
-	\begin{equation*}
-		\left(D_x \f_t\right)_{i,i} = \frac{e^t}{(x_i(e^t -1) + 1)^2.}
-	\end{equation*}
+	\[
+	\left(D_x \f_t\right)_{i,i} = \frac{e^t}{(x_i(e^t -1) + 1)^2.}
+	\]
 \end{corollary}
 
 \subsection{Neighborhoods}\label{S:neighborhoods}
@@ -197,16 +197,16 @@ In other words, given an $\varepsilon$ and a $u< 1$, there is a neighborhood $N_
 	We only prove the forward flow case since the backward flow case is analogous.
 	Recall from Equation~\eqref{E:inverse flow} that if $y = \f_t(x)$ then $x = \frac{y}{e^t-y(e^t-1)}$.
 	Plugging this into the Jacobian formula of \cref{C:pushforward of vectors along the flow} gives diagonals of the Jacobian of the form
-	\begin{equation*}
-		\frac{e^t}{\left(\frac{y}{e^t-y(e^t-1)}(e^t -1) + 1\right)^2} \ = \
-		\frac{e^t}{\left(\frac{e^t}{e^t-y(e^t-1)}\right)^2} \ = \
-		\frac{\left(e^t-y(e^t-1)\right)^2}{e^t}.
-	\end{equation*}
+	\[
+	\frac{e^t}{\left(\frac{y}{e^t-y(e^t-1)}(e^t -1) + 1\right)^2} \ = \
+	\frac{e^t}{\left(\frac{e^t}{e^t-y(e^t-1)}\right)^2} \ = \
+	\frac{\left(e^t-y(e^t-1)\right)^2}{e^t}.
+	\]
 	For any two coordinates we obtain
-	\begin{equation*}
-		\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
-		{\left|\left(D_{x}\f_t\right)_{j,j}\right|} = \left(\frac{e^t-y_i(e^t-1)}{e^t-y_j(e^t-1)}\right)^2,
-	\end{equation*}
+	\[
+	\frac{\left|\left(D_{x}\f_t\right)_{i,i}\right|}
+	{\left|\left(D_{x}\f_t\right)_{j,j}\right|} = \left(\frac{e^t-y_i(e^t-1)}{e^t-y_j(e^t-1)}\right)^2,
+	\]
 	whose limit as $t$ goes to infinity is equal to $\big(\frac{1-y_i}{1-y_j}\big)^2$.
 	Thus, a given bound $y_j \leq u<1$ for $j \in F^+_{01}$ allows us to find a bound $y_i > 1- \delta$ for $i \not\in F^+_{01}$ making this ratio as small as desired for sufficiently large $t$.
 \end{proof}
@@ -241,9 +241,9 @@ In this subsection we show that the logistic flow on a manifold without boundary
 
 \begin{lemma}
 	For any $W \in \cman_{\pf}^*(M)$ and complementary cube $E$,
-	\begin{equation*}
-		I_M(W, E) = I_M(\f_t(W), E)
-	\end{equation*}
+	\[
+	I_M(W, E) = I_M(\f_t(W), E)
+	\]
 	for all $t \in \R$.
 \end{lemma}
 
